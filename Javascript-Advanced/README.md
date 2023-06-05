@@ -28,3 +28,4 @@ Here's a list of the tasks I've completed, with links to their respective folder
   * [Classes and Attributes Exerise](./8.ClassesAndAttributesEXC) 
 * Prototypes and Inheritance
   * [Prototypes and Inheritance Lab](./9.PrototypesAndInheritanceLAB) 
+  * [Prototypes and Inheritance Exercise](./9.PrototypesAndInheritanceEXC)
