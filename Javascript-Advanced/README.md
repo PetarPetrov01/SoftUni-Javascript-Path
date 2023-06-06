@@ -29,3 +29,5 @@ Here's a list of the tasks I've completed, with links to their respective folder
 * Prototypes and Inheritance
   * [Prototypes and Inheritance Lab](./9.PrototypesAndInheritanceLAB) 
   * [Prototypes and Inheritance Exercise](./9.PrototypesAndInheritanceEXC)
+* Exams
+  * [Exam preparation 2 sept 2021](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/06f2980dab2f11c46fba19561b800e04b7a54818/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021) 
