@@ -7,5 +7,5 @@ This repository contains my solutions to the programming tasks assigned by SoftU
   * [Javascript Fundamentals (OLD ARCHIVED REPOSITORY)](https://github.com/PetarPetrov01/SoftUni-JavaScript-Fundamentals)
 * Javascript Advanced
   * [Javascript Advanced (Current)](./Javascript-Advanced)
-  * [Javascript Advanced (OLD ARCHIVED REPOSITORY)](https://github.com/PetarPetrov01/JavaScript-Advanced)
+  * [Javascript Advanced (OLD ARCHIVED AND NOT COMPLETE REPOSITORY)](https://github.com/PetarPetrov01/JavaScript-Advanced)
 
