@@ -36,3 +36,4 @@ Here's a list of the tasks I've completed, with links to their respective folder
   * [02.Restaurant](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/4038914a6710a85822a32f77fc80b7e8830f27ad/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/2.Restaurant.js)
   * [03.Cinema](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c871816a92b611d32eee2141b3b3e472915fd7f7/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/3.Cinema)
 * [Exam preparation sept 2021](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/9898768e67a8f1ee01998e52222433b61595db9a/Javascript-Advanced/Exams/Exam-prep%20sept%202021)
+  * [01.Pet Me](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/6573abc6742c7a13efc0ed9284f6ab873a926650/Javascript-Advanced/Exams/Exam-prep%20sept%202021/1.Pet_Me)
