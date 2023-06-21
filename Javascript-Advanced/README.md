@@ -39,3 +39,5 @@ Here's a list of the tasks I've completed, with links to their respective folder
   * [01.Pet Me](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/6573abc6742c7a13efc0ed9284f6ab873a926650/Javascript-Advanced/Exams/Exam-prep%20sept%202021/1.Pet_Me)
   * [02.Movie](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/6dac94a79a8d02dac6fd301a276626a64b81e3b7/Javascript-Advanced/Exams/Exam-prep%20sept%202021/2.Movie.js)
   * [03.Test Numbers](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/6dac94a79a8d02dac6fd301a276626a64b81e3b7/Javascript-Advanced/Exams/Exam-prep%20sept%202021/3.TestNumbers)
+* [Exam Preparation 15.02.21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/1ee39f3b7ee8325c987132685cd54fcd935271df/Javascript-Advanced/Exams/Exam-prep-15.02.21)
+  * [01. Christmas Gifts Delivery](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/1ee39f3b7ee8325c987132685cd54fcd935271df/Javascript-Advanced/Exams/Exam-prep-15.02.21/01.%20Christmas%20Gifts%20Delivery)
