@@ -44,4 +44,5 @@ Here's a list of the tasks I've completed, with links to their respective folder
   * [02. Christmas Dinner](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/878ae202eec87dd8a4c104e3ec972a19d9e8da30/Javascript-Advanced/Exams/Exam-prep-15.02.21/02.ChristmasDinner.js)
   * [03. Dealership](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/878ae202eec87dd8a4c104e3ec972a19d9e8da30/Javascript-Advanced/Exams/Exam-prep-15.02.21/03.Dealership)
 * [Exam 10.12.19](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fdb2f684328167975fe264c2eac398e0ee52dc01/Javascript-Advanced/Exams/Retake-exam-10-dec-19)
-  * [01. Christmas Gifts Delivery](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/00042c4817499e5676aa04fce57b2f445fa0185f/Javascript-Advanced/Exams/Retake-exam-10-dec-19/1.ChristmasGiftsDelivery) 
+  * [01. Christmas Gifts Delivery](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/00042c4817499e5676aa04fce57b2f445fa0185f/Javascript-Advanced/Exams/Retake-exam-10-dec-19/1.ChristmasGiftsDelivery)
+  * [02. Christmas Movies](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/56e45ce05b3ec23d2e87d36eb4d1072f803b36af/Javascript-Advanced/Exams/Retake-exam-10-dec-19/2.ChristmasMovies)
