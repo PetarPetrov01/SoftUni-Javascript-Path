@@ -32,7 +32,8 @@ Here's a list of the tasks I've completed, with links to their respective folder
  
  ### Exams
 * [My Exam 17.06.2023](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/22bcc45e7315101bfa77681f5e90345c3bbd1318/Javascript-Advanced/MyExam)
-  * [01. Car Parts](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/198bd7996353709e38ca542fc7c3bbee6cb78c4c/Javascript-Advanced/MyExam/1.CarParts) 
+  * [01. Car Parts](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/198bd7996353709e38ca542fc7c3bbee6cb78c4c/Javascript-Advanced/MyExam/1.CarParts)
+  * [02. Job Offers](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/f05b1c8a4943314ff5b95f37d7004add6d51f086/Javascript-Advanced/MyExam/2.JobOffers.js)
 * [Exam preparation 2 sept 2021](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/06f2980dab2f11c46fba19561b800e04b7a54818/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021)
   * [01.Furniture Store](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7e6942ef6ea0a0af0c334ebb621ff5b9a9c737c1/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/1.FurnitureStore)  
   * [02.Restaurant](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/4038914a6710a85822a32f77fc80b7e8830f27ad/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/2.Restaurant.js)
