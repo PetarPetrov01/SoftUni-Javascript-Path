@@ -38,6 +38,7 @@ Here's a list of the tasks I've completed, with links to their respective folder
 * [Exam 18-feb-2023](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/8a97ef39d86a8e3e4d6e17af8030f48306aa4365/Javascript-Advanced/Exams/Exam-18.02.23)
   * [01. Ski Lift](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/aa76cfc50773de40a5ac352f0c0d1bffa8be5bc8/Javascript-Advanced/Exams/Exam-18.02.23/1.SkiLift)
   * [02. Wine Selection](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/009175ffb98a31aca6accac664de3fa22a125079/Javascript-Advanced/Exams/Exam-18.02.23/2.WineSelection.js)
+  * [03. Find Apartment](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/d7019b5e70b74855430d697f0cc46978cc0ef95c/Javascript-Advanced/Exams/Exam-18.02.23/3.FindApartment)
 * [Exam preparation 2-sept-2021](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/06f2980dab2f11c46fba19561b800e04b7a54818/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021)
   * [01.Furniture Store](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7e6942ef6ea0a0af0c334ebb621ff5b9a9c737c1/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/1.FurnitureStore)  
   * [02.Restaurant](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/4038914a6710a85822a32f77fc80b7e8830f27ad/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/2.Restaurant.js)
