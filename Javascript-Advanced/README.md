@@ -31,10 +31,12 @@ Here's a list of the tasks I've completed, with links to their respective folder
   * [Prototypes and Inheritance Exercise](./9.PrototypesAndInheritanceEXC)
  
  ### Exams
+#### My Exam 
 * [My Exam 17-jun-2023](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/22bcc45e7315101bfa77681f5e90345c3bbd1318/Javascript-Advanced/MyExam)
   * [01. Car Parts](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/198bd7996353709e38ca542fc7c3bbee6cb78c4c/Javascript-Advanced/MyExam/1.CarParts)
   * [02. Job Offers](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/f05b1c8a4943314ff5b95f37d7004add6d51f086/Javascript-Advanced/MyExam/2.JobOffers.js)
   * [03. Lottery](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fab383edf53ac7da4cd4d5da5cd171f2d6dda49c/Javascript-Advanced/MyExam/3.Lottery)
+#### Other Exams
 * [Retake Exam 05-apr-2023](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fd6976e9226a461d00bea3bc169c34dfd903adb3/Javascript-Advanced/Exams/Retake-exam-5-apr-23)
   * [01. Gem Collection](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/0d6acc37d61aa7c37a5a4740c5c1c0a42aa7f599/Javascript-Advanced/Exams/Retake-exam-5-apr-23/1.GemCollection)
   * [02. Job Offers](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/739ea3121ab57c6d5b8c7e8f914c8a74ac3c95c9/Javascript-Advanced/MyExam/2.JobOffers.js)
