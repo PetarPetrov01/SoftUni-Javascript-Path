@@ -46,6 +46,7 @@ Here's a list of the tasks I've completed, with links to their respective folder
 * [Retake-exam 7-dec-22](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ca27d1698ed51c59c0532f824015d6150672e0f1/Javascript-Advanced/Exams/Retake-exam-7-dec-22)
   * [01. Hotel Reservation](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ca27d1698ed51c59c0532f824015d6150672e0f1/Javascript-Advanced/Exams/Retake-exam-7-dec-22/1.HotelReservation)
   * [02. Online Shop](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/8e6626a8033def0bc712db5a03d1231d108d8764/Javascript-Advanced/Exams/Retake-exam-7-dec-22/2.OnlineShop.js)
+  * [03. Motorcylce Rider](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/f7dcc0666427d80bde4ecb8dd831394fc8f16db4/Javascript-Advanced/Exams/Retake-exam-7-dec-22/3.MotorcycleRider)
 * [Exam preparation 2-sept-2021](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/06f2980dab2f11c46fba19561b800e04b7a54818/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021)
   * [01.Furniture Store](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7e6942ef6ea0a0af0c334ebb621ff5b9a9c737c1/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/1.FurnitureStore)  
   * [02.Restaurant](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/blob/4038914a6710a85822a32f77fc80b7e8830f27ad/Javascript-Advanced/Exams/Exam-prep%202%20sept%202021/2.Restaurant.js)
