@@ -8,4 +8,6 @@ This repository contains my solutions to the programming tasks assigned by SoftU
 * Javascript Advanced
   * [Javascript Advanced (Current)](./Javascript-Advanced)
   * [Javascript Advanced (OLD ARCHIVED AND NOT COMPLETE REPOSITORY)](https://github.com/PetarPetrov01/JavaScript-Advanced)
+* Javascript Applications
+  * [JS-Applications](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ed3c75aed8826c83ae11ac76eb4dee44844fe76e/JS-Applications)  
 
