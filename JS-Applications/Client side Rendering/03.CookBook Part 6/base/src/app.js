@@ -15,6 +15,14 @@ window.addEventListener('load', async () => {
     const navbar = document.querySelector('nav');
     const navigation = createNav(main, navbar);
 
+    navigation.registerView('home', setupHome);
+    navigation.registerView('catalog', setupCatalog, 'catalogLink');
+    navigation.registerView('details', setupDetails);
+    navigation.registerView('login', setupLogin, 'loginLink');
+    navigation.registerView('register', setupRegister, 'registerLink');
+    navigation.registerView('create', setupCreate, 'createLink');
+    navigation.registerView('edit', setupEdit);
+    navigation.registerView('deleted', setupDeleted)
 
     navigation.setUserNav();
     document.getElementById('logoutBtn').addEventListener('click', logout);
