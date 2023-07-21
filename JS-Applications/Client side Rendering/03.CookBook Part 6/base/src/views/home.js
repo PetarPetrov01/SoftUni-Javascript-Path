@@ -1,3 +1,7 @@
+import { html } from '../dom.js';
+import { getRecent } from '../api/data.js';
+
+
 const homeTemplate = (recents, goTo) => html`
 <section id="home">
     <div class="hero">
@@ -26,3 +30,14 @@ const recentRecipe = (recipe, goTo) => html`
 
 const spacerTemplate = () => html`
 <div class="recent-space"></div>`
+
+export function setupHome(nav) {
+
+    return showHome;
+
+    async function showHome() {
+        const recipes = await getRecent();
+
+        return homeTemplate(recipes, nav.goTo)
+    }
+}

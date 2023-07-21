@@ -1,3 +1,6 @@
+import { html } from '../dom.js'
+import { login } from '../api/data.js';
+
 const loginTemplate = () => html`
 <section>
     <article>
@@ -9,3 +12,24 @@ const loginTemplate = () => html`
         </form>
     </article>
 </section>`
+
+export function setupLogin(nav) {
+    nav.registerForm('loginForm', onSubmit)
+    return showLogin;
+
+    function showLogin() {
+        return loginTemplate();
+    }
+
+    async function onSubmit(data) {
+        try {
+            console.log('logging in...');
+
+            await login(data.email, data.password);
+            nav.setUserNav();
+            nav.goTo('catalog');
+        } catch (err) {
+            alert(err.message);
+        }
+    }
+}
