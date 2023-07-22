@@ -11,6 +11,8 @@ import { homePage } from './views/home.js'
 import { loginPage } from './views/login.js'
 import { myCarsPage } from './views/myCars.js'
 import { registerPage } from './views/register.js'
+import { searchPage } from './views/search.js'
+import { addSearchQuery } from './utils.js'
 
 page(updateSession)
 page(addRender)

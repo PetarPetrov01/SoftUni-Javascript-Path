@@ -20,3 +20,13 @@ export function createSubmitHandler(ctx, handler) {
     }
 }
 
+export function addSearchQuery(ctx, next) {
+    if (ctx.querystring != '') {
+        ctx.search = ctx.querystring.split('=')[1]
+    }
+    next()
+}
+
+
+
+
