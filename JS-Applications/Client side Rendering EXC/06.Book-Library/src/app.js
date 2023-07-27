@@ -10,6 +10,8 @@ const context = {
     update
 }
 
+setupCatalog(context)
+setupCreate(context)
 
 function update(el) {
     render(el, body)
