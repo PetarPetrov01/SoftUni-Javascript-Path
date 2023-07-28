@@ -20,6 +20,8 @@ page('/index.html', '/');
 page('/', homePage);
 page('/login', loginPage);
 page('/register', registerPage);
+page('/catalog', catalogPage);
+page('/create', createPage);
 
 //initiliaze
 page.start();
