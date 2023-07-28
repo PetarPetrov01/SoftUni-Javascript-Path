@@ -22,6 +22,10 @@ page('/login', loginPage);
 page('/register', registerPage);
 page('/catalog', catalogPage);
 page('/create', createPage);
+page('/edit/:id', editPage);
+page('/details/:id', detailsPage);
+page('/logout', onLogout);
+page('/buy/:id', buyProdcut)
 
 //initiliaze
 page.start();
