@@ -9,5 +9,8 @@ Repository for my solutions to SoftUni's JS-Applications course.
   * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c03a9ba4ced33d4a9b1072ae83ee95298aea564b/JS-Applications/Remote%20Data%20and%20Authentication%20EXC)
 * Single Page Application
   * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c03a9ba4ced33d4a9b1072ae83ee95298aea564b/JS-Applications/Single%20Page%20Application)
-    
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Single%20Page%20Application%20EXC)
+* Architecture and Testing
+  * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Architecture%20and%20Testing)
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Architecture%20and%20Testing%20EXC)      
 
