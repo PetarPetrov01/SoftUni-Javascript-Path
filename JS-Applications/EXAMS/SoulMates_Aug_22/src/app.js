@@ -12,6 +12,8 @@ import { editPage } from './views/edit.js';
 import { homePage } from './views/home.js';
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
+import { searchPage } from './views/search.js';
+
 page(updateSession);
 page(addRender);
 page(addSearch);
@@ -25,6 +27,7 @@ page('/create', createPage);
 page('/edit/:id', editPage);
 page('/details/:id', detailsPage);
 page('/logout', onLogout);
+page('/search', searchPage)
 
 //initiliaze
 page.start();

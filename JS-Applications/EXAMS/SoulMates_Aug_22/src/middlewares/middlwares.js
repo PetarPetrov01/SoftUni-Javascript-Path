@@ -36,3 +36,11 @@ export function addRender(ctx, next) {
     next()
 }
 
+export function addSearch(ctx, next) {
+    if (ctx.querystring != '') {
+        ctx.search = ctx.querystring.split('=')[1]
+    }
+
+    next()
+}
+
