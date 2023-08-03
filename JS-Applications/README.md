@@ -12,5 +12,8 @@ Repository for my solutions to SoftUni's JS-Applications course.
   * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Single%20Page%20Application%20EXC)
 * Architecture and Testing
   * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Architecture%20and%20Testing)
-  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Architecture%20and%20Testing%20EXC)      
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c89a0f9db7a432b8ef834c8b2d7a0f62cd63a599/JS-Applications/Architecture%20and%20Testing%20EXC)
+* Client side Rendering
+  * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/8c062e4a1c3327ebb18b71fbddbcb7f137010878/JS-Applications/Client%20side%20Rendering)
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/8c062e4a1c3327ebb18b71fbddbcb7f137010878/JS-Applications/Client%20side%20Rendering%20EXC)  
 
