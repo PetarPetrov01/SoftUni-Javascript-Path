@@ -1,8 +1,15 @@
 import * as userService from './api/auth.js';
+import { page } from './lib.js';
+import { addRender } from './middlewares/middlwares.js';
+import { updateSession } from './middlewares/session.js';
+import { catalogPage } from './views/catalog.js';
+import { createPage } from './views/create.js';
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
 page('/login', loginPage);
 page('/register', registerPage);
+page('/catalog', catalogPage);
+page('/create', createPage);
 page.start();
 async function onLogout() {
     userService.logout();
