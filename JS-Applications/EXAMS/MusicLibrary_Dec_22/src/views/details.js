@@ -64,3 +64,12 @@ async function loadAlbum(ctx) {
     }
 }
 
+export async function onLike(ctx) {
+    const albumId = ctx.params.id
+    try {
+        await postLike({ albumId })
+        ctx.page.redirect(`/details/${albumId}`)
+    } catch (error) {
+        allert(error.message)
+    }
+}
