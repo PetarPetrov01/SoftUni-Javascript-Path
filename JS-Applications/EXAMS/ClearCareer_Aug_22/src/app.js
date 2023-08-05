@@ -4,17 +4,22 @@ import { addRender } from './middlewares/middlwares.js';
 import { updateSession } from './middlewares/session.js';
 import { catalogPage } from './views/catalog.js';
 import { createPage } from './views/create.js';
+import { detailsPage, onApply } from './views/details.js';
+import { editPage } from './views/edit.js';
 import { homePage } from './views/home.js';
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
+
 page(updateSession);
 page(addRender);
+
 page('/index.html', '/');
 page('/', homePage);
 page('/login', loginPage);
 page('/register', registerPage);
 page('/catalog', catalogPage);
 page('/create', createPage);
+page('/edit/:id', editPage);
 page('/logout', onLogout);
 page.start();
 async function onLogout() {
