@@ -9,6 +9,7 @@ import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
 import { createPage } from './views/create.js';
 import { myTeamsPage } from './views/myTeams.js';
+import { detailsPage } from './views/details.js';
 import { updateSession } from './middlewares/session.js';
 page(updateSession)
 page(decorate)
@@ -18,6 +19,7 @@ page('/catalog', catalogPage)
 page('/login', loginPage)
 page('/register', registerPage)
 page('/create', createPage)
+page('/edit/:id', editPage)
 page('/my-teams', myTeamsPage)
 page('/logout', onLogout)
 
