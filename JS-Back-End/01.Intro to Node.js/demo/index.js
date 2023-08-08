@@ -1,3 +1,6 @@
 const http = require('http')
 const router = require('./router')
+router.get('/', homePage)
+router.get('default', defaultPage)
 const server = http.createServer(router.match)
+server.listen(3000)
