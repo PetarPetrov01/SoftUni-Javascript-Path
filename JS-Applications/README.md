@@ -18,5 +18,7 @@ Repository for my solutions to SoftUni's JS-Applications course.
   * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/8c062e4a1c3327ebb18b71fbddbcb7f137010878/JS-Applications/Client%20side%20Rendering%20EXC)
 * Routing
   * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/58e814064972d13dc8e8297333ddf540ff770792/JS-Applications/Routing)
-  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/58e814064972d13dc8e8297333ddf540ff770792/JS-Applications/Routing%20EXC)  
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/58e814064972d13dc8e8297333ddf540ff770792/JS-Applications/Routing%20EXC)
+* Modular Application
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5c9746d850c7aefad64ad0a831367a4b215e9fbd/JS-Applications/Modular%20Application%20EXC)  
 
