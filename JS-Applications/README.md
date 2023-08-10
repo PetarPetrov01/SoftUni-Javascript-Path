@@ -20,5 +20,7 @@ Repository for my solutions to SoftUni's JS-Applications course.
   * [LAB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/58e814064972d13dc8e8297333ddf540ff770792/JS-Applications/Routing)
   * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/58e814064972d13dc8e8297333ddf540ff770792/JS-Applications/Routing%20EXC)
 * Modular Application
-  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5c9746d850c7aefad64ad0a831367a4b215e9fbd/JS-Applications/Modular%20Application%20EXC)  
+  * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5c9746d850c7aefad64ad0a831367a4b215e9fbd/JS-Applications/Modular%20Application%20EXC)
+* EXAMS
+  * [My Exam Fun Facts 29.07.23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/f671451b58f3e851ab974ef0a2ae53db2a650b63/JS-Applications/EXAMS/MyExam)  
 
