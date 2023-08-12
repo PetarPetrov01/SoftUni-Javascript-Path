@@ -1,3 +1,4 @@
+
 # JS-Applications
 Repository for my solutions to SoftUni's JS-Applications course.
 ### Content
@@ -22,5 +23,5 @@ Repository for my solutions to SoftUni's JS-Applications course.
 * Modular Application
   * [Exercise](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5c9746d850c7aefad64ad0a831367a4b215e9fbd/JS-Applications/Modular%20Application%20EXC)
 * EXAMS
-  * [My Exam Fun Facts 29.07.23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/f671451b58f3e851ab974ef0a2ae53db2a650b63/JS-Applications/EXAMS/MyExam)  
-
+  * [My Exam Fun Facts 29.07.23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/f671451b58f3e851ab974ef0a2ae53db2a650b63/JS-Applications/EXAMS/MyExam)
+  * [Eventer Apr 23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/bd9ceef421ae249be5f7b4c6d18b2bac62a8a142/JS-Applications/EXAMS/Eventer_Apr_23)
