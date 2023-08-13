@@ -1,4 +1,9 @@
+const url = require('url')
+const fs = require('fs');
 const { catalogPage } = require('./catalog.js')
+const { homePage, errorPage, sendFile } = require('./homeController.js')
+
+
 function handleRequest(req, res) {
 
     let handler;
