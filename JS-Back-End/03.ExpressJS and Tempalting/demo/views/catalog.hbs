@@ -1,0 +1,14 @@
+<div>
+    <h1>Catalog of games</h1>
+    {{#if games}}
+    <div class="game-container">
+        {{#each games}}
+        {{> gameCard}}
+        {{/each}}
+    </div>
+    {{else}}
+    <div>
+        <p>There are currently no games!</p>
+    </div>
+    {{/if}}
+</div>

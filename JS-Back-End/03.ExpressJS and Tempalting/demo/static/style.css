@@ -1,0 +1,73 @@
+body {
+    background-color: #ddd;
+}
+
+#main {
+    background-color: white;
+    width: 70vw;
+    padding: 0px 10px 10px 10px;
+    margin: auto;
+}
+
+nav {
+    background-color: #ccc;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: bisque;
+    color: black;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    transition: 0.4s;
+}
+
+nav a:hover {
+    background-color: rgb(235, 202, 163);
+}
+
+.game-container {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.card {
+    width: 250px;
+    display: inline-block;
+    font-size: 1.2em;
+    border: 1px solid rgb(98, 98, 98);
+    border-radius: 8px;
+    padding: 0px 6px 8px 6px;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.card h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 5px;
+}
+
+label span {
+    display: inline-block;
+    width: 110px;
+}

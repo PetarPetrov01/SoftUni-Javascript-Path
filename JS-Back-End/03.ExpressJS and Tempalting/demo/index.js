@@ -15,3 +15,4 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/static', express.static('static'))
 
 app.use(homeController)
+app.use('/catalog', catalogController)
