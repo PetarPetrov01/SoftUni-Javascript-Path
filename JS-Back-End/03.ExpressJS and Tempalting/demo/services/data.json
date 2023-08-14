@@ -1,0 +1,27 @@
+[
+  {
+    "id": "asdf1234",
+    "title": "Assassin's creed",
+    "year": 2016,
+    "publisher": "Ubisoft",
+    "_locals": {}
+  },
+  {
+    "id": "asdf1424",
+    "title": "Call of duty",
+    "year": 2010,
+    "publisher": "Activision"
+  },
+  {
+    "title": "Some g231ame",
+    "year": 123,
+    "publisher": "asd",
+    "id": "asdf0000"
+  },
+  {
+    "title": "Jognhu",
+    "year": 123,
+    "publisher": "sad",
+    "id": "asdf0000"
+  }
+]
