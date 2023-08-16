@@ -1,0 +1,13 @@
+<div>
+    <h1>Deleting {{title}}</h1>
+    <div class="card">
+        <h2>
+            {{title}}
+        </h2>
+        <p> Released in {{year}} by {{publisher}} </p>
+        <form action="/delete/{{id}}" method="post">
+            <input type="submit" value="Confirm deleting">
+        </form>
+        <a href="/catalog/{{id}}">Cancel</a>
+    </div>
+</div>
