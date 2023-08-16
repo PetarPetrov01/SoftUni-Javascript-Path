@@ -20,4 +20,5 @@ app.use('/static', express.static('static'))
 
 app.use(homeController)
 app.use('/catalog', catalogController)
+app.use('/create', createController)
 app.listen(3000)
