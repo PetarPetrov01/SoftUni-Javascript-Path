@@ -29,4 +29,16 @@ app.get('/', (req, res) => {
     </body>
     </html>`);
 });
+app.get('/register', (req, res) => {
+    res.sendFile(__dirname + '/register.html');
+});
+
+app.post('/register', async (req, res) => {
+    if (await req.auth.register(req.body.username, req.body.password)) {
+        res.redirect('/');
+    } else {
+        res.status(401).send('User already exists');
+    }
+});
+
 app.listen(3000, () => (console.log('Listening on port 3000...')));
