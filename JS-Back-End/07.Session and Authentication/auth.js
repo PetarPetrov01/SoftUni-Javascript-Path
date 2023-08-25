@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 module.exports = () => {
     const users = {
         'peter': {
@@ -8,8 +10,23 @@ module.exports = () => {
 
     return (req, res, next) => {
         req.auth = {
+            login,
             register
         };
+
+        async function login(username, password) {
+            const user = Object.values(users).find(u => u.username == username);
+
+            if (user && await bcrypt.compare(password, user.hashedPassowrd)) {
+                //Sucessful login
+                req.session.user = user;
+                return true;
+            } else {
+                //Incorrect password or username
+                return false;
+            }
+        }
+
         async function register(username, password) {
             if (Object.values(users).find(u => u.username == username) != undefined) {
                 //Already exists

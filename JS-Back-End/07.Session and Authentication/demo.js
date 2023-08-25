@@ -1,6 +1,9 @@
 const express = require('express');
 const sessionExpress = require('express-session');
+const auth = require('./auth');
+
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionExpress({
     secret: 'something secret',
@@ -8,6 +11,8 @@ app.use(sessionExpress({
     saveUninitialized: true,
     cookie: { secure: 'auto' }
 }));
+
+app.use(auth());
 
 app.get('/', (req, res) => {
     console.log(req.session);
@@ -29,8 +34,22 @@ app.get('/', (req, res) => {
     </body>
     </html>`);
 });
+
+app.get('/login', (req, res) => {
+    console.log('Login page loading...');
+    res.sendFile(__dirname + '/login.html');
+});
+
 app.get('/register', (req, res) => {
     res.sendFile(__dirname + '/register.html');
+});
+
+app.post('/login', async (req, res) => {
+    if (await req.auth.login(req.body.username, req.body.password)) {
+        res.redirect('/');
+    } else {
+        res.status(401).send('Invalid name or pass');
+    }
 });
 
 app.post('/register', async (req, res) => {
