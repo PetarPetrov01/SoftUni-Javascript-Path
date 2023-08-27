@@ -1,3 +1,33 @@
+const { body, validationResult } = require('express-validator');
+const { login, register } = require('../services/authService');
+const { errorParser } = require('../util/parser');
+
+
+const router = require('express').Router();
+
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+router.get('/register', (req, res) => {
+    res.render('register');
+});
+
+//Logging in
+router.post('/login', async (req, res) => {
+    try {
+        const result = await login(req.body.username, req.body.password);
+        attachToken(req, res, result);
+        res.redirect('/');
+    } catch (error) {
+        res.render('login', {
+            error: errorParser(error),
+            body: { username: req.body.username }
+        });
+    }
+});
+
+//Signing up
 router.post('/register',
     body('username')
         .trim()
@@ -31,6 +61,11 @@ router.post('/register',
         }
     });
 
+router.get('/logout', (req, res) => {
+    console.log('Logging out...');
+    res.clearCookie('jwt');
+    res.redirect('/');
+});
 
 function attachToken(req, res, data) {
     const token = req.signJwt(data);
