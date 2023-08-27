@@ -26,11 +26,36 @@ function getById(id) {
 }
 async function createCube(cube, ownerId) {
 
+    const newCube = {
+        name: cube.name,
+        description: cube.description,
+        imageUrl: cube.imageUrl,
+        difficultyLevel: Number(cube.difficultyLevel),
+        ownerId: ownerId
     };
 
-async function editCube(id, cube) {
-
+    if (Object.values(newCube).some(v => !v)) {
+        throw new Error('All inputs must be filled!');
     }
+
+    const result = await Cube.create(newCube);
+    return result;
+}
+
+async function editCube(id, cube) {
+    const newCube = {
+        name: cube.name,
+        description: cube.description,
+        imageUrl: cube.imageUrl,
+        difficultyLevel: Number(cube.difficultyLevel)
+    };
+
+    if (Object.values(newCube).some(v => !v)) {
+        throw new Error('All inputs must be filled!');
+    }
+
+    await Cube.findByIdAndUpdate(id, newCube, { runValidators: true });
+}
 
 async function deleteCube(id) {
 }
