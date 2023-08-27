@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Cube = require('../models/cube');
+
 function getCubes(search, fromLevel, toLevel) {
     const options = {};
     if (search) {
@@ -23,7 +24,10 @@ function getCubes(search, fromLevel, toLevel) {
 }
 
 function getById(id) {
+    const cube = Cube.findById(id).populate('accessories').lean();
+    return cube;
 }
+
 async function createCube(cube, ownerId) {
 
     const newCube = {
@@ -58,5 +62,8 @@ async function editCube(id, cube) {
 }
 
 async function deleteCube(id) {
+    await Cube.findByIdAndDelete(id);
 }
+
 module.exports = { getCubes, getById, createCube, editCube, deleteCube };
+
