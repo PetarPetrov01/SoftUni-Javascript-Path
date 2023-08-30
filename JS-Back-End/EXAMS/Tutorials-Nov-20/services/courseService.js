@@ -4,6 +4,8 @@ async function getAll() {
     return courses;
 }
 async function getById(courseId) {
+    const course = await Course.findById(courseId).lean();
+    return course;
 }
 async function editCourse(id, body) {
 }

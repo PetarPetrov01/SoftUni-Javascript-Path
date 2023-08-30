@@ -1,4 +1,18 @@
 courseController.get('/:id/details', async (req, res) => {
+    const course = await getById(req.params.id);
+
+    if (course.ownerId == req.user._id) {
+
+        course.isOwner = true;
+    } else if (course.users.map(u => u.toString()).includes(req.user._id.toString())) {
+        course.isEnrolled = true;
+    }
+
+
+    res.render('details', {
+        course
+    });
+
 });
 courseController.get('/create', (req, res) => {
     res.render('create');
