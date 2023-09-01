@@ -48,6 +48,22 @@ async function editTrip(id, data, userId) {
 }
 
 async function joinTrip(id, userId) {
+    const trip = await Trip.findById(id);
+
+    if (trip.creator == userId) {
+        throw new Error('The creator cannot join his own trip');
+    } else if (trip.buddies.includes(userId)) {
+        throw new Error('Cannot join the same trip twice');
+    }
+
+    trip.buddies.push(userId);
+    trip.seats--;
+
+    await trip.save();
+}
+
+async function getUserTrips(user) {
+    return await Trip.find({ creator: user }).lean();
 }
 
 module.exports = { getAll, getById, createTrip, editTrip, joinTrip, getUserTrips };
