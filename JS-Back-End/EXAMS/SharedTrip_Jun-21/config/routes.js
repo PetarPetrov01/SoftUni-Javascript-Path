@@ -7,5 +7,7 @@ const tripController = require('../controllers/tripController');
 module.exports = (app) => {
     console.log('Routes loading');
     app.use(homeController);
+    app.use('/trip', tripController);
     app.use('/auth', authController);
+    app.use(notFoundController);
 };
