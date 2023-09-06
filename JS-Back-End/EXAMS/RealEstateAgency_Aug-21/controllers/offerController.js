@@ -103,4 +103,19 @@ offerController.get('/:id/rent', isUser(), async (req, res) => {
     }
 });
 
+offerController.get('/search', isUser(), async (req, res) => {
+    res.render('search', {
+        title: 'Search offers'
+    });
+});
+
+offerController.post('/search', isUser(), async (req, res) => {
+    const offers = await searchHome(req.body.search);
+
+    res.render('search', {
+        title: 'Search offers',
+        offers
+    });
+});
+
 module.exports = offerController;

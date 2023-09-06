@@ -32,12 +32,40 @@ async function createOffer(data, ownerId) {
 }
 
 async function editOffer(offerId, data, userId) {
+    const offer = await Offer.findById(offerId);
+
+
+    if (offer.owner != userId) {
+        throw new Error('This offer is not yours');
+    }
+    offer.name = data.name;
+    offer.type = data.type;
+    offer.year = data.year;
+    offer.city = data.city;
+    offer.homeImage = data.homeImage;
+    offer.description = data.description;
+    offer.available = data.available;
+
+    await offer.save();
 }
 
 async function rentHome(offerId, userId) {
+    const offer = await Offer.findById(offerId);
+
+    if (offer.owner == userId) {
+        throw new Error('You can\'t rent your own home!');
+    } else if (offer.tenants.includes(userId)) {
+        throw new Error('You already rented this home!');
+    }
+
+    offer.tenants.push(userId);
+    offer.available--;
+
+    await offer.save();
 }
 
 async function searchHome(searchType) {
+    return await Offer.find({ type: new RegExp(searchType, 'i') }).lean();
 }
 
 module.exports = { createOffer, getAll, getLastThree, getOffer, editOffer, rentHome, searchHome };
