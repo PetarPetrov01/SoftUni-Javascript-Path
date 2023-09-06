@@ -71,4 +71,36 @@ offerController.get('/:id/edit', isUser(), async (req, res) => {
     });
 });
 
+offerController.post('/:id/edit', isUser(), async (req, res) => {
+    try {
+        await editOffer(req.params.id, req.body, req.user._id);
+        res.redirect(`/offer/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
+
+offerController.get('/:id/delete', async (req, res) => {
+    await Offer.findByIdAndDelete(req.params.id);
+    res.redirect('/offer/forRent');
+});
+
+offerController.get('/:id/rent', isUser(), async (req, res) => {
+    try {
+        await rentHome(req.params.id, req.user._id);
+        res.redirect(`/offer/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/');
+        console.log(error);
+    }
+});
+
 module.exports = offerController;
