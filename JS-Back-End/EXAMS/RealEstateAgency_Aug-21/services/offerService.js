@@ -5,9 +5,14 @@ async function getAll() {
 }
 
 async function getLastThree() {
+    return await Offer.find({})
+        .lean()
+        .sort({ createdAt: -1 })
+        .limit(3);
 }
 
 async function getOffer(id) {
+    return await Offer.findById(id).lean().populate('tenants');
 }
 
 async function createOffer(data, ownerId) {
