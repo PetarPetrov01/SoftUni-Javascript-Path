@@ -36,6 +36,22 @@ authController.post('/register', isGuest(), async (req, res) => {
 });
 
 authController.post('/login', isGuest(), async (req, res) => {
+    try {
+        if (req.body.username == '' || req.body.password == '') {
+            throw new Error('All inputs must be filled!');
+        }
+
+        const token = await login(req.body.username, req.body.password);
+        res.cookie('token', token);
+        res.redirect('/');
+    } catch (error) {
+        res.render('login', {
+            error: errorParser(error),
+            body: {
+                username: req.body.username
+            }
+        });
+    }
 });
 
 authController.get('/logout', (req, res) => {
