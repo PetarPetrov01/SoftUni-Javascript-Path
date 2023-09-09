@@ -3,3 +3,4 @@ Solution to Soft-Uni's Back End course tasks
 ### Content
 * [Intro to Node.js](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/c8478fcf5192bc1c2d518320a2201f0cefadb7e2/JS-Back-End/01.Intro%20to%20Node.js)
 * [Node.js Streams and Utilities](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/e1e030049036ea268331f65a31b83b7b3547a23b/JS-Back-End/02.Node.js%20Streams%20and%20utilites/demo2)
+* [ExpressJS and Templating](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5007dc84d5c50e6160b1ef344194f57e5aeffdfb/JS-Back-End/03.ExpressJS%20and%20Tempalting)
