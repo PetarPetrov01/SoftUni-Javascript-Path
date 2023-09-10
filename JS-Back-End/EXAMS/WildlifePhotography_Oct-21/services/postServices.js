@@ -6,6 +6,17 @@ async function getAll() {
 }
 
 async function createPost(data, userId) {
+    const post = {
+        title: data.title,
+        keyword: data.keyword,
+        location: data.location,
+        dateOfCreation: data.dateOfCreation,
+        image: data.image,
+        description: data.description,
+        author: userId,
+    };
+
+    await Post.create(post);
 }
 async function getById(id) {
 }

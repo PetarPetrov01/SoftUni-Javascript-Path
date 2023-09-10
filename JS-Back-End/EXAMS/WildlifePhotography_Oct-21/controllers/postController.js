@@ -11,3 +11,24 @@ postController.get('/all-posts', async (req, res) => {
         posts
     });
 });
+postController.get('/create', isUser(), (req, res) => {
+    res.render('create');
+});
+
+postController.post('/create', isUser(), async (req, res) => {
+
+    try {
+        if (Object.values(req.body).some(v => v == '')) {
+            throw new Error('All inputs must be filled!');
+        }
+
+        await createPost(req.body, req.user._id);
+        res.redirect('/post/all-posts');
+    } catch (error) {
+        res.render('create', {
+            error: errorParser(error),
+            body: req.body
+        });
+    }
+});
+
