@@ -24,6 +24,16 @@ async function getById(id) {
 }
 
 async function updatePost(id, data) {
+    const post = await Post.findById(id);
+
+    post.title = data.title;
+    post.keyword = data.keyword;
+    post.location = data.location;
+    post.dateOfCreation = data.dateOfCreation;
+    post.image = data.image;
+    post.description = data.description;
+
+    await post.save();
 }
 
 async function getOwnPosts(id) {

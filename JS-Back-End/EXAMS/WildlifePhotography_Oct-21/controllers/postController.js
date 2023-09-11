@@ -50,3 +50,40 @@ postController.get('/:id/details', async (req, res) => {
     });
 
 });
+
+postController.get('/:id/edit', isUser(), async (req, res) => {
+    const post = await getById(req.params.id);
+
+    if (req.user && post.author._id != req.user._id) {
+        res.redirect('/post/all-posts');
+    }
+
+    res.render('edit', {
+        post
+    });
+});
+
+postController.post('/:id/edit', isUser(), async (req, res) => {
+    try {
+        if (Object.values(req.body).some(v => v == '')) {
+            throw new Error('All inputs must be filled!');
+        }
+
+        await updatePost(req.params.id, req.body);
+        res.redirect(`/post/${req.params.id}/details`);
+    } catch (error) {
+        let post = req.body;
+        post._id = req.params.id;
+
+        res.render('edit', {
+            error: errorParser(error),
+            post
+        });
+    }
+});
+
+postController.get('/:id/delete', isUser(), async (req, res) => {
+    await Post.findByIdAndDelete(req.params.id);
+    res.redirect('/all-posts');
+});
+
