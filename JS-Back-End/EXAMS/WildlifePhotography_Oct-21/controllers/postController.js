@@ -32,3 +32,21 @@ postController.post('/create', isUser(), async (req, res) => {
     }
 });
 
+postController.get('/:id/details', async (req, res) => {
+    const post = await getById(req.params.id);
+
+    post.authorNames = `${post.author.firstName} ${post.author.lastName}`;
+    if (req.user) {
+        post.isOwner = post.author._id == req.user._id;
+        post.hasVoted = post.votes.some(v => v._id == req.user._id);
+    }
+
+    if (post.votes.length > 0) {
+        post.votes = post.votes.map(v => v.email).join(', ');
+    }
+
+    res.render('details', {
+        post
+    });
+
+});

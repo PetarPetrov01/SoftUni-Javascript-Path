@@ -18,7 +18,9 @@ async function createPost(data, userId) {
 
     await Post.create(post);
 }
+
 async function getById(id) {
+    return await Post.findById(id).lean().populate('author votes');
 }
 
 async function updatePost(id, data) {
