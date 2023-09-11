@@ -11,6 +11,7 @@ postController.get('/all-posts', async (req, res) => {
         posts
     });
 });
+
 postController.get('/create', isUser(), (req, res) => {
     res.render('create');
 });
@@ -87,3 +88,41 @@ postController.get('/:id/delete', isUser(), async (req, res) => {
     res.redirect('/all-posts');
 });
 
+postController.get('/my-posts', isUser(), async (req, res) => {
+    const posts = await getOwnPosts(req.user._id);
+
+    posts.map(post => {
+        post.authorNames = `${post.author.firstName} ${post.author.lastName}`;
+        return post;
+    });
+
+    res.render('my-posts', {
+        posts
+    });
+});
+
+postController.get('/:id/upvote', isUser(), async (req, res) => {
+    try {
+        await upvote(req.params.id, req.user._id);
+        res.redirect(`/post/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/');
+        console.log(error);
+    }
+});
+
+postController.get('/:id/downvote', isUser(), async (req, res) => {
+    try {
+        await downVote(req.params.id, req.user._id);
+        res.redirect(`/post/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/');
+        console.log(error);
+    }
+});
+
+postController.get('*', (req, res) => {
+    res.render('404');
+});
+
+module.exports = postController;
