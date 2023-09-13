@@ -6,3 +6,4 @@ Solution to Soft-Uni's Back End course tasks
 * [ExpressJS and Templating](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/5007dc84d5c50e6160b1ef344194f57e5aeffdfb/JS-Back-End/03.ExpressJS%20and%20Tempalting)
 * [Workshop ExpressJS and Templating](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fb9d145ee5e40d205d83382c310f746aedca9d52/JS-Back-End/04.Workshop%20ExpressJS%20and%20Templating)
 * [MongoDB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3f7d54bac28411c8b6b2f8b3c1049566c65c1294/JS-Back-End/05.MongoDB)
+* [Workshop MongoDB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/aaa84248b7d29fa3e419b97bfd6080667cb13011/JS-Back-End/06.Workshop%20MongoDB)
