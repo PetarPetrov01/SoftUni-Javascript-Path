@@ -21,4 +21,23 @@ userController.post('/register',
             res.status(400).json(message);
         }
     });
+
+userController.post('/login', async (req, res) => {
+    try {
+        const user = await login(req.body.email, req.body.password);
+        res.json(user);
+    } catch (error) {
+        const message = errorParser(error);
+        res.status(400).json(message);
+    }
+});
+
+
+userController.get('/logout', async (req, res) => {
+    const token = req.body['X-Authorization'];
+    await logout(token);
+    res.sendStatus(204).end();
+});
+
 module.exports = userController;
+

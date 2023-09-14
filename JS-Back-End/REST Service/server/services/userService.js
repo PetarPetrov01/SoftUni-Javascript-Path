@@ -19,13 +19,33 @@ async function register(email, password) {
 
     return createToken(user);
 }
-async function login(email, password) {
 
+async function login(email, password) {
+    const user = await User.findOne({ email }).collation({ locale: 'en', strength: 2 });
+    if (!user) {
+        throw new Error('Incorrect username or password');
+    }
+
+    const match = bcrypt.compare(password, user.hashedPassword);
+    if (!match) {
+        throw new Error('Incorrect username or password');
+    }
+
+    return createToken(user);
 }
+
 async function logout(token) {
+    tokenBlacklist.add(token);
 }
+
 function verifyToken(token) {
+    if (tokenBlacklist.has(token)) {
+        throw new Error('This token is blacklisted');
+    }
+
+    return jwt.verify(token, secret);
 }
+
 function createToken(user) {
     const payload = {
         _id: user._id,
