@@ -16,6 +16,8 @@ async function start() {
     app.use(express.json());
     app.use(cors());
 
+    app.use('/users', userController);
+
     app.listen(3030, () => console.log('Server started on 3030'));
 }
 
