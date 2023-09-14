@@ -11,5 +11,5 @@ This repository contains my solutions to the programming tasks assigned by SoftU
 * Javascript Applications
   * [JS-Applications](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ed3c75aed8826c83ae11ac76eb4dee44844fe76e/JS-Applications)
 * Javascript Back-End
-  * [JS-Back-End](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e4053df207050916938e1fbbca64c138904b667/JS-Back-End)    
+  * [JS-Back-End](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/6601299b5d5044d91c1afc4cb00bf993a6a578fe/JS-Back-End)    
 
