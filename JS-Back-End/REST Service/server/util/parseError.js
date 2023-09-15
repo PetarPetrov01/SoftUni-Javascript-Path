@@ -4,7 +4,6 @@ function errorParser(error) {
         return error.map(err => err.msg).join('\n');
     } else if (error.name == 'ValidationError') {
         //Error coming from monggose validation
-        console.log(error.errors);
         return Object.values(error.errors).map(e => e.message).join('\n');
     } else {
         //Custom thrown error
