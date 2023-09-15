@@ -4,6 +4,7 @@ const cors = require('./middlewares/cors');
 const userController = require('./controllers/userController');
 const session = require('./middlewares/session');
 const trimBody = require('./middlewares/trimBody');
+const furnitureController = require('./controllers/furnitureController');
 
 
 const connectionString = 'mongodb://localhost:27017/furniture';
@@ -21,6 +22,7 @@ async function start() {
     app.use(trimBody());
 
     app.use('/users', userController);
+    app.use('/data/catalog', furnitureController);
 
     app.listen(3030, () => console.log('Server started on 3030'));
 }
