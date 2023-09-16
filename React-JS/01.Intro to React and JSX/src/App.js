@@ -10,7 +10,10 @@ function App() {
     <div>
       <div className='hero_area'>
         <Header />
+        <SliderSection />
       </div>
+      <FurnitureSection />
+
       <AboutSection />
 
       <BlogSection />
@@ -18,6 +21,7 @@ function App() {
       <ClientSection />
 
       <ContactSection />
+      <InfoSection />
     </div>
   );
 }
