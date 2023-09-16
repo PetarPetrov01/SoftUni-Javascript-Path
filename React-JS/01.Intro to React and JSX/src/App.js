@@ -3,7 +3,11 @@ import AboutSection from './components/AboutSection';
 import BlogSection from './components/BlogSection';
 import ClientSection from './components/ClientSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import FurnitureSection from './components/FurnitureSection';
 import Header from './components/Header';
+import InfoSection from './components/InfoSection';
+import SliderSection from './components/SliderSection';
 
 function App() {
   return (
@@ -21,7 +25,10 @@ function App() {
       <ClientSection />
 
       <ContactSection />
+
       <InfoSection />
+
+      <Footer />
     </div>
   );
 }
