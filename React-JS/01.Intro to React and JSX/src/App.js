@@ -1,4 +1,6 @@
 import './App.css';
+import AboutSection from './components/AboutSection';
+import BlogSection from './components/BlogSection';
 import Header from './components/Header';
 
 function App() {
@@ -7,6 +9,9 @@ function App() {
       <div className='hero_area'>
         <Header />
       </div>
+      <AboutSection />
+
+      <BlogSection />
     </div>
   );
 }
