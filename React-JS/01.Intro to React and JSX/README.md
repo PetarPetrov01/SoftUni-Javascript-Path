@@ -2,7 +2,7 @@
 
 Transforming an online free HTML template into static React components
 
-The following information is a Readme generated from the app initialization:
+## NOTE: The following information is a Readme generated from the app initialization:
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
