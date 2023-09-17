@@ -63,3 +63,56 @@ publicationController.post('/create', isUser(), async (req, res) => {
         });
     }
 });
+
+publicationController.get('/:id/edit', isUser(), async (req, res) => {
+
+    const publication = await getById(req.params.id);
+
+    if (req.user._id != publication.author._id) {
+        res.redirect('/publication/catalog');
+    }
+
+    res.render('edit', {
+        title: 'Edit',
+        body: publication
+    });
+
+});
+
+publicationController.post('/:id/edit', isUser(), async (req, res) => {
+
+    try {
+        await editPublication(req.params.id, req.body, req.user._id);
+        res.redirect(`/publication/${req.params.id}/details`);
+    } catch (error) {
+        let body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body: req.body
+        });
+    }
+});
+
+publicationController.get('/:id/delete', isUser(), async (req, res) => {
+    await Publication.findByIdAndDelete(req.params.id);
+    res.redirect('/publication/catalog');
+});
+
+publicationController.get('/:id/share', isUser(), async (req, res) => {
+    try {
+        await sharePublication(req.params.id, req.user._id);
+        res.redirect(`/publication/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/publication/catalog');
+    }
+});
+
+publicationController.get('*', (req, res) => {
+    res.render('404');
+});
+
+
+module.exports = publicationController;
