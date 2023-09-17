@@ -7,6 +7,7 @@ async function getAll() {
 async function getById(id) {
     return await Publication.findById(id).lean().populate('author');
 }
+
 async function createPublication(data, ownerId) {
     const publication = {
         title: data.title,
@@ -19,6 +20,7 @@ async function createPublication(data, ownerId) {
 
     await Publication.create(publication);
 }
+
 async function editPublication(id, data, userId) {
 }
 async function sharePublication(publicationId, userId) {
