@@ -13,6 +13,39 @@ auctionController.get('/catalog', async (req, res) => {
 
 });
 
+auctionController.get('/:id/details', async (req, res) => {
+
+    const auction = await getById(req.params.id);
+
+    let isUser;
+    let isOwner;
+    auction.authorName = `${auction.author.firstName} ${auction.author.lastName}`;
+    auction.bidderName = auction.bidder ? `${auction.bidder.firstName} ${auction.bidder.lastName}` : false;
+
+    if (req.user) {
+        isUser = true;
+        auction.hasBid = auction.bidder && auction.bidder._id == req.user._id;
+
+        if (req.user._id == auction.author._id) {
+            isOwner = true;
+        }
+    }
+
+    if (isOwner) {
+        res.render('details-owner', {
+            title: `${auction.title} details`,
+            auction
+        });
+    } else {
+        res.render('details', {
+            title: `${auction.title} details`,
+            auction,
+            isUser
+        });
+    }
+
+});
+
 auctionController.get('/create', isUser(), (req, res) => {
     res.render('create', {
         title: 'Create'
