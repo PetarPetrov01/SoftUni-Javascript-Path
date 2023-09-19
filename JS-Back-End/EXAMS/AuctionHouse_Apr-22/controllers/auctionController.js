@@ -2,6 +2,17 @@ const { isUser } = require('../middlewares/guards');
 const { createAuction, getAll, getById, editAuction, deleteAuction, bidAuction, closeAuction } = require('../services/auctionService');
 const { errorParser } = require('../utils/parser');
 const auctionController = require('express').Router();
+
+auctionController.get('/catalog', async (req, res) => {
+    const auctions = await getAll();
+
+    res.render('catalog', {
+        title: 'Browse auctions',
+        auctions
+    });
+
+});
+
 auctionController.get('/create', isUser(), (req, res) => {
     res.render('create', {
         title: 'Create'
