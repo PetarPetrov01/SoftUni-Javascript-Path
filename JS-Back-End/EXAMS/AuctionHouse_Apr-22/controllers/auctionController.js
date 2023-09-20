@@ -133,4 +133,9 @@ auctionController.post('/:id/bid', isUser(), async (req, res) => {
     }
 });
 
+auctionController.get('/:id/close', isUser(), async (req, res) => {
+    await closeAuction(req.params.id);
+    res.redirect('/closed');
+});
+
 module.exports = auctionController;
