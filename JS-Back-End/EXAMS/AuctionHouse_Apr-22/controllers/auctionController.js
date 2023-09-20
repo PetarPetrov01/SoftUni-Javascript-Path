@@ -69,4 +69,68 @@ auctionController.post('/create', isUser(), async (req, res) => {
         });
     }
 });
+
+auctionController.get('/:id/edit', isUser(), async (req, res) => {
+
+    const auction = await getById(req.params.id);
+    const hasBid = auction.bidder;
+    try {
+
+        if (auction.author._id != req.user._id) {
+            throw new Error('You can\'t edit this post');
+        }
+
+        res.render('edit', {
+            title: 'Edit',
+            body: auction,
+            hasBid
+        });
+    } catch (error) {
+        console.log(errorParser(error));
+        res.redirect(`/auction/${req.params.id}/details`);
+    }
+
+});
+
+auctionController.post('/:id/edit', isUser(), async (req, res) => {
+    try {
+        await editAuction(req.params.id, req.body);
+        res.redirect(`/auction/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
+auctionController.get('/:id/delete', isUser(), async (req, res) => {
+    try {
+        await deleteAuction(req.params.id);
+        res.redirect('/auction/catalog');
+    } catch (error) {
+        res.render('home', {
+            title: 'Home page',
+            error: errorParser(error)
+        });
+    }
+});
+
+auctionController.post('/:id/bid', isUser(), async (req, res) => {
+
+    try {
+        await bidAuction(req.params.id, req.user._id, req.body.amount);
+        res.redirect(`/auction/${req.params.id}/details`);
+    } catch (error) {
+        res.render('home', {
+            title: 'Home page',
+            error: errorParser(error)
+        });
+    }
+});
+
 module.exports = auctionController;
