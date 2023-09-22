@@ -9,3 +9,6 @@ Solution to Soft-Uni's Back End course tasks
 * [Workshop MongoDB](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/aaa84248b7d29fa3e419b97bfd6080667cb13011/JS-Back-End/06.Workshop%20MongoDB)
 * [Session and Authentication](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fbcbef913763401ab353cdf1e12249addf2feaff/JS-Back-End/07.Session%20and%20Authentication)
 * [Workshop Session and Authentication](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/fbcbef913763401ab353cdf1e12249addf2feaff/JS-Back-End/08.Workshop%20Session%20and%20Authentication)
+### Exams
+  * [Tutorials-Nov-20](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7fdd3e966a5f2c9065a3c77eddcad55a09f4a330/JS-Back-End/EXAMS/Tutorials-Nov-20)
+  * [BookingUni-Dec-20](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/47bb3e98beed61b2fc39297878d3b6e1ad4ebe65/JS-Back-End/EXAMS/BookingUni_Dec-20)
