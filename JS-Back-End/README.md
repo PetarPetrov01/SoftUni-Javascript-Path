@@ -12,3 +12,5 @@ Solution to Soft-Uni's Back End course tasks
 ### Exams
   * [Tutorials-Nov-20](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7fdd3e966a5f2c9065a3c77eddcad55a09f4a330/JS-Back-End/EXAMS/Tutorials-Nov-20)
   * [BookingUni-Dec-20](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/47bb3e98beed61b2fc39297878d3b6e1ad4ebe65/JS-Back-End/EXAMS/BookingUni_Dec-20)
+  * [SharedTrip-Jun-21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7c143119e8ccd361f2d1d7475b7fbefe556986ce/JS-Back-End/EXAMS/SharedTrip_Jun-21)
+  * [RealEstateAgency-Aug-21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7c143119e8ccd361f2d1d7475b7fbefe556986ce/JS-Back-End/EXAMS/RealEstateAgency_Aug-21)
