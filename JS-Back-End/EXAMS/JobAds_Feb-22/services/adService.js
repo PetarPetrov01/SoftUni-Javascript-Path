@@ -12,3 +12,26 @@ async function getFirstThree() {
         .lean();
 }
 
+async function getById(id) {
+    return await Ad.findById(id).lean().populate('author applied');
+}
+
+async function createAd(data, userId) {
+    const user = await User.findById(userId);
+    const createdAt = new Date();
+
+    const ad = {
+        headline: data.headline,
+        location: data.location,
+        companyName: data.companyName,
+        companyDescription: data.companyDescription,
+        createdAt: Number(createdAt.getTime()),
+        author: userId,
+        applied: data.applied
+    };
+
+    const createdAd = await Ad.create(ad);
+    user.ownAds.push(createdAd._id);
+    await user.save();
+
+}
