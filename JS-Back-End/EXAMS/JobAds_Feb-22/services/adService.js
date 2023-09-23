@@ -49,3 +49,24 @@ async function editAd(id, data) {
     await ad.save();
 }
 
+async function apply(adId, userId) {
+    const ad = await Ad.findById(adId);
+    if (ad.applied.includes(userId)) {
+        throw new Error('You can\'t apply twice');
+    }
+
+    if (ad.author == userId) {
+        throw new Error('You can\'t apply to your own job');
+    }
+
+    ad.applied.push(userId);
+
+    await ad.save();
+}
+
+async function searchAds(email) {
+    const ads = await Ad.find({}).populate('author').lean();
+    return ads.filter(a => a.author.email.match(new RegExp(email)));
+}
+
+module.exports = { getAll, getById, createAd, editAd, getFirstThree, apply, searchAds };

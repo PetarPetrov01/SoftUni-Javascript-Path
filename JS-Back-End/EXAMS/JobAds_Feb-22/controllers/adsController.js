@@ -93,3 +93,14 @@ adsController.get('/:id/delete', async (req, res) => {
     await Ad.findByIdAndDelete(req.params.id);
     res.redirect('/ads/catalog');
 });
+
+adsController.get('/:id/apply', isUser(), async (req, res) => {
+    try {   
+        await apply(req.params.id, req.user._id);
+        res.redirect(`/ads/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/');
+        console.log(error);
+    }
+});
+module.exports = adsController;
