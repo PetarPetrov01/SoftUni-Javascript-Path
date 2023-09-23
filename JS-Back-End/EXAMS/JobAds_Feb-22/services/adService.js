@@ -35,3 +35,17 @@ async function createAd(data, userId) {
     await user.save();
 
 }
+
+async function editAd(id, data) {
+
+    const ad = await Ad.findById(id);
+
+    ad.headline = data.headline;
+    ad.location = data.location;
+    ad.companyName = data.companyName;
+    ad.companyDescription = data.companyDescription;
+
+
+    await ad.save();
+}
+

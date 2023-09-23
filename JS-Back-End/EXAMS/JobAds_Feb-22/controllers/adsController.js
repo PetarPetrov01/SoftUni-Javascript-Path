@@ -54,3 +54,42 @@ adsController.post('/create', isUser(), async (req, res) => {
         });
     }
 });
+
+adsController.get('/:id/edit', isUser(), async (req, res) => {
+
+    const ad = await getById(req.params.id);
+
+    if(ad.author._id != req.user._id){
+        res.redirect('/');
+        console.log('Cannot edit this ad');
+        return;
+    }
+
+    res.render('edit', {
+        title: 'Edit',
+        body: ad
+    });
+
+});
+
+adsController.post('/:id/edit', isUser(), async (req, res) => {
+
+    try {
+        await editAd(req.params.id, req.body);
+        res.redirect(`/ads/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
+adsController.get('/:id/delete', async (req, res) => {
+    await Ad.findByIdAndDelete(req.params.id);
+    res.redirect('/ads/catalog');
+});
