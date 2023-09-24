@@ -20,6 +20,7 @@ function App() {
             <button className='instructionBtn' onClick={toggleInstruction}>
                 {expanded ? 'X':'Show instuctions'}
             </button>
+            <Calculator />
             <List />
         </div>
     );
