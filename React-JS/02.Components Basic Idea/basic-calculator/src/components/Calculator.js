@@ -45,12 +45,32 @@ const Calculator = (props) => {
         setOperator(clickedOperator);
     }
 
+    function onEqualClick() {
+        //if "=" is clicked before the two values are set
+        if (!value || !firstNum) {
+            return;
+        }
+        let newNum = Number(value);
+        let result = operators[operator](firstNum, newNum);
+
+        setOperator('=');
+        setValue(result);
+    }
+
+    //could be done with eval() instead ==> eval(firstNum + operator + lastNum)
+    const operators = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => a / b
+    };
 
     return (
         <div onClick={onBtnClick} className="calculator">
             <span>{value}</span>
             <div className="controllers">
                 <div className="table">
+                    <CalculatorRow />
                 </div>
                 <div className="operators">
                     {['Clear', '*', '/', '+', '-'].map((k) => (
