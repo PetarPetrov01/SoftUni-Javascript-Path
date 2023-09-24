@@ -1,0 +1,174 @@
+body {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #fd718d, #758cfd);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.instructions {
+  display: block;
+  position: absolute;
+  padding: 5px;
+  width: 30%;
+  min-height: 80%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  left: 2%;
+  top: 5%;
+  color: white;
+}
+
+.instructions p{
+  text-align: justify;
+  font-family: Montserrat, sans-serif;
+  color: white;
+  padding: 5px 15px;
+}
+
+.instructionBtn{
+  position: absolute;
+  padding: 5px;
+  left: 3%;
+  top: 6%;
+  min-width: 25px;
+}
+
+.title {
+  color: bisque;
+  font-family: Montserrat, sans-serif;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+span {
+  display: block;
+  padding: 4px 10px 2px 10px;
+  margin-top: 3px;
+  min-height: 30px;
+  min-width: 100px;
+  text-align: end;
+  font-size: 1.5em;
+  background: rgba(255, 255, 255, 0.2);
+  border-left: 1px solid (255, 255, 255, 0.3);
+  border-top: 1px solid (255, 255, 255, 0.3);
+  border-radius: 2px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.controllers {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.table {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  height: 200px;
+  width: 200px;
+}
+
+button {
+  background: rgba(228, 88, 100, 0.638);
+  border: none;
+  border-left: 1px solid (255, 255, 255, 0.3);
+  border-top: 1px solid (255, 255, 255, 0.3);
+  border-radius: 70px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.row button {
+  font-size: 1.2em;
+  width: 33%;
+  height: 100%;
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.operators button {
+  padding: 5px;
+  min-width: 40px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(228, 207, 181);
+}
+
+button:active {
+  background-color: bisque;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
