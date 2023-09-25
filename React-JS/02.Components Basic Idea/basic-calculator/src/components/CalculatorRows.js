@@ -6,9 +6,9 @@ const CalculatorRow = (props) => {
         [0, '.', '=']];
 
     return (
-        nums.map((numArr) => {
+        nums.map((numArr, index) => {
             return (
-                <div className="row">
+                <div className="row" key={('00' + index).slice(-2)}>
                     {numArr.map((n) => {
                         return (
                             <button>{n}</button>
