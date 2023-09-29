@@ -16,3 +16,4 @@ Solution to Soft-Uni's Back End course tasks
   * [RealEstateAgency-Aug-21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/7c143119e8ccd361f2d1d7475b7fbefe556986ce/JS-Back-End/EXAMS/RealEstateAgency_Aug-21)
   * [WildLifePhotography-Oct-21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/1f418ea7ddcf2a8d4b08c4937f3a0aa1aa8ca878/JS-Back-End/EXAMS/WildlifePhotography_Oct-21)
   * [ArtGallery-Dec-21](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/846be50ce6525df03bc304a4a076ee06b09ad88e/JS-Back-End/EXAMS/ArtGallery_Dec-21)
+  * [AuctionHouse-Apr-22](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ad175cb4f84b6594b0a47dcd894e78f4f9478c75/JS-Back-End/EXAMS)
