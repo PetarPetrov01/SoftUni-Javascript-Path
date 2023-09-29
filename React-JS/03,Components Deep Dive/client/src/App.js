@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
+import TodoList from "./components/TodoList";
+import Loader from "./components/Loader";
 import Footer from "./components/Footer";
+
 function App() {
+
     const [todos, setTodos] = useState([])
     const [isLoading, setLoading] = useState(true)
 
@@ -18,6 +22,33 @@ function App() {
         }
         getData()
     }, [])
+
+    const toggleCompletion = (id) => {
+        setTodos(oldTodos => oldTodos.map(t => t._id === id ? { ...t, isCompleted: !t.isCompleted } : t))
+    }
+
+    const addTodo = async () => {
+        const todoText = prompt('Todo text:');
+        const todo = {
+            text: todoText, isCompleted: false
+        }
+        try {
+            const res = await fetch('http://localhost:3030/jsonstore/todos', {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(todo)
+            })
+            const newTodo = await res.json()
+            console.log(newTodo)
+            setTodos(oldTodos => [newTodo, ...oldTodos])
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    console.log(todos);
+
     return (
         <div className="App">
 
@@ -42,3 +73,5 @@ function App() {
         </div>
     );
 }
+
+export default App;
