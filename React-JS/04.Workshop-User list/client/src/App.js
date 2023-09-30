@@ -18,6 +18,25 @@ function App() {
         }
     }, []);
 
+    function showModalHandler(e, modalType) {
+        e.preventDefault();
+        setShowModal(modalType);
+    }
+
+    function renderModal(modalType) {
+        switch (modalType) {
+            case 'Create':
+                return <CreateModal onCreateClick={onCreateClick} showModalHandler={showModalHandler} />;
+            case 'Info':
+                return <UserInfo {...user} showModalHandler={showModalHandler} />;
+            case 'Delete':
+                return <DeleteModal userId={selectedUserId} showModalHandler={showModalHandler} confirmDelete={confirmDelete} />;
+            case 'Edit':
+                return <CreateModal onCreateClick={onCreateClick} showModalHandler={showModalHandler} user={user} />;
+            default: return null;
+        }
+    }
+
     return (
         <>
             <Header />
