@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Pagination } from './components/Pagination';
 import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
+import { CreateModal } from './components/CreateModal';
 function App() {
     const [users, setUsers] = useState([]);
     useEffect(() => {
@@ -21,6 +22,30 @@ function App() {
     function showModalHandler(e, modalType) {
         e.preventDefault();
         setShowModal(modalType);
+    }
+
+    async function onCreateClick(e, userId) {
+        e.preventDefault();
+        setLoading(true);
+        const { country, city, street, streetNumber, ...formData } = Object.fromEntries(new FormData(e.target));
+        const data = Object.assign(formData, { address: { country, city, street, streetNumber } });
+
+        let newUser;
+        try {
+            //If userId is passed it's Update 
+            if (userId) {
+                newUser = await userService.update(userId, data);
+                setUsers(state => state.map(u => u._id === userId ? newUser.user : u));
+            } else {
+                newUser = await userService.create(data);
+                setUsers(state => [...state, newUser.user]);
+            }
+
+            setShowModal(null);
+            setLoading(false);
+        } catch (error) {
+            alert(error);
+        }
     }
 
     function renderModal(modalType) {
@@ -57,3 +82,6 @@ function App() {
         </>
     );
 }
+
+
+export default App;
