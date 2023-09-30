@@ -6,6 +6,9 @@ import * as userService from './services/userService';
 import { CreateModal } from './components/CreateModal';
 function App() {
     const [users, setUsers] = useState([]);
+    const [showModal, setShowModal] = useState(null);
+    const [isLoading, setLoading] = useState(true);
+
     useEffect(() => {
         getUsers();
         async function getUsers(query = null) {
