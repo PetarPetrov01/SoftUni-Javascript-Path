@@ -1,6 +1,7 @@
 import './App.css';
 import { Header } from './components/Header';
 import { Pagination } from './components/Pagination';
+import { Search } from './components/Search';
 import { Table } from './components/Table';
 import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
@@ -107,11 +108,30 @@ function App() {
         }
     }
 
+    async function onSearch(e) {
+        e.preventDefault();
+        setLoading(true);
+
+        const formData = new FormData(e.target);
+        const query = Object.fromEntries(formData);
+        if (query.criteria !== 'Not selected') {
+            try {
+                const filteredUsers = await userService.getAll(query);
+                setUsers(filteredUsers.users);
+            } catch (error) {
+                alert(error);
+            }
+        }
+        setLoading(false);
+
+    }
+
     return (
         <>
             <Header />
             <main className='main'>
                 <section className="card users-container">
+                    <Search onSearch={onSearch} />
                     <Table
                         users={users}
                         showModal={showModal}
@@ -128,5 +148,9 @@ function App() {
     );
 }
 
+/*{showModal === 'create' ? <CreateModal onCreateClick={onCreateClick} showModalHandler={showModalHandler} /> : null}
+{showModal === 'userInfo' ? <UserInfo {...user} showModalHandler={showModalHandler} /> : null}
+{showModal === 'deleteUser' ? <DeleteModal userId={selectedUserId} showModalHandler={showModalHandler} confirmDelete={confirmDelete} /> : null}
+*/
 
 export default App;

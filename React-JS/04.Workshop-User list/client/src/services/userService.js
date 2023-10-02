@@ -28,6 +28,14 @@ const put = api.bind(null, 'PUT');
 const del = api.bind(null, 'DELETE');
 
 async function getAll(query) {
+    if (query) {
+        query.criteria = query.criteria
+        .split(' ')
+        .map((str, i) => i === 0 ? str.toLowerCase() : str)
+        .join('');
+        
+        return await get(`users?search=${query.search}&criteria=${query.criteria}`);
+    }
     return await get('users');
 }
 
