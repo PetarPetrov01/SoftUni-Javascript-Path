@@ -5,9 +5,12 @@ import { Table } from './components/Table';
 import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
 import { CreateModal } from './components/CreateModal';
+import { UserInfo } from './components/UserInfo';
 function App() {
     const [users, setUsers] = useState([]);
     const [showModal, setShowModal] = useState(null);
+    const [selectedUserId, setSelectedUserId] = useState(null);
+    const [user, setUser] = useState(null);
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -52,6 +55,26 @@ function App() {
         }
     }
 
+    async function onControllersClick(e, userId, type) {
+        e.preventDefault();
+        setLoading(true);
+
+        if (type === 'Delete') {
+            //If Delete btn is clicked
+            setSelectedUserId(userId);
+        } else {
+            //If Edit or Info btn is clicked
+            try {
+                const data = await userService.getById(userId);
+                setUser(data.user);
+            } catch (error) {
+                alert(error);
+            }
+        }
+
+        setShowModal(type);
+        setLoading(false);
+    }
     function renderModal(modalType) {
         switch (modalType) {
             case 'Create':
