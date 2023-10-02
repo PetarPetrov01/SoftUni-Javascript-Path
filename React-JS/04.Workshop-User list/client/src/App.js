@@ -1,6 +1,7 @@
 import './App.css';
 import { Header } from './components/Header';
 import { Pagination } from './components/Pagination';
+import { Table } from './components/Table';
 import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
 import { CreateModal } from './components/CreateModal';
