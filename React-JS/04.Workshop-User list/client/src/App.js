@@ -6,7 +6,10 @@ import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
 import { CreateModal } from './components/CreateModal';
 import { UserInfo } from './components/UserInfo';
+import { DeleteModal } from './components/DeleteModal';
+
 function App() {
+
     const [users, setUsers] = useState([]);
     const [showModal, setShowModal] = useState(null);
     const [selectedUserId, setSelectedUserId] = useState(null);
@@ -75,6 +78,21 @@ function App() {
         setShowModal(type);
         setLoading(false);
     }
+
+    async function confirmDelete(e, userId) {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            await userService.deleteById(userId);
+            setUsers(state => state.filter(u => u._id !== userId));
+            setShowModal(null);
+            setLoading(false);
+        } catch (error) {
+            alert(error);
+        }
+    }
+
     function renderModal(modalType) {
         switch (modalType) {
             case 'Create':
