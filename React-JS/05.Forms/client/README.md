@@ -1,3 +1,31 @@
+## Latest updates
+* Implement sorting
+    * Delegated onClick event listener -> 
+    the function reads e.target.textContent ->
+    Using state, if ascending, make descending else the opposite ->
+    pases the query to the userService and sets the new state sorted.
+
+* Controlled search input
+    * The search input has an onChange event listener which sets the value through a state
+    * If the value's length is greater than 0, the clear button shows up
+
+* Implement search
+    * The search form has an onSubmit Event listener which invokes the onSearch function
+    * The onSearch function, collects the data from the input and checks if criteria is selected.
+    * If the criteria is selected, an API call is made through the userService, additionaly passing the criteria and search info as query.
+    * If the response is intact, sets the filtered useres in the state, causing prerender.
+
+* Refactor create/edit component to make the form controlled. 
+    * Calling the useState hook to store the form values in a state
+    * Each input now has an onChange event listener which invokes the onChangeHandler 
+    * onChangeHandler function sets the form values in the state
+    * Each input uses the formState to set its value 
+    * In the case of Editing (passing an user object to the component), useEffect is used to set formValues state with the passed user object.
+
+* Implement Create/Edit form validation
+    * Each input has an onBlur event listener, which maps through an object of the target.names and returns the error message
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
