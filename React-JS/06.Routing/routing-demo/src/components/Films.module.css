@@ -1,0 +1,19 @@
+.films-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 80%;
+}
+
+.loader{
+    align-self: center;
+}
+
+.filmCard{
+    background-color: wheat;
+    margin: 5px;
+    border-radius: 10px;
+    width: 24%;
+    height: 30vh;
+}
