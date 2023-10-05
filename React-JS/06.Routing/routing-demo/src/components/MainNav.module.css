@@ -1,0 +1,26 @@
+.navigation {   
+    background-color: bisque;
+    padding: 10px;
+    margin: 10px
+}
+
+.navigation li{
+    display: inline;
+    list-style: none;
+    margin: 10px;
+}
+
+.navigation a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: darkslategrey;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    background-color: antiquewhite;
+}
+
+.navigation a:hover{
+    background-color: rgb(210, 202, 188);
+    color: rgb(59, 99, 99);
+}
