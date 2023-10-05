@@ -4,6 +4,8 @@ import { NotFound } from './components/NotFound';
 import { MainNav } from './components/MainNav';
 import { Films } from './components/Films';
 import { Characters } from './components/Characters';
+import { CharacterDetails } from './components/CharacterDetails';
+
 function App() {
     return (
         <div className="App">
@@ -15,6 +17,7 @@ function App() {
                 <Route path='/' element={<h1>Home page</h1>}></Route>
                 <Route path='/films' element={<Films />}></Route>
                 <Route path='/people' element={<Characters />}></Route>
+                <Route path='/people/:id' element={<CharacterDetails />}></Route>
                 <Route path='*' element={<NotFound />}></Route>
             </Routes>
         </div>
