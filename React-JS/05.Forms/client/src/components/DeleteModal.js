@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
 export const DeleteModal = ({
     userId,
-    showModalHandler,
     confirmDelete
 }) => {
+
+    const { showModalHandler } = useContext(UserContext);
+
     return (
         <div className="overlay">
             <div className="backdrop"></div>

@@ -104,13 +104,13 @@ function App() {
     function renderModal(modalType) {
         switch (modalType) {
             case 'Create':
-                return <CreateModal onCreateClick={onCreateClick} showModalHandler={showModalHandler} />;
+                return <CreateModal onCreateClick={onCreateClick} />;
             case 'Info':
-                return <UserInfo {...user} showModalHandler={showModalHandler} />;
+                return <UserInfo {...user} />;
             case 'Delete':
-                return <DeleteModal userId={selectedUserId} showModalHandler={showModalHandler} confirmDelete={confirmDelete} />;
+                return <DeleteModal userId={selectedUserId} confirmDelete={confirmDelete} />;
             case 'Edit':
-                return <CreateModal onCreateClick={onCreateClick} showModalHandler={showModalHandler} user={user} />;
+                return <CreateModal onCreateClick={onCreateClick} user={user} />;
             default: return null;
         }
     }
@@ -145,26 +145,29 @@ function App() {
         setSort(sortData);
     }
 
+    const context = { onControllersClick, showModalHandler };
+
     return (
         <>
             <Header />
             <main className='main'>
-                <section className="card users-container">
-                    <Search onSearch={onSearch} />
+                <UserContext.Provider value={context}>
+                    <section className="card users-container">
+                        <Search onSearch={onSearch} />
 
-                    <UserContext.Provider value={{onControllersClick}}>
                         <Table
                             users={users}
                             showModal={showModal}
                             isLoading={isLoading}
                             onSortChange={onSortChange}
                         />
-                    </UserContext.Provider>
 
-                    <button className="btn-add btn" onClick={(e) => showModalHandler(e, 'Create')}>Add new user</button>
-                    <Pagination />
-                </section>
-                {renderModal(showModal)}
+                        <button className="btn-add btn" onClick={(e) => showModalHandler(e, 'Create')}>Add new user</button>
+                        <Pagination />
+                    </section>
+                    
+                    {renderModal(showModal)}
+                </UserContext.Provider>
 
             </main>
         </>

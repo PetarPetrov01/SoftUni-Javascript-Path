@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
 import { useForm } from '../hooks/useForm';
+import { UserContext } from '../context/UserContext';
 
 export const CreateModal = ({
     onCreateClick,
-    showModalHandler,
     user
 }) => {
     let userInfo;
@@ -26,6 +27,7 @@ export const CreateModal = ({
     });
 
     const [errors, setErrors] = useState({});
+    const { showModalHandler } = useContext(UserContext);
 
     function validateForm(e) {
         const value = e.target.value;

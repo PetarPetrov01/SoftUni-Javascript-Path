@@ -1,7 +1,6 @@
+import { useContext } from "react";
 import { formatDate } from "../utils/formatDate";
-
-
-
+import { UserContext } from "../context/UserContext";
 
 export const UserInfo = ({
     _id,
@@ -11,9 +10,11 @@ export const UserInfo = ({
     phoneNumber,
     address,
     createdAt,
-    updatedAt,
-    showModalHandler
+    updatedAt
 }) => {
+
+    const { showModalHandler } = useContext(UserContext);
+    
     return (
         <div className="overlay">
             <div className="backdrop"></div>
