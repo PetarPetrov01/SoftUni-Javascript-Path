@@ -1,13 +1,15 @@
+import { useState, useEffect } from 'react';
 import './App.css';
+
 import { Header } from './components/Header';
 import { Pagination } from './components/Pagination';
 import { Search } from './components/Search';
 import { Table } from './components/Table';
-import { useState, useEffect } from 'react';
 import * as userService from './services/userService';
 import { CreateModal } from './components/CreateModal';
 import { UserInfo } from './components/UserInfo';
 import { DeleteModal } from './components/DeleteModal';
+import { UserContext } from './context/UserContext';
 
 function App() {
 
@@ -37,11 +39,12 @@ function App() {
         setShowModal(modalType);
     }
 
-    async function onCreateClick(e, userId) {
+    async function onCreateClick(e, formValues, userId) {
         e.preventDefault();
         setLoading(true);
-        const { country, city, street, streetNumber, ...formData } = Object.fromEntries(new FormData(e.target));
-        const data = Object.assign(formData, { address: { country, city, street, streetNumber } });
+
+        const { country, city, street, streetNumber, ...data } = formValues;
+        Object.assign(data, { address: { country, city, street, streetNumber } });
 
         let result;
         try {
@@ -148,13 +151,16 @@ function App() {
             <main className='main'>
                 <section className="card users-container">
                     <Search onSearch={onSearch} />
-                    <Table
-                        users={users}
-                        showModal={showModal}
-                        onControllersClick={onControllersClick}
-                        isLoading={isLoading}
-                        onSortChange={onSortChange}
-                    />
+
+                    <UserContext.Provider value={{onControllersClick}}>
+                        <Table
+                            users={users}
+                            showModal={showModal}
+                            isLoading={isLoading}
+                            onSortChange={onSortChange}
+                        />
+                    </UserContext.Provider>
+
                     <button className="btn-add btn" onClick={(e) => showModalHandler(e, 'Create')}>Add new user</button>
                     <Pagination />
                 </section>

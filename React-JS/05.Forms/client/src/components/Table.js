@@ -5,7 +5,6 @@ import { UserRow } from "./UserRow";
 
 export const Table = ({
     users,
-    onControllersClick,
     isLoading,
     onSortChange
 
@@ -186,7 +185,7 @@ export const Table = ({
                 <tbody>
                     {/* <!-- Table row component --> */}
 
-                    {users.map(u => <UserRow key={u._id} {...u} onControllersClick={onControllersClick} />)}
+                    {users.map(u => <UserRow key={u._id} {...u} />)}
 
                 </tbody>
 
