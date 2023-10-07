@@ -1,11 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useForm } from '../hooks/useForm';
 
 export const CreateModal = ({
     onCreateClick,
     showModalHandler,
     user
 }) => {
-    const [formValues, setFormValues] = useState({
+    let userInfo;
+
+    if (user) {
+        userInfo = { ...user, ...user.address };
+        delete userInfo.address;
+    }
+
+    const [formValues, onChangeHandler] = useForm(userInfo || {
         firstName: '',
         lastName: '',
         email: '',
@@ -18,20 +26,6 @@ export const CreateModal = ({
     });
 
     const [errors, setErrors] = useState({});
-
-    //If user is passed (Edit user) set state with its info
-    useEffect(() => {
-        if (user) {
-            const userInfo = { ...user, ...user.address };
-            delete userInfo.address;
-            setFormValues(userInfo);
-        }
-    }, [user]);
-
-    function onChangeHandler(e) {
-        e.preventDefault();
-        setFormValues(state => ({ ...state, [e.target.name]: e.target.value }));
-    }
 
     function validateForm(e) {
         const value = e.target.value;
@@ -78,7 +72,7 @@ export const CreateModal = ({
                             </svg>
                         </button>
                     </header>
-                    <form onSubmit={(e) => onCreateClick(e, user?._id)}>
+                    <form onSubmit={(e) => onCreateClick(e, formValues, user?._id)}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>
