@@ -1,8 +1,7 @@
 import Todo from "./Todo";
 
 export default function TodoList({
-    todos,
-    toggleCompletion
+    todos
 }) {
     return (
         <table className="table">
@@ -14,7 +13,7 @@ export default function TodoList({
                 </tr>
             </thead>
             <tbody>
-                {todos.map(t => <Todo key={t._id} {...t} toggleCompletion={toggleCompletion} />)}
+                {todos.map(t => <Todo key={t._id} {...t} />)}
             </tbody>
         </table>
     )

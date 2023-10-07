@@ -1,9 +1,14 @@
+import { useContext } from "react"
+import { TodoContext } from "../context/TodoContext"
+
 export default function Todo({
     text,
     isCompleted,
-    toggleCompletion,
     _id
 }) {
+
+    const { toggleCompletion } = useContext(TodoContext);
+
     return (
         <tr className={`todo${isCompleted ? ' is-completed' : ''}`}>
             <td>{text}</td>

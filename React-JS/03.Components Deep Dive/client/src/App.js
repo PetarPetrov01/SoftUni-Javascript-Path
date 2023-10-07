@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 import Loader from "./components/Loader";
 import Footer from "./components/Footer";
+import { TodoContext } from "./context/TodoContext";
 
 function App() {
 
@@ -47,7 +49,6 @@ function App() {
             console.log(error)
         }
     }
-    console.log(todos);
 
     return (
         <div className="App">
@@ -61,11 +62,13 @@ function App() {
                     <div className="add-btn-container">
                         <button className="btn" onClick={addTodo}>+ Add new Todo</button>
                     </div>
-                    <div className="table-wrapper">
-                        {isLoading
-                            ? <Loader />
-                            : <TodoList todos={todos} toggleCompletion={toggleCompletion} />}
-                    </div>
+                    <TodoContext.Provider value={{ toggleCompletion }}>
+                        <div className="table-wrapper">
+                            {isLoading
+                                ? <Loader />
+                                : <TodoList todos={todos} />}
+                        </div>
+                    </TodoContext.Provider>
                 </section>
             </main>
 
