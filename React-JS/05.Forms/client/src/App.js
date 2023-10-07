@@ -152,12 +152,12 @@ function App() {
             <Header />
             <main className='main'>
                 <UserContext.Provider value={context}>
+
                     <section className="card users-container">
                         <Search onSearch={onSearch} />
 
                         <Table
                             users={users}
-                            showModal={showModal}
                             isLoading={isLoading}
                             onSortChange={onSortChange}
                         />
@@ -165,8 +165,8 @@ function App() {
                         <button className="btn-add btn" onClick={(e) => showModalHandler(e, 'Create')}>Add new user</button>
                         <Pagination />
                     </section>
-                    
                     {renderModal(showModal)}
+
                 </UserContext.Provider>
 
             </main>

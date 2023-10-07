@@ -18,7 +18,6 @@ export const Table = ({
         "Created": ''
     });
 
-
     useEffect(() => {
         if (shouldSort) {
             const sortArr = (Object.entries(sorting).filter(([k, v]) => v !== '')[0]);
@@ -190,7 +189,9 @@ export const Table = ({
                 </tbody>
 
             </table>
-            {users?.length < 1 ? <NoUsers /> : null}
+            {users?.length < 1 && isLoading === false
+                ? <NoUsers />
+                : null}
         </div>
     );
 };
