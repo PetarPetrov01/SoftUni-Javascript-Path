@@ -1,6 +1,9 @@
 export const NoUsers = () => {
     return (
-        <div className="table-overlap">
+        <div className="table-overlap" style={{
+            position: "relative",
+            top: "30%",
+        }}>
             <svg
                 aria-hidden="true"
                 focusable="false"
@@ -10,6 +13,7 @@ export const NoUsers = () => {
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
+                style={{ maxHeight: "2em" }}
             >
                 <path
                     fill="currentColor"
@@ -17,6 +21,6 @@ export const NoUsers = () => {
                 ></path>
             </svg>
             <h2>There is no users yet.</h2>
-        </div>
+        </div >
     );
 };
