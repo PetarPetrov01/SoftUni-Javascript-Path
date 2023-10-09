@@ -9,6 +9,8 @@ import { Catalog } from "./components/Catalog/Catalog";
 import { Register } from "./components/Register/Register";
 import { Login } from "./components/Login/Login";
 import { Create } from "./components/Create/Create";
+import { Details } from "./components/Details/Details";
+import { Edit } from "./components/Edit/Edit";
 import { Search } from "./components/Search/Search";
 
 function App() {
@@ -45,6 +47,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/catalog" element={<Catalog fruits={fruits} />}></Route>
+                        <Route path="/catalog/:id" element={<Details onDeleteHandler={onDeleteHandler} />}></Route>
+                        <Route path="/catalog/:id/edit" element={<Edit onEditHanlder={onEditHanlder} />}></Route>
                         <Route path="/create" element={<Create onCreateHandler={onCreateHandler} />}></Route>
                         <Route path="/register" element={<Register />}></Route>
                         <Route path="/login" element={<Login />}></Route>
