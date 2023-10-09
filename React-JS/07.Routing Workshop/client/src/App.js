@@ -39,6 +39,28 @@ function App() {
         }
     };
 
+    const onEditHanlder = async (e, id, fruit) => {
+        e.preventDefault();
+        try {
+            await fruitService.edit(id, fruit);
+            setFruits(fruits => [...fruits, fruit]);
+            navigate(`/catalog/${id}`);
+        } catch (error) {
+            alert(error);
+        }
+    };
+
+    const onDeleteHandler = async (e, id) => {
+        e.preventDefault();
+        try {
+            await fruitService.deleteById(id);
+            setFruits(fruits => fruits.filter(f => f._id !== id));
+            navigate('/catalog');
+        } catch (error) {
+            alert(error);
+        }
+    };
+
     return (
         <div className="App">
             <div id="wrapper">
