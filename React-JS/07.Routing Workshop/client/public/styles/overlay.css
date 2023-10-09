@@ -1,0 +1,17 @@
+.overlay-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    background-color: rgb(232, 130, 130);
+    padding: 20px;
+}
