@@ -1,12 +1,14 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as fruitService from './services/fruitService';
+
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { Home } from "./components/Home/Home";
 import { Catalog } from "./components/Catalog/Catalog";
 import { Register } from "./components/Register/Register";
 import { Login } from "./components/Login/Login";
+import { Create } from "./components/Create/Create";
 import { Search } from "./components/Search/Search";
 
 function App() {
