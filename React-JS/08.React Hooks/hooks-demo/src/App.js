@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 
 import { Items } from "./components/Items";
+import { Navigation } from "./components/Navigation";
 import * as itemService from "./service/itemService";
 import { CreateModal } from "./components/CreateModal/CreateModal";
 import { ItemContext } from "./context/ItemContext";
@@ -61,6 +63,9 @@ function App() {
     return (
         <ItemContext.Provider value={{ onCloseClick, onCreateSubmit }}>
             <div className="App">
+                <Navigation onCreateClick={onCreateClick} />
+                <Items items={items} />
+                {<CreateModal show={showCreate} />}
             </div>
         </ItemContext.Provider>
     );
