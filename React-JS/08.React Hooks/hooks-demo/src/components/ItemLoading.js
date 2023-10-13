@@ -1,17 +1,11 @@
 import Card from 'react-bootstrap/Card';
 import Placeholder from 'react-bootstrap/Placeholder';
 
-export const ItemCard = ({
-    name,
-    description,
-    price,
-    _id,
-    imageUrl
-}) => {
+export const ItemCardLoading = () => {
     return (
         <div className="d-flex justify-content-around">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+            <Card style={{ width: '17rem' }}>
+                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" style={{height: '40%'}}/>
                 <Card.Body>
                     <Placeholder as={Card.Title} animation="glow">
                         <Placeholder xs={6} />

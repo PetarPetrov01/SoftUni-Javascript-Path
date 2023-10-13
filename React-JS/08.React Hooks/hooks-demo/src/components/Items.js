@@ -1,4 +1,6 @@
 import { ItemCard } from "./ItemCard";
+import { ItemCardLoading } from "./ItemLoading";
+
 import styles from './Items.module.css';
 
 export const Items = ({
@@ -6,7 +8,12 @@ export const Items = ({
 }) => {
     return (
         <div className={styles["items-wrapper"]}>
-            {items.map(i => <ItemCard key={i._id} {...i} />)}
+            {items.length > 0
+                ? items.map(i => <ItemCard key={i._id} {...i} />)
+                : <>
+                    <ItemCardLoading />
+                    <ItemCardLoading />
+                </>}
         </div>
     );
 };

@@ -9,6 +9,7 @@ import { useAsyncReducer } from "./hooks/useAsyncRedcuer";
 
 export const ACTIONS = {
     // ITEMS_GET: 'items-get',
+    ITEMS_LOADING: 'items-loading',
     ITEMS_GET_SUCCESS: 'items-get-success',
     ITEMS_ADD: 'items-add'
 };
@@ -47,11 +48,9 @@ function App() {
         setShowCreate(true);
     };
 
-    const onCreateSubmit = async (e,data) => {
+    const onCreateSubmit = async (e, data) => {
         e.preventDefault();
-        console.log(data);
         const result = await itemService.create(data);
-        console.log(result);
         dispatch({ type: ACTIONS.ITEMS_ADD, payload: result });
         onCloseClick();
     };
