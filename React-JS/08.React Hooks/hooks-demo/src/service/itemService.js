@@ -1,9 +1,16 @@
 import * as api from './api';
 
 export const getAll = async () => {
+    //TODO REMOVE TIMER
 
-    const result = await api.get('');
-    return Object.values(result);
+    return new Promise((resolve) => {
+        setTimeout(async () => {
+            // TODO: Remove the timer before making the actual API call
+            const result = await api.get('');
+            resolve(Object.values(result));
+        }, 2000);
+    });
+
 };
 
 export const create = async (data) => {
