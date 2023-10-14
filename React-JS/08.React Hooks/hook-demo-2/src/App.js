@@ -2,6 +2,8 @@ import './App.css'
 
 import { useEffect, useReducer } from "react";
 import { CreateForm } from "./components/createForm";
+import { Row } from "./components/Row";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
@@ -27,6 +29,7 @@ function App() {
     <div className="App">
       <CreateForm onSubmitHandler={onSubmitHandler} />
       <div style={{ margin: "auto",padding: "15px",border:"1px groove" }}>
+        {people.map(p => <Row key={p._id} {...p} />)}
       </div>
     </div>
   );
