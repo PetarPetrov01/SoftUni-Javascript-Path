@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Info
+
+The project aims to develop a simple application using React for the front-end, while utilizing Softuni's practice server as the back-end. You can find the practice server and its documentation here: 
+[Softuni's practice server](https://github.com/softuni-practice-server/softuni-practice-server). 
+
+The following documentation is generated using the Create React App toolkit.
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
