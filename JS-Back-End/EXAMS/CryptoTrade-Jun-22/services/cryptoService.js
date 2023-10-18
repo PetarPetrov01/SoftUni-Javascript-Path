@@ -34,6 +34,7 @@ async function edit(id, data) {
 
     await crypto.save();
 }
+
 async function deleteById(id) {
     await Crypto.findByIdAndDelete(id);
 }
@@ -54,6 +55,13 @@ async function buy(id, userId) {
 }
 
 async function search(name, paymentMethod) {
+    console.log(name);
+    console.log(paymentMethod);
+    return await Crypto.find({
+        $and: [
+            { name: { $regex: new RegExp(name, 'i') } },
+            { paymentMethod: { $regex: new RegExp(paymentMethod, 'i') } }]
+    }).lean();
 }
 
 module.exports = { getAll, getById, create, edit, deleteById, buy, search };
