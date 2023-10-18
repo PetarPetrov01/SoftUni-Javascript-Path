@@ -1,5 +1,7 @@
+const { isUser, isOwner } = require('../middlewares/guards');
 const { errorParser } = require('../utils/parser');
 const cryptoService = require('../services/cryptoService');
+const preload = require('../middlewares/preload');
 
 const cryptoController = require('express').Router();
 
@@ -79,3 +81,22 @@ cryptoController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
     }
 });
 
+cryptoController.get('/:id/delete', preload(), isOwner(), async (req, res) => {
+    try {
+        await cryptoService.deleteById(req.params.id);
+        res.redirect('/crypto/catalog');
+    } catch (error) {
+        res.render('/');
+    }
+});
+
+cryptoController.get('/:id/buy', isUser(), async (req, res) => {
+    try {
+        await cryptoService.buy(req.params.id, req.user?._id);
+        res.redirect(`/crypto/${req.params.id}/details`);
+    } catch (error) {
+        res.redirect('/');
+    }
+});
+
+module.exports = cryptoController;

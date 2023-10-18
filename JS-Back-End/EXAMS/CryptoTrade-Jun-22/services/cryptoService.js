@@ -24,12 +24,35 @@ async function create(data, ownerId) {
 
 async function edit(id, data) {
 
+    const crypto = await Crypto.findById(id);
+
+    crypto.name = data.name;
+    crypto.imageUrl = data.imageUrl;
+    crypto.price = data.price;
+    crypto.description = data.description;
+    crypto.paymentMethod = data.paymentMethod;
+
+    await crypto.save();
 }
 async function deleteById(id) {
+    await Crypto.findByIdAndDelete(id);
 }
-async function buy(id, userId) {
 
+async function buy(id, userId) {
+    const crypto = await Crypto.findById(id);
+
+    if (crypto.bought.includes(userId)) {
+        throw new Error('You can\'t buy this coin twice');
+    }
+
+    if (crypto.bought.owner == userId) {
+        throw new Error('You can\'t buy your own coin');
+    }
+
+    crypto.bought.push(userId);
+    await crypto.save();
 }
+
 async function search(name, paymentMethod) {
 }
 
