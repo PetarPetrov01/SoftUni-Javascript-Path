@@ -29,6 +29,12 @@ cryptoController.get('/:id/details', async (req, res) => {
 
 });
 
+cryptoController.get('/create', isUser(), (req, res) => {
+    res.render('create', {
+        title: 'Create',
+    });
+});
+
 cryptoController.post('/create', isUser(), async (req, res) => {
     try {
         if (Object.values(req.body).some(v => v == '')) {
@@ -41,6 +47,34 @@ cryptoController.post('/create', isUser(), async (req, res) => {
             title: 'Create',
             error: errorParser(error),
             body: req.body
+        });
+    }
+});
+
+cryptoController.get('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    const crypto = await cryptoService.getById(req.params.id);
+
+    res.render('edit', {
+        title: 'Edit',
+        body: crypto
+    });
+
+});
+
+cryptoController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    try {
+        await cryptoService.edit(req.params.id, req.body);
+        res.redirect(`/crypto/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
         });
     }
 });
