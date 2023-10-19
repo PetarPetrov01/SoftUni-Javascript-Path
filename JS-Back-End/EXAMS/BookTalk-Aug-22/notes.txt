@@ -1,0 +1,14 @@
+Preload middleware !!!
+
+req, res ,next => 
+id = req.params.id
+res.locals.--- = await getById(id)
+next()
+
+Plus is Owner
+
+userId = req.user?._id
+if res.locals.---.owner == userId
+    next();
+else
+    redirect to login
