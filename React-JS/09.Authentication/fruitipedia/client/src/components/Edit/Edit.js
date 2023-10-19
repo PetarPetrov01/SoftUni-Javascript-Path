@@ -1,6 +1,31 @@
+import { useParams } from "react-router-dom";
+
+import * as fruitService from '../../services/fruitService';
+import { useEffect, useState } from "react";
+
 export const Edit = ({
     onEditHanlder
 }) => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        imageUrl: '',
+        description: '',
+        nutrition: ''
+    });
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        fruitService.getById(id)
+            .then(result => setFormData(result));
+    }, [id]);
+
+    const onChangeHandler = (e) => {
+        e.preventDefault();
+        setFormData(state => ({ ...state, [e.target.name]: e.target.value }));
+    };
+
     return (
         <section id="edit">
             <div className="form">
