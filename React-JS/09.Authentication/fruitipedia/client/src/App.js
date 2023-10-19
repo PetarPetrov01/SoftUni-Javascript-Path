@@ -11,7 +11,10 @@ import { Catalog } from "./components/Catalog/Catalog";
 import { Register } from "./components/Register/Register";
 import { Login } from "./components/Login/Login";
 import { Create } from "./components/Create/Create";
+import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
+import { RouteGuard } from "./components/RouteGuards/RouteGard";
+
 function App() {
     const navigate = useNavigate();
     const [fruits, setFruits] = useState();
@@ -49,6 +52,16 @@ function App() {
         }
     };
 
+    const onDeleteHandler = async (e, id) => {
+        e.preventDefault();
+        try {
+            await fruitService.deleteById(id);
+            setFruits(fruits => fruits.filter(f => f._id !== id));
+            navigate('/catalog');
+        } catch (error) {
+            alert(error);
+        }
+    };
 
     return (
         <div className="App">
@@ -60,6 +73,8 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />}></Route>
                             <Route path="/catalog" element={<Catalog fruits={fruits} />}></Route>
+                            <Route path="/catalog/:id" element={<Details onDeleteHandler={onDeleteHandler} />}></Route>
+                            <Route path="/catalog/:id/edit" element={<Edit onEditHanlder={onEditHanlder} />}></Route>
                             <Route path="/create" element={<RouteGuard />}>
                                 <Route path="/create" element={<Create onCreateHandler={onCreateHandler} />}></Route>
                             </Route>
