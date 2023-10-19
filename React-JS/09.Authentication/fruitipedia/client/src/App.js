@@ -13,6 +13,7 @@ import { Login } from "./components/Login/Login";
 import { Create } from "./components/Create/Create";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
+import { Search } from "./components/Search/Search";
 import { RouteGuard } from "./components/RouteGuards/RouteGard";
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
                             </Route>
                             <Route path="/register" element={<Register />}></Route>
                             <Route path="/login" element={<Login />}></Route>
+                            <Route path="/search" element={<Search />}></Route>
                         </Routes>
                     </main>
                 </div>
