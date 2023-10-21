@@ -25,8 +25,20 @@ async function create(data, ownerId) {
 
 async function edit(id, data) {
 
+    const book = await Book.findById(id);
+
+    book.title = data.title;
+    book.author = data.author;
+    book.genre = data.genre;
+    book.stars = Number(data.stars);
+    book.imageUrl = data.imageUrl;
+    book.review = data.review;
+
+    await book.save();
+
 }
 async function deleteById(id) {
+    await Book.findByIdAndDelete(id);
 }
 async function wish(bookId, userId) {
 

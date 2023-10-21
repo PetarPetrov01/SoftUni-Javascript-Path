@@ -1,4 +1,5 @@
 const { isUser, isOwner } = require('../middlewares/guards');
+const preload = require('../middlewares/preload');
 const { errorParser } = require('../utils/parser');
 
 const bookController = require('express').Router();
@@ -50,6 +51,48 @@ bookController.post('/create', isUser(), async (req, res) => {
             title: 'Create',
             error: errorParser(error),
             body: req.body
+        });
+    }
+});
+
+bookController.get('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    const book = await bookService.getById(req.params.id);
+
+    res.render('edit', {
+        title: 'Edit',
+        body: book
+    });
+
+});
+
+bookController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    try {
+        await bookService.edit(req.params.id, req.body);
+        res.redirect(`/books/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        console.log(error);
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
+bookController.get('/:id/delete', preload(), isOwner(), async (req, res) => {
+    try {
+        await bookService.deleteById(req.params.id);
+        res.redirect('/books/catalog');
+    } catch (error) {
+        res.render('home', {
+            title: 'Home',
+            error: errorParser(error)
         });
     }
 });
