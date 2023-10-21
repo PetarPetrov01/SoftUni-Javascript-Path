@@ -38,4 +38,20 @@ bookController.get('/create', isUser(), (req, res) => {
     });
 });
 
+bookController.post('/create', isUser(), async (req, res) => {
+    try {
+        if (Object.values(req.body).some(v => v == '')) {
+            throw new Error('All inputs must be filled!');
+        }
+        await bookService.create(req.body, req.user._id);
+        res.redirect('/books/catalog');
+    } catch (error) {
+        res.render('create', {
+            title: 'Create',
+            error: errorParser(error),
+            body: req.body
+        });
+    }
+});
+
 module.exports = bookController;
