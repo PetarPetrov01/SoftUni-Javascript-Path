@@ -97,4 +97,16 @@ bookController.get('/:id/delete', preload(), isOwner(), async (req, res) => {
     }
 });
 
+bookController.get('/:id/wish', isUser(), async (req, res) => {
+    try {
+        await bookService.wish(req.params.id, req.user._id);
+        res.redirect(`/books/${req.params.id}/details`);
+    } catch (error) {
+        res.render('home', {
+            title: 'Home',
+            error: errorParser(error)
+        });
+    }
+});
+
 module.exports = bookController;

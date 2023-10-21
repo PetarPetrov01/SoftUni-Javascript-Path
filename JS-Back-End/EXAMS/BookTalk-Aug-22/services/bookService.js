@@ -41,9 +41,21 @@ async function deleteById(id) {
     await Book.findByIdAndDelete(id);
 }
 async function wish(bookId, userId) {
+    const book = await Book.findById(bookId);
 
+    if (book.wishingList.some(wishId => wishId == userId)) {
+        throw new Error('You already added the book to your wish list ');
+    }
 
+    if (book.ownerId == userId) {
+        throw new Error('You can\'t wish for your own book');
+    }
+
+    book.wishingList.push(userId);
+
+    await book.save();
 }
+
 async function getWishedBooks(userId) {
 }
 
