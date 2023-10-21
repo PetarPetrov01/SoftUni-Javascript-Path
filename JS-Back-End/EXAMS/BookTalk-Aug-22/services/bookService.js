@@ -37,9 +37,11 @@ async function edit(id, data) {
     await book.save();
 
 }
+
 async function deleteById(id) {
     await Book.findByIdAndDelete(id);
 }
+
 async function wish(bookId, userId) {
     const book = await Book.findById(bookId);
 
@@ -57,6 +59,8 @@ async function wish(bookId, userId) {
 }
 
 async function getWishedBooks(userId) {
+    const books = await Book.find({ wishingList: userId }).lean();
+    return books;
 }
 
 module.exports = { getAll, getById, create, edit, deleteById, wish, getWishedBooks };
