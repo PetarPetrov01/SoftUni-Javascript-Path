@@ -28,64 +28,12 @@ function App() {
             .catch(er => alert(er));
     }, []);
 
-    const onCreateHandler = async (e, fruit) => {
-        e.preventDefault();
-        try {
-            if (Object.values(fruit).some(v => v === '')) {
-                throw new Error('All inputs must be filled!');
-            }
-            const newFruit = await fruitService.create(fruit);
-            setFruits(fruits => [...fruits, newFruit]);
-            navigate('/catalog');
-        } catch (error) {
-            alert(error);
-        }
-    };
-
-    const onEditHanlder = async (e, id, editedFruit) => {
-        e.preventDefault();
-        try {
-            await fruitService.edit(id, editedFruit);
-            setFruits(fruits => fruits.map(f => f._id === id ? editedFruit : f));
-            navigate(`/catalog/${id}`);
-        } catch (error) {
-            alert(error);
-        }
-    };
-
-    const onDeleteHandler = async (e, id) => {
-        e.preventDefault();
-        try {
-            await fruitService.deleteById(id);
-            setFruits(fruits => fruits.filter(f => f._id !== id));
-            navigate('/catalog');
-        } catch (error) {
-            alert(error);
-        }
-    };
 
     return (
         <div className="App">
             <UserProvider>
-
-                <div id="wrapper">
-                    <Header />
-                    <main>
-                        <Routes>
-                            <Route path="/" element={<Home />}></Route>
-                            <Route path="/catalog" element={<Catalog fruits={fruits} />}></Route>
-                            <Route path="/catalog/:id" element={<Details onDeleteHandler={onDeleteHandler} />}></Route>
-                            <Route path="/catalog/:id/edit" element={<Edit onEditHanlder={onEditHanlder} />}></Route>
-                            <Route path="/create" element={<RouteGuard />}>
-                                <Route path="/create" element={<Create onCreateHandler={onCreateHandler} />}></Route>
-                            </Route>
-                            <Route path="/register" element={<Register />}></Route>
-                            <Route path="/login" element={<Login />}></Route>
-                            <Route path="/search" element={<Search />}></Route>
-                        </Routes>
-                    </main>
-                </div>
-                <Footer />
+                <FruitsProvider>
+                </FruitsProvider>
             </UserProvider >
         </div >
     );
