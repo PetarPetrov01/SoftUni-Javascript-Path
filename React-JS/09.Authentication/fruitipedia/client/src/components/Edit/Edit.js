@@ -2,11 +2,12 @@ import { useParams } from "react-router-dom";
 
 import * as fruitService from '../../services/fruitService';
 import { useEffect, useState } from "react";
+import { useFruitsContext } from "../../contexts/FruitsContext";
 
-export const Edit = ({
-    onEditHanlder
-}) => {
+export const Edit = (props) => {
 
+    console.log('EDITING');
+    const { onEditHanlder } = useFruitsContext();
     const [formData, setFormData] = useState({
         name: '',
         imageUrl: '',
