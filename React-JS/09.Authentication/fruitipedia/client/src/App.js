@@ -1,7 +1,5 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import * as fruitService from './services/fruitService';
 import { UserProvider } from "./contexts/UserContext";
 
 import { Header } from "./components/Header/Header";
@@ -15,24 +13,36 @@ import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Search } from "./components/Search/Search";
 import { RouteGuard } from "./components/RouteGuards/RouteGard";
+import { FruitsProvider } from "./contexts/FruitsContext";
+import { RouteOwnerGuard } from "./components/RouteGuards/RouteOwnerGuard";
 
 function App() {
-    const navigate = useNavigate();
-    const [fruits, setFruits] = useState();
-
-    useEffect(() => {
-        fruitService.getAll()
-            .then(result => {
-                setFruits(result);
-            })
-            .catch(er => alert(er));
-    }, []);
-
 
     return (
         <div className="App">
             <UserProvider>
                 <FruitsProvider>
+                    <div id="wrapper">
+                        <Header />
+                        <main>
+                            <Routes>
+                                <Route path="/" element={<Home />}></Route>
+                                <Route path="/catalog" element={<Catalog />}></Route>
+                                <Route path="/catalog/:id" element={<Details />}></Route>
+                                <Route element={<RouteGuard />}>
+                                    <Route path="/create" element={<Create />}></Route>
+                                    <Route path="/search" element={<Search />}></Route>
+
+                                    <Route element={<RouteOwnerGuard />}>
+                                        <Route path="/catalog/:id/edit" element={<Edit />}></Route>
+                                    </Route>
+                                </Route>
+                                <Route path="/register" element={<Register />}></Route>
+                                <Route path="/login" element={<Login />}></Route>
+                            </Routes>
+                        </main>
+                    </div>
+                    <Footer />
                 </FruitsProvider>
             </UserProvider >
         </div >
