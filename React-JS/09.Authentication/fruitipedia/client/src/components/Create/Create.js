@@ -1,9 +1,8 @@
+import { useFruitsContext } from "../../contexts/FruitsContext";
 import { useForm } from "../../hooks/useForm";
 
-export const Create = ({
-    onCreateHandler
-}) => {
-
+export const Create = (props) => {
+    const { onCreateHandler } = useFruitsContext();
     const { formValues, onChangeHandler } = useForm({
         name: '',
         imageUrl: '',

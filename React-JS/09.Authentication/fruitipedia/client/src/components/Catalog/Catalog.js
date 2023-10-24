@@ -1,8 +1,9 @@
+import { useFruitsContext } from "../../contexts/FruitsContext";
 import { FruitItem } from "./FruitItem";
 
-export const Catalog = ({
-    fruits
-}) => {
+export const Catalog = (props) => {
+
+    const { fruits } = useFruitsContext();
 
     return (
         <>

@@ -3,10 +3,11 @@ import { Link, useParams } from "react-router-dom";
 
 import * as fruitService from '../../services/fruitService';
 import { UserContext } from "../../contexts/UserContext";
+import { DeleteModal } from "../Delete/DeleteModal";
 
-export const Details = ({
-    onDeleteHandler
-}) => {
+export const Details = (props) => {
+
+    const [showDelete, setShowDelete] = useState(false);
     const [fruit, setFruit] = useState({});
     const { id } = useParams();
 
@@ -17,6 +18,13 @@ export const Details = ({
 
     const { user } = useContext(UserContext);
 
+    const onDeleteClick = () => {
+        setShowDelete(true);
+    };
+
+    const onCloseClick = () => {
+        setShowDelete(false);
+    };
 
     return (
 
@@ -36,11 +44,15 @@ export const Details = ({
                             <Link to={`/catalog/${fruit._id}/edit`} id="edit-btn">
                                 Edit
                             </Link>
-                            <button onClick={(e) => onDeleteHandler(e, fruit._id)} id="delete-btn">
+                            <button onClick={onDeleteClick} id="delete-btn">
                                 Delete
                             </button>
                         </div>
                     }
+
+                    {showDelete && <DeleteModal
+                        fruit={fruit}
+                        onCloseClick={onCloseClick} />}
                 </div>
             </div>
         </section>
