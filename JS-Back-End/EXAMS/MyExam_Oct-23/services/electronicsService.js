@@ -1,4 +1,5 @@
 const { Electronics } = require('../models/Electronics');
+
 async function getAll() {
     return await Electronics.find({}).lean();
 }
@@ -6,6 +7,7 @@ async function getAll() {
 async function getById(id) {
     return await Electronics.findById(id).lean();
 }
+
 async function create(data, ownerId) {
 
     const electronics = {
@@ -22,8 +24,22 @@ async function create(data, ownerId) {
 
     await Electronics.create(electronics);
 }
+
 async function edit(id, data) {
+    const electronics = await Electronics.findById(id);
+
+    electronics.name = data.name;
+    electronics.type = data.type;
+    electronics.damages = data.damages;
+    electronics.image = data.image;
+    electronics.description = data.description;
+    electronics.production = Number(data.production);
+    electronics.exploitation = Number(data.exploitation);
+    electronics.price = Number(data.price);
+
+    await electronics.save();
 }
+
 async function deleteById(id) {
     await Electronics.findByIdAndDelete(id);
 }

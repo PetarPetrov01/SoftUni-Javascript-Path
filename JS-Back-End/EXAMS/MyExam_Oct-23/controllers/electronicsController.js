@@ -59,4 +59,33 @@ electronicsController.post('/create', isUser(), async (req, res) => {
         });
     }
 });
+
+electronicsController.get('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    const electronics = await electronicsService.getById(req.params.id);
+
+    res.render('edit', {
+        title: 'Edit',
+        body: electronics
+    });
+
+});
+
+electronicsController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    try {
+        await electronicsService.edit(req.params.id, req.body);
+        res.redirect(`/electronics/${req.params.id}/details`); //As assignemnt says
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
 module.exports = electronicsController;
