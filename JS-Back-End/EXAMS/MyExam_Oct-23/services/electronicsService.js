@@ -60,4 +60,15 @@ async function buy(id, userId) {
 
     await electronics.save();
 }
+
+async function search(name, type) {
+
+    //Search by two criteria (if one is empty regex matches is as correct fulfilling the requirement)
+    return await Electronics.find({
+        $and: [
+            { name: { $regex: new RegExp(name, 'i') } },
+            { type: { $regex: new RegExp(type, 'i') } }]
+    }).lean();
+}
+
 module.exports = { getAll, getById, create, edit, deleteById, buy, search };

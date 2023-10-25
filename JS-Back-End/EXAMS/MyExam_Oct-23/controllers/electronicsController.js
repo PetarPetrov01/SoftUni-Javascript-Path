@@ -88,6 +88,18 @@ electronicsController.post('/:id/edit', preload(), isOwner(), async (req, res) =
     }
 });
 
+electronicsController.get('/:id/delete', preload(), isOwner(), async (req, res) => {
+    try {
+        await electronicsService.deleteById(req.params.id);
+        res.redirect('/catalog'); //As assignment says
+    } catch (error) {
+        res.render('home', {
+            title: 'Home',
+            error: errorParser(error)
+        });
+    }
+});
+
 electronicsController.get('/:id/buy', isUser(), async (req, res) => {
     try {
         await electronicsService.buy(req.params.id, req.user._id);
