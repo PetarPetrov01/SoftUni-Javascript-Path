@@ -18,5 +18,16 @@ function isGuest() {
     };
 }
 
+function isOwner() {
+    return (req, res, next) => {
+        const userId = req.user?._id;
+        
+        if (res.locals.el.owner == userId) {
+            next();
+        } else {
+            res.redirect('/');
+        }
+    };
+}
 
 module.exports = { isGuest, isUser, isOwner };

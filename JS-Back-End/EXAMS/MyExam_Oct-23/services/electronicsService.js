@@ -1,7 +1,10 @@
 const { Electronics } = require('../models/Electronics');
 async function getAll() {
+    return await Electronics.find({}).lean();
 }
+
 async function getById(id) {
+    return await Electronics.findById(id).lean();
 }
 async function create(data, ownerId) {
 
