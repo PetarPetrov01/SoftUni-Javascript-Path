@@ -22,6 +22,23 @@ async function register(email, username, password) {
     const token = createSession(user);
     return token;
 }
+
+async function login(email, password) {
+    const user = await User.findOne({ email }).collation({ locale: 'en', strength: 2 });
+
+    if (!user) {
+        throw new Error('Email or password don\'t match!');
+    }
+
+    const match = await bcrypt.compare(password, user.hashedPassword);
+
+    if (!match) {
+        throw new Error('Email or password don\'t match!');
+    }
+
+    return createSession(user);
+}
+
 function createSession({ _id, email, username }) {
     const payload = {
         _id,
