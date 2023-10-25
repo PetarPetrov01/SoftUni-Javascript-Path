@@ -17,6 +17,33 @@ electronicsController.get('/catalog', async (req, res) => {
 
 });
 
+electronicsController.get('/:id/details', async (req, res) => {
+
+    const electronics = await electronicsService.getById(req.params.id);
+
+    if (req.user) {
+        electronics.isUser = true;
+
+        //The owner
+        electronics.isOwner = req.user._id == electronics.owner;
+
+        //User that has bought
+        electronics.hasBought = electronics.buyingList.some(boughtId => boughtId == req.user._id);
+    }
+
+    res.render('details', {
+        title: `${electronics.name} details`,
+        electronics
+    });
+
+});
+
+electronicsController.get('/create', isUser(), (req, res) => {
+    res.render('create', {
+        title: 'Create',
+    });
+});
+
 electronicsController.post('/create', isUser(), async (req, res) => {
     try {
         if (Object.values(req.body).some(v => v == '')) {

@@ -25,6 +25,7 @@ async function create(data, ownerId) {
 async function edit(id, data) {
 }
 async function deleteById(id) {
+    await Electronics.findByIdAndDelete(id);
 }
 async function buy(id, userId) {
 }
