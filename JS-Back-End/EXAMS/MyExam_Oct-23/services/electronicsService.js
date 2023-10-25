@@ -43,6 +43,21 @@ async function edit(id, data) {
 async function deleteById(id) {
     await Electronics.findByIdAndDelete(id);
 }
+
 async function buy(id, userId) {
+    const electronics = await Electronics.findById(id);
+
+    //The assignemnt doesn't say whether buying second time should be protected ???
+    if (electronics.buyingList.some(boughtId => boughtId == userId)) {
+        throw new Error('You already bought this product');
+    }
+
+    if (electronics.owner == userId) {
+        throw new Error('You can\'t buy your own product');
+    }
+
+    electronics.buyingList.push(userId);
+
+    await electronics.save();
 }
 module.exports = { getAll, getById, create, edit, deleteById, buy, search };

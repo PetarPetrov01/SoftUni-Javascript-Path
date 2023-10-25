@@ -88,4 +88,16 @@ electronicsController.post('/:id/edit', preload(), isOwner(), async (req, res) =
     }
 });
 
+electronicsController.get('/:id/buy', isUser(), async (req, res) => {
+    try {
+        await electronicsService.buy(req.params.id, req.user._id);
+        res.redirect(`/electronics/${req.params.id}/details`);
+    } catch (error) {
+        res.render('home', {
+            title: 'home',
+            error: errorParser(error)
+        });
+    }
+});
+
 module.exports = electronicsController;
