@@ -63,5 +63,8 @@ async function vote(id, userId) {
 }
 
 async function getOwn(userId) {
+    const creatures = await Creature.find({ ownerId: userId }).populate('ownerId').lean();
+    return creatures;
 }
+
 module.exports = { getAll, getById, create, edit, deleteById, getByIdPopulated, vote,getOwn };

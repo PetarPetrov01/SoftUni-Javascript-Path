@@ -1,0 +1,19 @@
+<main>
+    <section id="my-posts">
+        <h1>My post</h1>
+
+        <div class="my-container">
+            {{#each creatures}}
+            <!-- If there are own posts in the database display each of them -->
+
+            {{> myCard}}
+            <!-- If there are still no own posts in the database display: -->
+            {{else}}
+            <div class="no-posts">
+                <p class="no-offer">There are no own posts yet...</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+</main>
