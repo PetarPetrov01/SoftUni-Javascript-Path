@@ -16,6 +16,28 @@ creatureController.get('/catalog', async (req, res) => {
 
 });
 
+creatureController.get('/:id/details', async (req, res) => {
+
+    const creature = await creatureService.getByIdPopulated(req.params.id);
+    creature.author = `${creature.ownerId.firstName} ${creature.ownerId.lastName}`;
+
+    if (req.user) {
+        creature.isUser = true;
+        creature.isOwner = req.user?._id == creature.ownerId._id;
+    }
+    creature.voteCount = creature.votes.length;
+
+    if (creature.voteCount > 0) {
+        creature.voteEmails = creature.votes.map(user => user.email).join(', ');
+    }
+
+    res.render('details', {
+        title: `${creature.name} details`,
+        creature
+    });
+
+});
+
 creatureController.get('/create', isUser(), (req, res) => {
     res.render('create', {
         title: 'Create',

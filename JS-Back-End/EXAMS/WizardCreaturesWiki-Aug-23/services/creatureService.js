@@ -5,6 +5,7 @@ async function getAll() {
 }
 
 async function getById(id) {
+    return await Creature.findById(id).lean();
 }
 
 async function getByIdPopulated(id) {
