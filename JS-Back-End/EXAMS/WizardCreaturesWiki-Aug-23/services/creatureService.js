@@ -12,6 +12,17 @@ async function getByIdPopulated(id) {
 
 async function create(data, ownerId) {
 
+    const creature = {
+        name: data.name,
+        species: data.species,
+        skinColor: data.skinColor,
+        eyeColor: data.eyeColor,
+        imageUrl: data.imageUrl,
+        description: data.description,
+        ownerId
+    };
+
+    await Creature.create(creature);
 }
 
 async function edit(id, data) {

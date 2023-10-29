@@ -60,4 +60,10 @@ authController.post('/login', isGuest(), async (req, res) => {
     }
 });
 
+authController.get('/logout', (req, res) => {
+    // TODO Check redirection
+    res.clearCookie('token');
+    res.redirect('/');
+});
+
 module.exports = authController;
