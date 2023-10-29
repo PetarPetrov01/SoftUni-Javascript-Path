@@ -60,5 +60,33 @@ creatureController.post('/create', isUser(), async (req, res) => {
     }
 });
 
+creatureController.get('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    const creature = await creatureService.getById(req.params.id);
+
+    res.render('edit', {
+        title: 'Edit',
+        body: creature
+    });
+
+});
+
+creatureController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
+
+    try {
+        await creatureService.edit(req.params.id, req.body);
+        res.redirect(`/creature/${req.params.id}/details`);
+    } catch (error) {
+        const body = req.body;
+        body._id = req.params.id;
+
+        res.render('edit', {
+            title: 'Edit',
+            error: errorParser(error),
+            body
+        });
+    }
+});
+
 
 module.exports = creatureController;

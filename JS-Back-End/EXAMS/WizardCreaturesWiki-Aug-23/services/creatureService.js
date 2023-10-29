@@ -9,6 +9,8 @@ async function getById(id) {
 }
 
 async function getByIdPopulated(id) {
+    const creature = await Creature.findById(id).populate('ownerId votes').lean();
+    return creature;
 }
 
 async function create(data, ownerId) {
@@ -27,6 +29,17 @@ async function create(data, ownerId) {
 }
 
 async function edit(id, data) {
+
+    const creature = await Creature.findById(id);
+
+    creature.name = data.name;
+    creature.species = data.species;
+    creature.skinColor = data.skinColor;
+    creature.eyeColor = data.eyeColor;
+    creature.imageUrl = data.imageUrl;
+    creature.description = data.description;
+
+    await creature.save();
 }
 
 async function deleteById(id) {
