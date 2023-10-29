@@ -24,6 +24,9 @@ creatureController.get('/:id/details', async (req, res) => {
     if (req.user) {
         creature.isUser = true;
         creature.isOwner = req.user?._id == creature.ownerId._id;
+        if (creature.votes.some(voted => voted._id == req.user._id)) {
+            creature.hasVoted = true;
+        }
     }
     creature.voteCount = creature.votes.length;
 
@@ -88,5 +91,25 @@ creatureController.post('/:id/edit', preload(), isOwner(), async (req, res) => {
     }
 });
 
+creatureController.get('/:id/delete', preload(), isOwner(), async (req, res) => {
+    try {
+        await creatureService.deleteById(req.params.id);
+        res.redirect('/creature/catalog');
+    } catch (error) {
+        res.redirect(`/creature/${req.params.id}/details`);
+    }
+});
+
+creatureController.get('/:id/vote', isUser(), async (req, res) => {
+    try {
+        await creatureService.vote(req.params.id, req.user._id);
+        res.redirect(`/creature/${req.params.id}/details`);
+    } catch (error) {
+        res.render('home', {
+            title: 'home',
+            error: errorParser(error)
+        });
+    }
+});
 
 module.exports = creatureController;

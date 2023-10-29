@@ -43,9 +43,23 @@ async function edit(id, data) {
 }
 
 async function deleteById(id) {
+    await Creature.findByIdAndDelete(id);
 }
 
 async function vote(id, userId) {
+    const creature = await Creature.findById(id);
+
+    if (creature.votes.some(id => id == userId)) {
+        throw new Error('You already voted');
+    }
+
+    if (creature.ownerId == userId) {
+        throw new Error('You can\'t vote for your own creation');
+    }
+
+    creature.votes.push(userId);
+
+    await creature.save();
 }
 
 async function getOwn(userId) {
