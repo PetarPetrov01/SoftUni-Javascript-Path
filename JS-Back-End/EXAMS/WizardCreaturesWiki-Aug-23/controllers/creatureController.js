@@ -1,3 +1,10 @@
+const { isUser, isOwner } = require('../middlewares/guards');
+const preload = require('../middlewares/preload');
+const { errorParser } = require('../utils/parser');
+
+const creatureController = require('express').Router();
+const creatureService = require('../services/creatureService');
+
 creatureController.get('/catalog', async (req, res) => {
 
     const creatures = await creatureService.getAll();
@@ -31,3 +38,5 @@ creatureController.post('/create', isUser(), async (req, res) => {
     }
 });
 
+
+module.exports = creatureController;
