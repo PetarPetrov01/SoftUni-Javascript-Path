@@ -19,5 +19,6 @@ Solution to Soft-Uni's Back End course tasks
   * [JobAds-Feb-22](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/9c3e4eec0520620b6acd15b3721ee0380d582047/JS-Back-End/EXAMS/JobAds_Feb-22)
   * [AuctionHouse-Apr-22](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/ad175cb4f84b6594b0a47dcd894e78f4f9478c75/JS-Back-End/EXAMS)
   * [BookTalk-Aug-23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/10beeec6f9c4f257634c0ad511d3ede8587411c6/JS-Back-End/EXAMS/BookTalk-Aug-22)
+  * [WizardCreaturesWiki-Aug-23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/8a126c2e3b8d43a9540088aa92a97f47a62e447c/JS-Back-End/EXAMS/WizardCreaturesWiki-Aug-23)
 #### [My Exam-Oct-23](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/10beeec6f9c4f257634c0ad511d3ede8587411c6/JS-Back-End/EXAMS/MyExam_Oct-23)
   
