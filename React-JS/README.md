@@ -4,3 +4,5 @@
 * [Components Deep Dive](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/9073fbd8805241d48a3e75acca18a00e22755f18/React-JS/03.Components%20Deep%20Dive)
 * [Workshop User list](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/04.Workshop-User%20list)
 * [Forms](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/05.Forms)
+* [Routing](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/06.Routing/routing-demo)
+* [Routing Workshop](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/07.Routing%20Workshop/client)
