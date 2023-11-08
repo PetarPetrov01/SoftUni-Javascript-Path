@@ -6,3 +6,5 @@
 * [Forms](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/05.Forms)
 * [Routing](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/06.Routing/routing-demo)
 * [Routing Workshop](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/07.Routing%20Workshop/client)
+* [Reacth Hooks](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/08.React%20Hooks)
+* [Authentucation](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/09.Authentication)
