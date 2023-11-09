@@ -8,3 +8,6 @@
 * [Routing Workshop](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/07.Routing%20Workshop/client)
 * [Reacth Hooks](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/08.React%20Hooks)
 * [Authentucation](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/09.Authentication)
+## Project - [LuxLiving](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties)
+* [client](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties/client)
+* [server](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties/server)
