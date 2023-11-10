@@ -9,5 +9,8 @@
 * [Reacth Hooks](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/08.React%20Hooks)
 * [Authentucation](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/main/React-JS/09.Authentication)
 ## Project - [LuxLiving](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties)
+LuxLiving is a web platform dedicated to luxury real estate, offering a user-friendly interface for browsing, listing, and bidding on high-end properties.
+    The platform provides open access to a comprehensive catalog of luxurious houses.
+    Users can explore detailed information about each property, including images, specifications, and amenities.
 * [client](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties/client)
 * [server](https://github.com/PetarPetrov01/SoftUni-Javascript-Path/tree/3e169b0dbd27478265c9407f749108c7de9e292d/React-JS/luxury-properties/server)
