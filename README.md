@@ -1,2 +1,2 @@
-# Lux Living
-An application made for lux seekers. Find the most luxurious houses around the world, place your bid.
+# SoftUni-Javascrip Path
+Repository for all task in the softuni JavaScript WEB developer path
