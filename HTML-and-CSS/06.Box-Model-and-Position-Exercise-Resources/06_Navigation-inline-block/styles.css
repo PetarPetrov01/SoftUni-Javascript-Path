@@ -1,0 +1,24 @@
+body{
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    border-bottom: 3px solid #444;
+}
+
+header * {
+    display: inline-block;
+}
+header h1{
+    margin-right: 40px;
+}
+
+nav  * {
+    margin: 0 5px;
+}
+
+
+a{
+    text-decoration: none;
+    color: #00cc00;
+}
