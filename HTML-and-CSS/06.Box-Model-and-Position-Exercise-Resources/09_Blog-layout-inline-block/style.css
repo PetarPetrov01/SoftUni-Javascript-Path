@@ -1,0 +1,19 @@
+body{
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+}
+
+article{
+    float: left;
+    width: 60%;
+}
+
+aside{
+    width: 40%;
+    float: right;
+}
+
+img{
+    width: 90%;
+}
