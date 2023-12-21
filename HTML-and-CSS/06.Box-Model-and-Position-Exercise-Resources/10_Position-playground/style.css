@@ -1,0 +1,24 @@
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+.card{
+    height: 800px;
+    flex: 1;
+    display: block;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    display: block;
+    box-shadow: 0 0 15px #333;
+}
+
+#upper{
+    background: linear-gradient(90deg, #0022cc, #00aa77 );
+}
+
+#lower{
+    background: linear-gradient(90deg, #aa0066, #cc8800 );
+}
