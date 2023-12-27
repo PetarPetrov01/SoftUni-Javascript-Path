@@ -1,0 +1,22 @@
+body,ul,li{
+    display: flex;
+}
+
+ul{
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+li{
+    flex-basis: 30%;
+    border: 5px solid black;
+    justify-content: center;
+}
+
+img{
+    object-fit: contain;
+    padding: 10px;
+}
+
