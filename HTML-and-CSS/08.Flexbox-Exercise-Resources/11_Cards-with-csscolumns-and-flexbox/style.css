@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 238, 238);
+}
+
+body>section {
+    width: 80%;
+}
+
+.cards-layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1700px;
+    gap: 20px;
+}
+
+h2 {
+    align-self: flex-start;
+}
+
+.flex {
+    flex-direction: row;
+    align-content: baseline;
+}
+
+section {
+    padding: 10px;
+    margin-bottom: auto;
+}
+
+footer {
+    box-sizing: border-box;
+    width: 100%;
+    float: inline-end;
+    align-self: flex-end;
+    padding: 10px;
+    border-top: 2px solid #bbb;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}
