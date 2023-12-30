@@ -1,0 +1,55 @@
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+tr {
+    display: flex;
+    width: 90vw;
+}
+
+thead,
+tbody {
+    flex: 1
+}
+
+thead tr {
+    color: white;
+    background-color: rgb(56, 56, 56);
+}
+
+th,
+td {
+    display: flex;
+    flex: 1;
+    text-align: left;
+    border: 1px solid #bbb;
+    padding: 2px 5px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 500px) {
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    td {
+        display: flex;
+        gap: 20px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
