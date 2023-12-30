@@ -1,0 +1,40 @@
+header, section, footer{
+    background-color: rgb(166, 207, 254);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+a{
+    display: block;
+    padding-left: 5px;
+    
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    padding: 3px 0;
+}
+
+@media (min-width: 500px){
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        display: flex;
+    }
+
+    .navigation{
+        flex: 1;
+    }
+
+    .tasks{
+        flex: 3;
+    }
+}
