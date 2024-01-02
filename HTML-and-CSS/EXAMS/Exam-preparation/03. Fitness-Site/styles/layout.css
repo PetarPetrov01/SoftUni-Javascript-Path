@@ -1,0 +1,61 @@
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #000;
+    background-image: url(../image/fitness-main.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center -10em;
+}
+
+a,
+li {
+    display: block;
+}
+
+header {
+    background-color: #D01919;
+    color: #fff;
+}
+
+.header-container {
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header span{
+    display: none;
+}
+
+ul.icons {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 10px;
+}
+
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.features{
+    background-color: #fff;
+}
+
+
+.coaches {
+    background-color: #EFEFEF;
+}
+
+footer {
+    background-color: #D01919;
+}
+
