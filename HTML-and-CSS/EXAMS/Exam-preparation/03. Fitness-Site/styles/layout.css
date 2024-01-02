@@ -59,3 +59,60 @@ footer {
     background-color: #D01919;
 }
 
+.features,
+.coaches {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.features .section-content{
+    padding: 2em 6em;
+}
+
+.features article,
+.coaches article {
+    flex: 0 0 26%;
+    text-align: center;
+}
+
+.features img {
+    width: 30%;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.4em;
+}
+
+h3::after {
+    display: block;
+    width: 25px;
+    margin: 10px auto;
+    content: '';
+    border-bottom: 2px solid #D01919;
+}
+
+.coaches p{
+    color: #999;
+}
+
+.coaches img{
+    border-radius: 0.5em;
+}
+
+.features h4,
+h5 {
+    color: #D01919;
+}
+
+footer {
+    text-align: center;
+}
