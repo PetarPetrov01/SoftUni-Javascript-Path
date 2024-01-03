@@ -1,0 +1,76 @@
+.courses-container article {
+    flex: 0 0 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px #bbb;
+    aspect-ratio: 10/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+.course-info{
+    flex:2;
+    padding: 10px;
+    text-align: center;
+}
+
+.course-info p{
+    margin: 15px 0;
+    font-size: 0.9em;
+}
+
+.price {
+    flex:1;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+}
+
+.left-price,
+.right-price{
+    flex: 1;
+    padding: 10px;
+}
+
+.price p{
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.price h3{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.price#basics{
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg,#029A3C, #4CD781);
+}
+
+.price#fundamentals{
+    background: linear-gradient(90deg,#4C6B88, #629ACF);
+}
+
+.price#pro{
+    background: linear-gradient(90deg,#4B38A5,#8C7DE2);
+}
+
+.price#fundamentals::after,
+.price#pro::after{
+    content: '';
+    position: relative;
+    right: calc(50% - 1px);
+    top: 10px;
+    height: 70px;
+    border: 1px solid #fff;
+}
+
+.education-info {
+    flex: 3;
+    margin: auto;
+    width: 90%;
+}
