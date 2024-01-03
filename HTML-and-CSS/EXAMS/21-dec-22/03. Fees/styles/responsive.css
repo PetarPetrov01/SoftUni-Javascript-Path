@@ -1,0 +1,41 @@
+@media (max-width: 1200px) {
+
+    .courses-container article {
+        flex: 0 0 33%;
+    }
+}
+
+@media (max-width:1000px) {
+
+
+    .banner {
+        max-height: initial;
+    }
+
+    .courses-container {
+        flex-direction: column;
+        width: 40%;
+        gap: 60px;
+        min-width: 300px;
+    }
+
+    .cards-wrapper {
+        display: block;
+    }
+
+    .cards-wrapper::after{
+        content: '';
+        border: 1px solid #bbb;
+        position: absolute;
+        right: calc(50% - 1px);
+        top: 200px;
+        height: 700px;
+        z-index: 1;
+    }
+
+    .courses-container article {
+        flex: 1;
+        width: 100%;
+        z-index: 10;
+    }
+}
