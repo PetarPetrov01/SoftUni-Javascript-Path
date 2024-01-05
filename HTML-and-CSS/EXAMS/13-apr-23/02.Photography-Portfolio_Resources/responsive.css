@@ -14,3 +14,22 @@
         margin-bottom: 40px;
     }
 
+    .home-image-container {
+        display: none;
+    }
+
+    .home-text10 {
+        margin-right: 10px;
+    }
+
+    .home-about.section-container,
+    .home-process.section-container 
+    {
+        padding: 25px 0px;
+    }
+
+    .home-links-container,
+    .home-top-part {
+        flex-direction: column;
+    }
+}
