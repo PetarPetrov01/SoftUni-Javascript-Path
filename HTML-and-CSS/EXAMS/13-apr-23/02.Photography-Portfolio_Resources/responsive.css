@@ -1,0 +1,16 @@
+@media (max-width: 600px) {
+
+    .navigation-nav,
+    .home-text {
+        display: none;
+    }
+
+    .home-tab-selector-cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-portofolio.section-container{
+        margin-bottom: 40px;
+    }
+
