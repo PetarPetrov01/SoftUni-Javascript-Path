@@ -1,0 +1,43 @@
+.subscribe .container{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.subscribe div{
+    flex: 1 1 45%;
+}
+
+.subscribe .media img{
+    width: 100%;
+}
+
+.notification-form,
+.notification-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2em;
+}
+
+form button,
+form input{
+    display: inline-block;
+}
+
+.send-btn{
+    padding: 0.8em 4em;
+    background-color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+form input{
+    height: 2.2em;
+    border-radius: 0.2em;
+    border: 1px solid #aaa;
+    padding-left: 5px;
+}
+
