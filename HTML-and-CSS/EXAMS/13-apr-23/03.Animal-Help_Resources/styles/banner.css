@@ -1,0 +1,66 @@
+header nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px
+}
+
+nav a{
+    text-decoration: none;
+    color: #000;
+}
+
+.banner{
+    height: 360px;
+    background-color: #85DCFF;
+}
+
+.banner .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px
+}
+
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 75ch;
+    padding: 0px 30px;
+    gap: 20px;
+}
+
+.banner .media{
+    padding-right: 20px;
+}
+
+.banner .media img{
+    width: 100%;
+} 
+
+.banner .controls{
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .controls a{
+    text-decoration: none;
+    padding: 0.8em 4em;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.controls .donate{
+    background-color: #fff;
+    color: #000;
+}
+
+.controls .join{
+    background-color: #000;
+    color: #fff;
+}
