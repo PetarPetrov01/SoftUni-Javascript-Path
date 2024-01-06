@@ -1,0 +1,24 @@
+.aim{
+    text-align: center;
+}
+
+.aim h3,
+.aim p{
+    margin: 1em auto;
+    max-width: 60ch;
+}
+
+.aim i {
+    color: #85DCFF;
+}
+.aim-cards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 2rem;
+}
+
+.aim-cards article{
+    flex: 0 0 30%;
+    max-width: 40ch;
+}

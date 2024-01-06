@@ -1,0 +1,21 @@
+.animals{
+    text-align: center;
+}
+
+.animals h1,
+.animals p{
+    margin: 1rem;
+}
+
+.animals-images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.animal-media{
+    flex: 0 0 22.5%;
+}
+
+.animal-media img{
+    width: 100%;
+}
