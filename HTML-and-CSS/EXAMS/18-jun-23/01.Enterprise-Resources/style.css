@@ -49,3 +49,63 @@ img {
 .content {
     padding: 1em;
 }
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #888;
+    padding-top: 1em;
+}
+
+.author-media {
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.4em
+}
+
+img.profile {
+    width: 15%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.author-media p{
+    color: #000;
+}
+
+.author-media span{
+    color: #9999AA;
+}
+
+@media (max-width: 1100px){
+    article{
+        flex: 0 0 32%;
+    }
+}
+
+@media (max-width: 900px){
+    .container{
+        flex-direction: column;
+        gap: 3em;
+        padding: 3em 10em;
+    }
+    
+}
+
+@media (max-width: 800px){
+    .container{
+        padding: 6em;
+    }
+}
+
+@media (max-width: 650px){
+    .container{
+        padding: 3em;
+    }
+}
