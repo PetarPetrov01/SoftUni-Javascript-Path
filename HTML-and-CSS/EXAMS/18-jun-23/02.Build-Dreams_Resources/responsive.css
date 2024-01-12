@@ -24,3 +24,34 @@
     .home-feature-card{
         align-items: center;
     }
+
+    #features{
+        height: initial;
+    }
+
+    .home-feature-card,
+    .home-feature-card1,
+    .home-feature-card2{
+        width: 95%;
+        align-self: initial;
+    }
+
+    .home-stats{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+
+    .home-stat{
+        grid-row: 1/2;
+    }
+    .home-stat1{
+        grid-row: 2/3;
+    }
+    .home-stat2{
+        grid-row: 3/4;
+    }
+    .home-stat3{
+        grid-row: 4/5;
+    }
+}
