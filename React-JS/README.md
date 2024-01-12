@@ -14,4 +14,4 @@ LuxLiving is a web platform dedicated to luxury real estate, offering a user-fri
     Users can explore detailed information about each property, including images, specifications, and amenities.
 ### [Client](https://github.com/PetarPetrov01/LuxLiving/tree/main/client)
 The client-side of this project is built using modern web technologies to ensure a responsive and engaging user experience. The user interface is developed using React, a powerful and declarative JavaScript library. Styling is managed through Styled Components, a CSS-in-JS library that enhances the modularity and maintainability of styles in our application.
-### [Server](https://github.com/PetarPetrov01/LuxLiving/tree/main/server)
+### [Server](https://github.com/PetarPetrov01/REST-API)
