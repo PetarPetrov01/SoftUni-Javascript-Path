@@ -1,0 +1,40 @@
+.info{
+    background-color: var(--pale-cyan);
+}
+
+.info .container{
+    display: flex;
+    padding: 0 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.info .media {
+    flex: 0 0 40%;
+    padding: 0 5px;
+    border: 2px dashed #999;
+}
+
+.info-side{
+    flex: 0 0 45%;
+}
+
+.info-side h3{
+    font-size: 2.2em;
+}
+
+.info-side h5{
+    margin-top: 1.5em;
+    font-size: 1em;
+}
+
+.info-side p{
+    margin-top: 0.6em;
+}
+
+.info-side a{
+    margin-top: 20px;
+    color: #444;
+    text-decoration: underline;
+}
