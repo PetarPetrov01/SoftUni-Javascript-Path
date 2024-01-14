@@ -47,3 +47,73 @@
     font-size: 1.2em;
 }
 
+.pricing-card h2 {
+    width: 100%;
+    margin: 20px 0;
+    align-self: flex-start;
+    position: relative;
+}
+
+.pricing-card h2::after {
+    content: '';
+    width: 90%;
+    border: 1px solid #ddd;
+    position: absolute;
+    left: 5%;
+    top: calc(100% + 20px);
+}
+
+.pricing-card span {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+.pricing-card ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #ddd;
+
+    height: 86%;
+    left: calc(100% - 1px);
+    top: 7%;
+}
+
+.pricing-card#premium::after {
+    display: none;
+}
+
+.pricing-card a {
+    background-color: var(--pale-cyan);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 2em;
+}
+
+.pricing ul {
+    margin-top: 20px;
+}
+
+.pricing-card#expand {
+    flex: 2 1 40%;
+    background-color: var(--pale-cyan);
+    display: flex;
+}
+
+#expand a{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+.expand-header p{
+    font-size: 1.15em;
+    font-weight: 550;
+}
