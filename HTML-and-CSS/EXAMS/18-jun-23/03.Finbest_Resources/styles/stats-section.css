@@ -1,0 +1,31 @@
+.stats .cards-wrapper {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    padding: 40px;
+}
+
+.stats-card{
+    padding: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.stats-card span{
+    display: block;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.stats-card::after{
+    position: absolute;
+    content: '';
+    border: 1px solid #ddd;
+    left: 100%;
+    top: 0;
+    height: 100%;
+}
+
+.stats-card:last-child::after{
+display: none;
+}
