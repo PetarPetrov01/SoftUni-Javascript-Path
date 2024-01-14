@@ -1,0 +1,49 @@
+.pricing {
+    background-color: #F3F5FA;
+    padding: 20px 0;
+}
+
+.pricing-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.pricing-header h3 {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.pricing-header span {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--pale-cyan);
+}
+
+.pricing-main {
+    background-color: #fff;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pricing-card {
+    position: relative;
+    padding: 15px;
+    flex: 1 1 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing li {
+    text-align: justify;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.pricing-card h5 {
+    text-align: center;
+    font-size: 1.2em;
+}
+

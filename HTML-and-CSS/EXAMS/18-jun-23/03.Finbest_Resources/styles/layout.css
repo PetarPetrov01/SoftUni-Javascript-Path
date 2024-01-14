@@ -26,3 +26,37 @@ a{
     color: #000;
 }
 
+header nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    align-items: center;
+}
+
+nav .main-nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 2em
+}
+
+nav .auth{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.auth #sign-up{
+    background-color: var(--pale-cyan);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+footer ul li{
+    margin: 0 5px;
+}
