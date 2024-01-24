@@ -1,9 +1,10 @@
 .header{
     padding: 20px;
-    background-color: bisque;
+    background-color: #FAEF9B;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #222;
 }
 
 .logo{
@@ -20,7 +21,7 @@ ul{
 
 a{
     text-decoration: none;
-    color: #000;
+    color: #222;
     padding: 5px 10px;
     border: 1px solid #555;
     transition: all 0.2s ease-in;
