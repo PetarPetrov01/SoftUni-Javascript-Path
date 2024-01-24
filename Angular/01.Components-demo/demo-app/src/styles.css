@@ -3,8 +3,12 @@
 html{
     font-family: 'Ubuntu'
 }
-body{
-    width: 100vw;
+
+*{
     margin: 0;
     padding: 0;
+}
+
+body{
+    width: 100vw;
 }
