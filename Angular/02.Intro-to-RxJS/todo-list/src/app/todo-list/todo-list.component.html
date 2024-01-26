@@ -1,6 +1,6 @@
 <div class="add-todo">
-    <input type="text" placeholder="New todo...">
-    <a href="">Add</a>
+    <input #titleInput type="text" placeholder="New todo...">
+    <a href="" (click)="createTodo($event, titleInput)">Add</a>
 </div>
 <div class="todo-list">
     <table>
