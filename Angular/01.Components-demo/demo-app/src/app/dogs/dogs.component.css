@@ -1,4 +1,3 @@
-.banner{
 :host{
     background-color: #F6D776;
     display: block;
@@ -15,33 +14,3 @@
     justify-content: space-evenly;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 26%;
-    background-color: #61c3ce;
-    margin: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.media{
-    width: 100%;
-    aspect-ratio: 1.25/1;
-    overflow: hidden;
-    border-radius: 5pxs;
-}
-
-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.content{
-    padding: 10px;
-}
-
-.content h3{
-    margin: 10px 0;
-}
