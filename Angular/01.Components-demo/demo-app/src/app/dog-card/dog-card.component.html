@@ -1,9 +1,9 @@
 <div class="media">
-    <img [attr.src]="dog.imgUrl" [alt]="dog.name">
+    <img [attr.src]="dog?.imgUrl" [alt]="dog.name">
     <div [class]="showInfo ? 'info' : 'info show'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum omnis dolor explicabo saepe perferendis voluptatibus iste dignissimos illo vitae quos molestias consectetur inventore facilis ad, sapiente fugit molestiae asperiores.</div>
 </div>
 <div class="content">
-    <h3>Dog name: {{dog.name}}</h3>
-    <span>Age: {{dog.age}}</span>
+    <h3>Dog name: {{dog?.name}}</h3>
+    <span>Age: {{dog?.age}}</span>
     <button (click)="handleClick($event)">{{showInfo ? 'Show' : 'Hide'}}</button>
 </div>

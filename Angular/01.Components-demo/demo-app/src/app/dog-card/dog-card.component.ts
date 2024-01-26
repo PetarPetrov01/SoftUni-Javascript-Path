@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Dog } from '../type/Dog';
 
 @Component({
   selector: 'app-dog-card',
@@ -8,11 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrl: './dog-card.component.css'
 })
 export class DogCardComponent implements OnInit{
-  @Input('dog') dog: { name: string, age: number, imgUrl: string } = {
-    name:'',
-    age: 0,
-    imgUrl: ''
-  };
+  @Input('dog') dog: Dog | undefined = undefined;
 
   ngOnInit(): void {
     console.log(this.dog);

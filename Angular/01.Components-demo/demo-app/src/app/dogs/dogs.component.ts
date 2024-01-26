@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DogCardComponent } from '../dog-card/dog-card.component';
+import { Dog } from '../type/Dog';
 
 @Component({
   selector: 'app-dogs',
@@ -10,6 +11,6 @@ import { DogCardComponent } from '../dog-card/dog-card.component';
   styleUrl: './dogs.component.css'
 })
 export class DogsComponent {
-  @Input('dogArr') dogs: { name: string, age: number, imgUrl: string }[] = [];
+  @Input('dogArr') dogs: Dog[] = [];
   
 }
