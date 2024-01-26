@@ -1,0 +1,60 @@
+.add-todo{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 1em;
+}
+
+.add-todo a{
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    border: 1px solid #444;
+}
+
+.add-todo a:hover{
+    background-color: #cfc;
+}
+
+input{
+    width: 40%;
+    border-radius: 1em;
+    padding: 0.1em 0.5em;
+    border: 1px solid #444;
+    transition: all 0.5s;
+    font-family: inherit;
+    font-size: 1.1em;
+}
+
+input:focus{
+    width: 75%;
+    outline: none;
+    background-color: transparent;
+}
+
+
+table,tr,td{
+    border-collapse: collapse;
+}
+    
+table{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+tr{
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+td{
+    padding: 5px;
+}
+
+td a{
+    text-decoration: none;
+    color: #000;
+}
