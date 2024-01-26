@@ -1,5 +1,12 @@
 .banner{
+:host{
     background-color: #F6D776;
+    display: block;
+}
+
+.banner{
+    max-width: 1200px;
+    margin: auto;
 }
 
 .card-wrapper{
