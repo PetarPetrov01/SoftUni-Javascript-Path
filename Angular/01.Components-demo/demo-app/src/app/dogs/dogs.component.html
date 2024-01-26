@@ -1,13 +1,7 @@
 <div class="banner">
     <div class="card-wrapper">
-        <div *ngFor="let dog of dogs" class="card">
-            <div class="media">
-                <img [src]="dog.imgUrl" alt="">
-            </div>
-            <div class="content">
-                <h3>Dog name: {{dog.name}}</h3>
-                <span>Age: {{dog.age}}</span>
-            </div>
-        </div>
+        <ng-container *ngFor="let dog of dogs">
+            <app-dog-card [dog]="dog"/>
+        </ng-container>
     </div>
 </div>
