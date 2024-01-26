@@ -5,27 +5,11 @@
 <div class="todo-list">
     <table>
         <tbody>
-
-            <tr>
-                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, dolore!</td>
-                <td><a href="">Complete</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, dolore!</td>
-                <td><a href="">Complete</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, dolore!</td>
-                <td><a href="">Complete</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, dolore!</td>
-                <td><a href="">Complete</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
+            <ng-container *ngFor="let todo of todos">
+                <tr>
+                    <app-todo-item [todo]="todo"/>
+                </tr>
+            </ng-container>
         </tbody>
     </table>
 </div>

@@ -15,10 +15,11 @@ header{
 }
 
 main{
+    min-width: 800px;
     display: block;
     max-width: 1300px;
     margin: auto;
-    padding: 3em 4em;
+    padding: 3em 2em;
     border-radius: 10px;
     background-color: #fff7;
 }
