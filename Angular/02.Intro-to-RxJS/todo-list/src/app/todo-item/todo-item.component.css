@@ -1,9 +1,32 @@
-
+:host{
+    display: flex;
+    justify-content: space-between;
+}
 td{
-    padding: 5px;
+    padding: 8px;
 }
 
 td a{
     text-decoration: none;
     color: #000;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    padding: 5px 8px;
+    background-color: #ddd8;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+a:hover{
+    background-color: #9998;
+}
+
+#deleteBtn:hover{
+    background-color: #e119;
 }

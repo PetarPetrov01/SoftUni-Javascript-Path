@@ -47,7 +47,15 @@ table{
 
 tr{
     width: 100%;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    background-color: #fff4;
+}
+
+tr:nth-child(even){
+    background-color: #ddd4;
+}
+tr:hover,
+tr:nth-child(even):hover{
+    background-color: #eee7;
+
 }
 
