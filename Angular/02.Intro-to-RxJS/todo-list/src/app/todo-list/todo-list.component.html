@@ -2,6 +2,12 @@
     <input #titleInput type="text" placeholder="New todo...">
     <a href="" (click)="createTodo($event, titleInput)">Add</a>
 </div>
+<div class="view">
+    <span>View:</span>
+    <a href="" [class.selected]="selectedView==='all'" (click)="changeView($event, 'all')">All</a>
+    <a href="" [class.selected]="selectedView==='pending'" (click)="changeView($event, 'pending')">Pending</a>
+    <a href="" [class.selected]="selectedView==='completed'" (click)="changeView($event, 'completed')">Completed</a>
+</div>
 <div class="todo-list">
     <table>
         <tbody>

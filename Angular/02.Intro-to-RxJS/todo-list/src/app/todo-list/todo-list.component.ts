@@ -15,13 +15,16 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class TodoListComponent implements OnInit {
+  todoList: Todo[] = [];
   todos: Todo[] = [];
+  selectedView: 'all' | 'pending' | 'completed' = 'all';
 
   constructor(private TodoService: TodoService) { }
 
   ngOnInit(): void {
     this.TodoService.getTodos()
       .subscribe((todos) => {
+        this.todoList = todos;
         this.todos = todos;
         console.log(todos)
       })
@@ -32,15 +35,28 @@ export class TodoListComponent implements OnInit {
 
     const newTodo: Todo | undefined = this.TodoService.addTodo(todoInput)
     if (newTodo != undefined) {
-      this.todos.push(newTodo);
+      this.todoList.push(newTodo);
       todoInput.value = ''
     }
   }
 
   completeTodo = (todoId: string) => {
-    const currentTodo = this.todos.find(todo => todo.id === todoId)
-    if(currentTodo){
+    const currentTodo = this.todoList.find(todo => todo.id === todoId)
+    if (currentTodo) {
       currentTodo.completed = !currentTodo.completed
+    }
+  }
+
+  changeView(event:Event, view: 'all' | 'pending' | 'completed') {
+    event.preventDefault();
+
+    this.selectedView = view;
+    if (view === 'pending') {
+      this.todos = this.todoList.filter(todo => !todo.completed)
+    } else if (view === 'completed') {
+      this.todos = this.todoList.filter(todo => todo.completed)
+    } else {
+      this.todos = this.todoList;
     }
   }
 }
