@@ -47,7 +47,14 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  changeView(event:Event, view: 'all' | 'pending' | 'completed') {
+  deleteTodo = (todoId: string) => {
+    this.todoList = this.todoList.filter(todo => todoId !== todo.id)
+
+    //Cause a prerender
+    this.todos = this.todoList;
+  }
+
+  changeView(event: Event, view: 'all' | 'pending' | 'completed') {
     event.preventDefault();
 
     this.selectedView = view;

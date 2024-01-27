@@ -16,9 +16,15 @@ export class TodoItemComponent {
   };
 
   @Input() completeTodo = (todoId: string) => { };
+  @Input() deleteTodo = (todoId: string) => { }
 
   onCompleteHandler(event: Event, todoId: string) {
     event.preventDefault();
     this.completeTodo(todoId)
+  }
+
+  onDeleteHandler(event: Event, todoId: string) {
+    event.preventDefault();
+    this.deleteTodo(todoId)
   }
 }

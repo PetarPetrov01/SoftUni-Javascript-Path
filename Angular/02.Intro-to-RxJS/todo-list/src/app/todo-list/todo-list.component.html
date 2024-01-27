@@ -13,7 +13,7 @@
         <tbody>
             <ng-container *ngFor="let todo of todos">
                 <tr>
-                    <app-todo-item [todo]="todo" [completeTodo]="completeTodo" />
+                    <app-todo-item [todo]="todo" [completeTodo]="completeTodo" [deleteTodo]="deleteTodo"/>
                 </tr>
             </ng-container>
         </tbody>
