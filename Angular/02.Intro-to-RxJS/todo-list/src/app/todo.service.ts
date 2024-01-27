@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Todo } from './type/Todo';
+import { IdGeneratorService } from './id-generator.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class TodoService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private idService: IdGeneratorService) { }
 
   getTodos() {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
@@ -16,7 +17,8 @@ export class TodoService {
         .map((todo) => {
           return {
             title: todo.title,
-            completed: todo.completed
+            completed: todo.completed,
+            id: this.idService.generateId()
           }
         })
         .slice(0, 10)
@@ -27,7 +29,8 @@ export class TodoService {
     if (titleInput.value !== '') {
       return {
         title: titleInput.value,
-        completed: false
+        completed: false,
+        id: this.idService.generateId()
       }
     } 
     return undefined;

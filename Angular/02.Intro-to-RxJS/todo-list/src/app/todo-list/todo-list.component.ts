@@ -27,13 +27,20 @@ export class TodoListComponent implements OnInit {
       })
   }
 
-  createTodo(event: Event, todoInput: HTMLInputElement){
+  createTodo(event: Event, todoInput: HTMLInputElement) {
     event.preventDefault();
 
     const newTodo: Todo | undefined = this.TodoService.addTodo(todoInput)
-    if(newTodo != undefined){
+    if (newTodo != undefined) {
       this.todos.push(newTodo);
       todoInput.value = ''
+    }
+  }
+
+  completeTodo = (todoId: string) => {
+    const currentTodo = this.todos.find(todo => todo.id === todoId)
+    if(currentTodo){
+      currentTodo.completed = !currentTodo.completed
     }
   }
 }

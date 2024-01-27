@@ -7,7 +7,7 @@
         <tbody>
             <ng-container *ngFor="let todo of todos">
                 <tr>
-                    <app-todo-item [todo]="todo"/>
+                    <app-todo-item [todo]="todo" [completeTodo]="completeTodo" />
                 </tr>
             </ng-container>
         </tbody>

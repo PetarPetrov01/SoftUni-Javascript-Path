@@ -11,6 +11,14 @@ import { Todo } from '../type/Todo';
 export class TodoItemComponent {
   @Input() todo: Todo = {
     title: '',
-    completed: false
+    completed: false,
+    id: '',
   };
+
+  @Input() completeTodo = (todoId: string) => { };
+
+  onCompleteHandler(event: Event, todoId: string) {
+    event.preventDefault();
+    this.completeTodo(todoId)
+  }
 }
