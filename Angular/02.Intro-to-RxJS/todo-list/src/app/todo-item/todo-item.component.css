@@ -1,32 +1,44 @@
-:host{
+:host {
     display: flex;
     justify-content: space-between;
 }
-td{
+
+td {
+    position: relative;
     padding: 8px;
 }
 
-td a{
+td.completed::after {
+    content: '';
+    border: 1px solid #000;
+    position: absolute;
+    left:8px;
+    top: 50%;
+    width: calc(100% - 2*8px);
+
+}
+
+td a {
     text-decoration: none;
     color: #000;
 }
 
-.controls{
+.controls {
     display: flex;
     align-items: center;
 }
 
-a{
+a {
     padding: 5px 8px;
     background-color: #ddd8;
     border-radius: 8px;
     transition: all 0.3s;
 }
 
-a:hover{
+a:hover {
     background-color: #9998;
 }
 
-#deleteBtn:hover{
+#deleteBtn:hover {
     background-color: #e119;
 }

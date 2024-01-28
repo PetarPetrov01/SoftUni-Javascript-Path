@@ -1,4 +1,4 @@
-<td>{{todo.title}}</td>
+<td [class.completed]="todo.completed">{{todo.title}}</td>
 <div class="controls">
     <td><a href="" (click)="onCompleteHandler($event, todo.id)">{{todo.completed? 'Revert' : 'Complete'}}</a></td>
     <td><a href="" (click)="onDeleteHandler($event, todo.id)" id="deleteBtn">Delete</a></td>
