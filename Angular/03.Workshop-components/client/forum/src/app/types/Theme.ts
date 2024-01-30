@@ -4,6 +4,7 @@ export type Theme = {
   _id: string;
   themeName: string;
   userId: userId;
+  created_at: string;
 };
 
 type userId = {
