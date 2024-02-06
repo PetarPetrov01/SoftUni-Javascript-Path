@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Theme } from '../../types/Theme';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
 import { NgFor } from '@angular/common';
 
 @Component({
