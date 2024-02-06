@@ -7,4 +7,7 @@ export interface Post {
   text: string;
   userId: UserId;
   themeId: Theme;
+  created_at: string;
+  updatedAt: string;
+  __v: number;
 };
