@@ -3,11 +3,12 @@ import { PeopleService } from './people.service';
 import { Character } from '../types/character';
 import { NgFor, NgIf } from '@angular/common';
 import { LoaderComponent } from '../shared/loader/loader.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-people',
   standalone: true,
-  imports: [NgFor, LoaderComponent, NgIf],
+  imports: [NgFor, LoaderComponent, NgIf, RouterLink, RouterLinkActive],
   templateUrl: './people.component.html',
   styleUrl: './people.component.css',
 })

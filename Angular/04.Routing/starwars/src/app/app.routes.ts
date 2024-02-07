@@ -4,6 +4,9 @@ import { PlanetsComponent } from './planets/planets.component';
 
 export const routes: Routes = [
   { path: '', component: PeopleComponent },
-  { path: 'people', component: PeopleComponent },
+  {
+    path: 'people',
+    loadChildren: () => import('../app/people/people.routes').then(r => r.PEOPLE_ROUTES),
+  },
   { path: 'planets', component: PlanetsComponent },
 ];
