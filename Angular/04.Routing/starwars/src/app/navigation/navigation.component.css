@@ -1,0 +1,28 @@
+.main-nav{
+    background-color: beige;
+    padding: 1.5em 6em;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
+    
+}
+
+a{
+    text-decoration: none;
+    background-color: rgb(243, 243, 194);
+    color: #000;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 8px 20px;
+    transition: all 0.3s ;
+}
+
+a:hover{
+    background-color: #888;
+    color: #fff;
+}
