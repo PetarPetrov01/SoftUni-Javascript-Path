@@ -1,1 +1,11 @@
-<p>people works!</p>
+<div class="people-container">
+    <app-loader *ngIf="isLoading"/>
+  <div
+    *ngFor="let character of peopleList; let id = index"
+    class="character-card"
+  >
+    <h3>{{ character.name }}</h3>
+    <p>Gender: {{ character.gender }}</p>
+    <a>Details {{id+1}}</a>
+  </div>
+</div>
