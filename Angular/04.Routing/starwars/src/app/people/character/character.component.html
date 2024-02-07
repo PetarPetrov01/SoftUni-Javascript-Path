@@ -1,6 +1,8 @@
-<div class="container">
+<div class="container" *ngIf="!isLoading">
   <h2>{{ character.name }}</h2>
   <div class="details">
+    <app-loader *ngIf="isLoading" />
+    
     <div class="info column">
       <p>Birth year: {{ character.birth_year }}</p>
       <p>Gender: {{ character.gender }}</p>
