@@ -1,4 +1,7 @@
 <div class="container">
-    <app-posts />
+    <div class="leftside">
+        <app-home *ngIf="!isLogged"/>
+        <app-posts />
+    </div>
     <app-recents />
 </div>
