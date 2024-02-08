@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment.development';
-import { Theme } from './types/Theme';
+import { Theme, ThemePopulated } from './types/Theme';
 import { Post } from './types/Post';
 
 @Injectable({
@@ -20,5 +20,10 @@ export class ApiService {
   getLatest(){
     const {appUrl} = environment;
     return this.http.get<Post[]>(`${appUrl}/posts`)
+  }
+  
+  getComments(themeId: string){
+    const {appUrl} = environment;
+    return this.http.get<ThemePopulated>(`${appUrl}/themes/${themeId}`)
   }
 }
