@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../user/user.service';
 import { NgIf } from '@angular/common';
 
@@ -11,13 +11,18 @@ import { NgIf } from '@angular/common';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  get isLogged(){
+  get isLogged() {
     return this.userService.isLogged;
   }
 
-  get firstName(){
-    return this.userService.user?.firstName || ''
+  get firstName() {
+    return this.userService.user?.firstName || '';
+  }
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['/']);
   }
 }
