@@ -1,1 +1,9 @@
-<p>planets works!</p>
+<div class="planets-container">
+    <app-loader *ngIf="isLoading"/>
+    <div class="planet-card" *ngFor="let planet of planets">
+        <h2>{{planet.name}}</h2>
+        <p>Population: {{planet.population}}</p>
+        <p>Diameter: {{planet.diameter}}</p>
+        <p>Gravity: {{planet.gravity}}</p>
+    </div>
+</div>
