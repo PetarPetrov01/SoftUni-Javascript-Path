@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PostsComponent } from './main/posts/posts.component';
-import { RecentsComponent } from './main/recents/recents.component';
+import { ThemesComponent } from './main/themes/themes.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +11,7 @@ import { RecentsComponent } from './main/recents/recents.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    PostsComponent,
-    RecentsComponent
+    ThemesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

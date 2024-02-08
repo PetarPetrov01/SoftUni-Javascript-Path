@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
-import { Theme } from '../../types/Theme';
+import { ApiService } from '../../../api.service';
+import { Theme } from '../../../types/Theme';
 import { NgFor } from '@angular/common';
 
 @Component({
