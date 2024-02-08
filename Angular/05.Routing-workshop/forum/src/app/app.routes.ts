@@ -6,12 +6,21 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AddThemeComponent } from './main/add-theme/add-theme.component';
 import { IsUserGuard } from './guards/auth.guard';
+import { ProfileComponent } from './user/profile/profile.component';
+import { CommentsComponent } from './main/themes/comments/comments.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'themes', component: ThemesComponent },
+  { path: 'profile', component: ProfileComponent },
+  {
+    path: 'themes',
+    children: [
+      { path: '', component: ThemesComponent },
+      { path: ':id', component: CommentsComponent },
+    ],
+  },
   {
     path: 'add-theme',
     component: AddThemeComponent,
