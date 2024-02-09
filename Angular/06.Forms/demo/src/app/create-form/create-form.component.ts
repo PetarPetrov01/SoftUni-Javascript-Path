@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { Component,  OnInit, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { EmailValidateDirective } from '../email-validate.directive';
 
 @Component({
   selector: 'app-create-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, NgIf, EmailValidateDirective],
   templateUrl: './create-form.component.html',
-  styleUrl: './create-form.component.css'
+  styleUrl: './create-form.component.css',
 })
-export class CreateFormComponent {
+export class CreateFormComponent implements OnInit {
+  @ViewChild('loginForm') loginForm: NgForm | undefined;
 
+  ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    console.log(this.loginForm?.form);
+  }
+
+  submitHandler() {
+    console.log(this.loginForm?.valid);
+    console.log(this.loginForm?.form);
+  }
 }

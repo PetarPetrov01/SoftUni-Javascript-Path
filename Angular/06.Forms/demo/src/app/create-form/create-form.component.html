@@ -1,8 +1,36 @@
-<form>
+<form #loginForm="ngForm" (ngSubmit)="submitHandler()">
   <div class="input-group">
     <label for="name">Name:</label>
-    <input type="text" name="name"/></div>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      ngModel
+      required
+      #nameInput="ngModel"
+      minlength="3"
+      maxlength="10"
+    />
+    <div class="error" *ngIf="nameInput.touched">
+      <span *ngIf="nameInput.errors?.['minlength']"
+        >Name must be between 3 and 10 characters</span
+      >
+      <span *ngIf="nameInput.errors?.['maxlength']"
+        >Name must be between 3 and 10 characters</span
+      >
+    </div>
+  </div>
   <div class="input-group">
-    <label for="model">Model:</label>
-    <input type="text" name="model"/></div>
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      ngModel
+      required
+      appEmailValidate
+    />
+  </div>
+
+  <button>Submit</button>
 </form>
