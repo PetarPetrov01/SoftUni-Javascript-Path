@@ -3,10 +3,10 @@
         
         <!-- theme component  -->
         
-        <div *ngFor="let theme of themes; let themeIndex = index" class="theme-container">
+        <div *ngFor="let theme of themes" class="theme-container">
             <div class="theme-name-wrapper">
                 <div class="theme-name">
-                    <a routerLink={{themeIndex+1}} routerLinkActive="active" class="normal">
+                    <a routerLink={{theme._id}} routerLinkActive="active" class="normal">
                         <h2>{{theme.themeName}}</h2>
                     </a>
                     <div class="columns">
