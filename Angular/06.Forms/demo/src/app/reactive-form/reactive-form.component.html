@@ -1,1 +1,22 @@
-<p>reactive-form works!</p>
+<h3>Reactive form</h3>
+<form [formGroup]="registerForm" (ngSubmit)="submitHandler()">
+  <div class="input-group">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" formControlName="name" />
+    <div class="error">
+      <span>Name must be between 3 and 10 characters</span>
+      <span>Name must be between 3 and 10 characters</span>
+    </div>
+  </div>
+  <div class="input-group">
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      formControlName="email"
+    />
+  </div>
+
+  <button>Submit</button>
+</form>
