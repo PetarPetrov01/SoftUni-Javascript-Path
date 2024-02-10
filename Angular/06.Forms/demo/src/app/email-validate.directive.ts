@@ -22,9 +22,7 @@ export class EmailValidateDirective implements Validator {
     }
 
     return {
-      email:{
-        value: value
-      }
+      email: 'Invalid email'
     }
   }
 }

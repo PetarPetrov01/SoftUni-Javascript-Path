@@ -3,9 +3,9 @@
   <div class="input-group">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" formControlName="name" />
-    <div class="error">
-      <span>Name must be between 3 and 10 characters</span>
-      <span>Name must be between 3 and 10 characters</span>
+    <div class="error" *ngIf="registerForm.get('name')?.touched">
+      <p *ngIf="registerForm.get('name')?.errors?.['required']">This input is required</p>
+      <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Name must be atleast 3 characters long</p>
     </div>
   </div>
   <div class="input-group">
@@ -15,7 +15,12 @@
       name="email"
       id="email"
       formControlName="email"
+      appEmailValidate
     />
+    <div class="error" *ngIf="registerForm.get('email')?.touched">
+        <p *ngIf="registerForm.get('email')?.errors?.['required']">This input is required</p>
+        <p *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email</p>
+      </div>
   </div>
 
   <button>Submit</button>
