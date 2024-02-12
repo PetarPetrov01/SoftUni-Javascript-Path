@@ -1,21 +1,42 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import {
+  FormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { validateEmail } from '../../validators/email-validator';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
-  constructor(private userService: UserService, private router: Router) {}
 
-  login(email: string, password: string): void {
-    console.log(email, password);
+export class LoginComponent {
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, validateEmail()]],
+    password: ['', [Validators.required, Validators.minLength(5)]],
+  });
+
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
+
+  login(): void {
+    if (this.loginForm.invalid) {
+      console.log(this.loginForm.get('email')?.errors);
+      return;
+    }
+
 
     this.userService.login();
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="login" action="" method="post">
+  <form class="login" (ngSubmit)="login()" [formGroup]="loginForm">
     <fieldset>
       <h2>Login Form</h2>
 
@@ -8,39 +8,58 @@
           ><span><i class="fas fa-envelope"></i></span
         ></label>
         <input
-          class="input-error"
+          [class]="
+            loginForm.get('email')?.errors && loginForm.get('email')?.touched
+              ? 'input-error'
+              : ''
+          "
           type="email"
           name="email"
           id="email"
           placeholder="john.doe@gmail.com"
           #email
+          formControlName="email"
         />
       </p>
-      <p class="error">Email is required!</p>
-      <!-- <p class="error">
-                Email is not valid!
-            </p> -->
+
+      <ng-container *ngIf="loginForm.get('email')?.touched">
+        <p class="error" *ngIf="loginForm.get('email')?.errors?.['required']">
+          Email is required!
+        </p>
+        <p
+          class="error"
+          *ngIf="loginForm.get('email')?.errors?.['emailValidator']"
+        >
+          Email is not valid!
+        </p>
+      </ng-container>
 
       <p class="field field-icon">
         <label for="password"
           ><span><i class="fas fa-lock"></i></span
         ></label>
         <input
+          [class]="
+            loginForm.get('password')?.errors &&
+            loginForm.get('password')?.touched
+              ? 'input-error'
+              : ''
+          "
           type="password"
           name="password"
           id="password"
           placeholder="******"
           #password
+          formControlName="password"
         />
       </p>
-      <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
 
-      <button (click)="login(email.value, password.value)">Login</button>
+      <ng-container *ngIf="loginForm.get('password')?.touched">
+        <p class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required!</p>
+        <p class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 4 characters!</p>
+      </ng-container>
+
+      <button [disabled]="loginForm.invalid">Login</button>
 
       <p class="text-center">
         Have an account?
