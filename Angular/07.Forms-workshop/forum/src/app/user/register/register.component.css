@@ -37,12 +37,19 @@ form.login, form.register {
 
 .login button, .register button {
     color: white;
+    background-color: #007bff;
     border: none;
     border-radius: 0.3em;
     padding: 0.6em 1.2em;
     margin-top: 1.5rem;
     width: 60%;
     outline: none;
+    cursor: pointer;
+}
+
+.login button:disabled{
+    background-color: #eee;
+    cursor: default;
 }
 
 .login i, .register i {
@@ -80,6 +87,6 @@ p.error {
     padding-top: 0;
 }
 
-.input-error {
+.login .input-error {
     border-left-color: red;
 }
