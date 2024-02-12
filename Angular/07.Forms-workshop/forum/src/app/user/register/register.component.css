@@ -47,7 +47,7 @@ form.login, form.register {
     cursor: pointer;
 }
 
-.login button:disabled{
+.register button:disabled{
     background-color: #eee;
     cursor: default;
 }
@@ -87,6 +87,6 @@ p.error {
     padding-top: 0;
 }
 
-.login .input-error {
+.register .input-error {
     border-left-color: red;
 }
