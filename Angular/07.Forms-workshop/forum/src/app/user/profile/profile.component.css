@@ -62,10 +62,18 @@
     padding: 0.17em 0;
 }
 
+.edit-button{
+    background-color: #007bff;
+}
+
 .red-button {
     background-color: red;
 }
 
 .green-button {
     background-color: green;
+}
+
+.green-button:disabled{
+    background-color: #ddd;
 }
