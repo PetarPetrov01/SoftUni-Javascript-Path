@@ -1,0 +1,30 @@
+@media (max-width: 600px) {
+  header.home-header {
+    padding-top: 0;
+  }
+  .home-main {
+    padding-bottom: 40px;
+  }
+
+  .home-container{
+    padding-top: 10px;
+  }
+  .home-navbar1 {
+    display: none;
+  }
+
+  .home-cards-container {
+    justify-content: center;
+  }
+
+  .category-card-category-card {
+    flex: 0 0 47%;
+  }
+
+  .category-card-category-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+}
