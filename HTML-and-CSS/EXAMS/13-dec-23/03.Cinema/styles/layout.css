@@ -1,0 +1,42 @@
+html{
+    --pale-cyan: #ADE2DF
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+li,a{
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    max-width: 1200px;
+}
+
+body{
+    background-color: #353434;
+}
+
+footer{
+    background-color: #1B9772;
+    padding: 4em;
+    text-align: center;
+    color: #56DBB1;
+}
+
+footer span{
+    color: #DBFAF0;
+}
+
