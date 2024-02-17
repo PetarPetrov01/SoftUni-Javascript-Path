@@ -1,0 +1,15 @@
+.banner {
+    background-color: #56DBB1;
+    text-align: center;
+    font-size: 15px;
+}
+
+.banner .media{
+    background-color: #666;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+.banner p{
+    padding: 3em 0;
+}
+

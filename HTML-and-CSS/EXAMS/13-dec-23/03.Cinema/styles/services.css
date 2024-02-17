@@ -1,0 +1,36 @@
+.services{
+    color: #fff;
+    padding: 6em 0;
+}
+
+.services .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.services .card{
+    flex: 0 0 23.5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services .card .icon{
+    background-color: #56DBB1;
+    width: 35%;
+    height: auto;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.services .card h3{
+    padding: 1em 0;
+}
+.services .card p{
+    color: #5B5956;
+    padding-top: 1em;
+    border-top: 2px solid #EEEEEE;
+}
+

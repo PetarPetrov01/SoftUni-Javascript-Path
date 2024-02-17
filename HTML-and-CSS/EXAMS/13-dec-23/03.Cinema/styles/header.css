@@ -1,0 +1,39 @@
+.main-header {
+    padding: 2em;
+    background-color: #fff;
+}
+
+.main-header .container{
+    max-width: 1400px;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .title p{
+    display: inline;
+    font-size: 2.4em;
+    border-right: 2px solid #DBDBDB;
+    padding-right: 0.4em;
+}
+
+.main-nav .title span{
+    color: #696969;
+    padding:  0 1.5em;
+    height: 100%;
+}
+.main-nav a{
+    text-decoration: none;
+    padding: 1em;
+    background-color: #ECECEC;
+    color: #696969;
+    letter-spacing: 1px;
+}
+
+.main-nav a.active{
+    background-color: #56DBB1;
+    color: #000;
+}
