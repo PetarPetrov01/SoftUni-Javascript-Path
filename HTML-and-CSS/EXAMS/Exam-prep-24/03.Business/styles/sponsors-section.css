@@ -1,0 +1,43 @@
+.sponsors-partners{
+    padding: 3em 0;
+    color: #555;
+
+}
+
+.sponsors-partners article{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sponsors-partners h2{
+    font-size: 2.6em;
+    color: #B0825C;
+    font-weight: 400;
+}
+
+.sponsors-partners p{
+    padding-top: 2em;
+}
+
+.sponsors-cards{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    padding: 4em 0;
+}
+
+.sponsors-cards .card{
+    flex: 0 0 10em;
+    background-color: #ddd;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img{
+    width: 70%;
+    height: auto;
+}

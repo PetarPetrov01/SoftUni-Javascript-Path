@@ -1,0 +1,32 @@
+.aims-objectives{
+    padding: 5em 0;
+    border-bottom: 1px solid #777;
+}
+
+.aims-objectives .container{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5em;
+}
+
+.aims-objectives article{
+    flex: 1 1 40%
+}
+
+.aims-objectives h2{
+    font-size: 2.4em;
+    font-weight: 400;
+}
+
+.aims-objectives p{
+    margin: 1em 0;
+}
+
+.aims-objectives a{
+    text-decoration: none;
+    color: #B0825C;
+    border: 2px solid #B0825C;
+    font-weight: bold;
+    padding: 0.6em 1em;
+    margin-top: 1em;
+}
