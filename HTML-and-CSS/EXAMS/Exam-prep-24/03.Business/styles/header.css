@@ -1,0 +1,45 @@
+.main-header {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    padding: 2em 3em;
+    padding-bottom: 10em;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.main-nav .logo-container{
+    width: 6em;
+}
+
+.main-nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.banner{
+    color: #fff;
+    padding-top: 2em;
+    width: 38em;
+}
+
+.banner h1{   
+    margin-bottom: 0.5em;
+    font-size: 3.2em;
+    font-weight: 400;
+}
+
+.banner>p{
+    font-size: 1.2em;
+}
+
+

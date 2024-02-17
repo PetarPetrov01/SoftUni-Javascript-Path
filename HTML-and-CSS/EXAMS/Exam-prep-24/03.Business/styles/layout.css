@@ -1,0 +1,27 @@
+html{
+    --pale-cyan: #ADE2DF
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+li,a{
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    max-width: 1200px;
+}
+
