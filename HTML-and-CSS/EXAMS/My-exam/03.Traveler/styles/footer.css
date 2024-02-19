@@ -1,0 +1,19 @@
+footer {
+    background-color: #352B2A;
+    padding: 5em 0;
+    font-size: 0.8em;
+}
+
+footer .logo-container{
+    width: 60px;
+    margin-bottom: 3em;
+}
+footer p{
+    color: #fff;
+    width: 48ch;
+}
+
+footer .credentials{
+    color: #6C695E;
+    padding-top: 1.8em;
+}
