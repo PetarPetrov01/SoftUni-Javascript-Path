@@ -1,0 +1,33 @@
+.testimonial {
+    background-color: #F8F0E9;
+    padding: 3em 0;
+}
+
+.testimonial p{
+    color: #222;
+}
+
+.testimonial h2{
+    margin: 1em 0;
+    font-style: italic;
+    line-height: 0.8;
+
+}
+
+.support{
+    background-color: #E14747;
+    color: #fff;
+    padding: 3em 0;
+}
+
+.support .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    text-align: center;
+}
+
+.support p{
+    width: 24ch;
+}
