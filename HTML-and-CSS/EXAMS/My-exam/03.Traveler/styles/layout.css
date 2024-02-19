@@ -1,0 +1,30 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .container{
+    max-width: 1400px;
+}
+footer .container{
+    max-width: 1300px;
+}
+
+li,a{
+    display: inline-block;
+}
+
+ul{
+    list-style: none;
+}
+
+.logo-container{
+    width: 90px;
+}
+
