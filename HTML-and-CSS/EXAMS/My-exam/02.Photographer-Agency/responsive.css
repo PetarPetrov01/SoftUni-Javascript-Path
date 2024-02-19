@@ -18,3 +18,37 @@
     font-size: 1.1em;
   }
 
+  .choose-us ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .choose-us ul li {
+    width: 60%;
+}
+
+.about-us {
+    width: 75%;
+}
+.team-description-wrapper {
+    width: 55%;
+}
+.team-description-wrapper ul{
+
+    gap: 3em;
+}
+  .team-description-wrapper li {
+    flex: 1 1 48%;
+  }
+
+  .team-description-wrapper ul li img {
+    width: 100%;
+    height: auto;
+  }
+
+  .team-description-wrapper ul li p{
+    font-size: 0.9em;
+  }
+}
