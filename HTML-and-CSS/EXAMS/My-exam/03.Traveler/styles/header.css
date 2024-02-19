@@ -1,0 +1,48 @@
+header{
+    background-image: url('../images/poster.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
+
+.site-header{
+    padding: 1em 0;
+    background-color: #0006;
+    min-height: 500px;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .logo-container{
+    width: 80px;
+}
+
+.main-nav ul{
+    display: flex;
+    gap: 2em;
+}
+.main-nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner{
+    padding: 4em 0 6em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner h1{
+    margin: 1em;
+}
+
+.banner p{
+    margin: 2em;
+    width: 60ch;
+}
