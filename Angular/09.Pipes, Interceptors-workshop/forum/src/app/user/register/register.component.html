@@ -88,8 +88,8 @@
         </select>
         <input
           [class]="
-            registerForm.get('phone')?.touched &&
-            registerForm.get('phone')?.errors
+            registerForm.get('tel')?.touched &&
+            registerForm.get('tel')?.errors
               ? 'input-error'
               : ''
           "
@@ -97,7 +97,7 @@
           name="tel"
           id="tel"
           placeholder="885 888 888"
-          formControlName="phone"
+          formControlName="tel"
         />
       </p>
 

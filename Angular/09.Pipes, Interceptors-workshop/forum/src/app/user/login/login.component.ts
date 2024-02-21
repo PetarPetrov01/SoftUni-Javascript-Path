@@ -26,11 +26,13 @@ export class LoginComponent {
 
   login(): void {
     if (this.loginForm.invalid) {
-      console.log(this.loginForm.get('email')?.errors);
       return;
     }
 
-    this.userService.login();
-    this.router.navigate(['/']);
+    const { email, password } = this.loginForm.value;
+
+    this.userService.login(email!, password!).subscribe(()=>{
+      this.router.navigate(['/']);
+    })
   }
 }
