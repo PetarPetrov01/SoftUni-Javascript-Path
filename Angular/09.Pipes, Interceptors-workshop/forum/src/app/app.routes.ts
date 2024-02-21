@@ -10,6 +10,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { CommentsComponent } from './main/themes/comments/comments.component';
 
 import { IsUserGuard } from './guards/auth.guard';
+import { ErrorComponent } from './error/error.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,5 +29,6 @@ export const routes: Routes = [
     component: AddThemeComponent,
     canActivate: [IsUserGuard],
   },
+  { path: 'error', component: ErrorComponent },
   { path: '**', component: NotFoundComponent },
 ];

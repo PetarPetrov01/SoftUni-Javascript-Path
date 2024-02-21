@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ThemesComponent } from './main/themes/themes.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { ErrorComponent } from './error/error.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    ThemesComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    ErrorComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

@@ -36,7 +36,6 @@ export class ProfileComponent {
     if (form.invalid) {
       return;
     }
-    console.log(form.value.telStart);
     this.userService
       .updateProfile(
         form.value.username,
@@ -44,7 +43,6 @@ export class ProfileComponent {
         `${form.value.tel.includes('+')?'':form.value.telStart}${form.value.tel}`
       )
       .subscribe((user) => {
-        console.log(user);
         this.user = user;
       });
     this.toggleEditing();
