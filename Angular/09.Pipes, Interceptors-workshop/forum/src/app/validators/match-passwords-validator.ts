@@ -9,7 +9,6 @@ export function matchPasswordsValidator(
     const passwordCtr = group.get(passOne);
     const rePasswordCtr = group.get(passTwo);
 
-    console.log(passwordCtr?.value + ' - - ' + rePasswordCtr?.value)
     return passwordCtr?.value === rePasswordCtr?.value
       ? null
       : { matchPasswordsValidator: true };

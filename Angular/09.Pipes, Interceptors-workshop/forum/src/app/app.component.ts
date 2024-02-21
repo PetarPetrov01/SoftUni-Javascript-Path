@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ThemesComponent } from './main/themes/themes.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { ThemesComponent } from './main/themes/themes.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    ThemesComponent
+    ThemesComponent,
+    AuthenticationComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
