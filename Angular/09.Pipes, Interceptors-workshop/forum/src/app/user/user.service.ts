@@ -62,6 +62,18 @@ export class UserService {
   getProfile() {
     return this.http
       .get<User>('/api/users/profile')
-      .pipe(tap((user)=>this.user$$.next(user)))      
+      .pipe(tap((user) => this.user$$.next(user)));
+  }
+
+  updateProfile(username: string, email: string, tel: string) {
+    console.log('from service')
+    console.log(username)
+    return this.http
+      .put<User>('/api/users/profile', {
+        username,
+        email,
+        tel,
+      })
+      .pipe(tap((user) => this.user$$.next(user)));
   }
 }

@@ -7,15 +7,15 @@
     <ng-container *ngIf="!isEditing">
       <div class="flex">
         <p>Username:</p>
-        <p>{{user.username}}</p>
+        <p>{{ user.username }}</p>
       </div>
       <div class="flex">
         <p>Email:</p>
-        <p>{{user.email}}</p>
+        <p>{{ user.email }}</p>
       </div>
       <div class="flex">
         <p>Phone:</p>
-        <p>+359{{user.tel}}</p>
+        <p>+359{{ user.tel.slice(4) }}</p>
       </div>
       <button class="edit-button" (click)="toggleEditing()">Edit</button>
     </ng-container>
@@ -29,10 +29,9 @@
             type="text"
             name="username"
             id="username"
-            value="Johny"
-            required=""
+            required
             minlength="5"
-            ngModel
+            [(ngModel)]="editData.username"
           />
         </div>
         <div class="flex">
@@ -41,31 +40,35 @@
             type="email"
             name="email"
             id="email"
-            value="john.doe@gmail.com"
             required
-            ngModel
             [pattern]="emailPattern"
+            [(ngModel)]="editData.email"
           />
         </div>
         <div class="flex">
           <p>Phone:</p>
           <div>
-            <select name="telStart" id="select-tel" class="tel" >
+            <select name="telStart" id="select-tel" class="tel">
               <option value="00359" selected>+359</option>
             </select>
             <input
               type="text"
               name="tel"
               id="tel"
-              value="885 888 888"
               required
-              minlength="7"
-              ngModel
+              minlength="4"
+              [(ngModel)]="editData.tel"
             />
           </div>
         </div>
         <button class="red-button" (click)="toggleEditing()">Cancel</button>
-        <button class="green-button" [disabled]="form.invalid" (click)="submitEditHandler(form)">Save</button>
+        <button
+          class="green-button"
+          [disabled]="form.invalid"
+          (click)="submitEditHandler(form)"
+        >
+          Save
+        </button>
       </form>
     </ng-container>
   </div>

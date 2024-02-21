@@ -19,6 +19,7 @@ interface User {
 })
 export class ProfileComponent {
   user: User = this.userService.user!;
+  editData!: User;
   emailPattern = new RegExp(`[^@]{6,}@gmail\.(${EMAIL_DOMAINS.join('|')})$`);
 
   isEditing: boolean = false;
@@ -27,6 +28,7 @@ export class ProfileComponent {
 
   toggleEditing() {
     this.isEditing = !this.isEditing;
+    this.editData = { ...this.user };
   }
 
   submitEditHandler(form: NgForm) {
@@ -34,7 +36,12 @@ export class ProfileComponent {
       return;
     }
 
-    this.user = { ...form.value };
+    this.userService
+      .updateProfile(form.value.username, form.value.email, `+359${form.value.tel}`)
+      .subscribe((user) => {
+        console.log(user);
+        this.user = user;
+      });
     this.toggleEditing();
   }
 }
