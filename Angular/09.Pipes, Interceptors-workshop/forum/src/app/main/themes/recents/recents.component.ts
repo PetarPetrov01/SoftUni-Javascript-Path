@@ -21,7 +21,7 @@ export class RecentsComponent implements OnInit {
         this.posts = latest;
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
       },
     });
   }

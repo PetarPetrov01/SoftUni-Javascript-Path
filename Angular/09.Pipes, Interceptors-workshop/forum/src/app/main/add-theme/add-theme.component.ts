@@ -10,9 +10,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './add-theme.component.css',
 })
 export class AddThemeComponent {
-  createThemeHandler(form: NgForm) {
-    console.log(form.valid);
-    
+  createThemeHandler(form: NgForm) {    
     if (form.invalid){
       return
     }

@@ -15,7 +15,7 @@
       </div>
       <div class="flex">
         <p>Phone:</p>
-        <p>{{user.telStart+user.tel}}</p>
+        <p>+359{{user.tel}}</p>
       </div>
       <button class="edit-button" (click)="toggleEditing()">Edit</button>
     </ng-container>
@@ -50,7 +50,7 @@
         <div class="flex">
           <p>Phone:</p>
           <div>
-            <select name="telStart" id="select-tel" class="tel" ngModel >
+            <select name="telStart" id="select-tel" class="tel" >
               <option value="00359" selected>+359</option>
             </select>
             <input

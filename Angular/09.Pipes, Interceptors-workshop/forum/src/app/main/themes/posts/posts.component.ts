@@ -20,7 +20,6 @@ export class PostsComponent implements OnInit {
     this.apiService.getThemes().subscribe({
       next: (themes: Theme[]) => {
         this.themes = themes;
-        console.log(themes);
       },
       error: (err: Error) => {
         console.error(err);
