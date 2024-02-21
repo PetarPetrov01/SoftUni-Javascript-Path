@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../api.service';
 import { Theme } from '../../../types/Theme';
-import { NgFor } from '@angular/common';
+
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { SlicePipe } from '../../../pipes/slice.pipe';
+import { ElapsedTimePipe } from '../../../pipes/elapsed-time.pipe';
 
 @Component({
   selector: 'app-posts',
   standalone: true,
-  imports: [NgFor, RouterLink, RouterLinkActive],
+  imports: [NgFor, RouterLink, RouterLinkActive, SlicePipe],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css',
 })

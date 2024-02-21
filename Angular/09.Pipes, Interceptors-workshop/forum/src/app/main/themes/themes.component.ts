@@ -4,6 +4,7 @@ import { RecentsComponent } from './recents/recents.component';
 import { HomeComponent } from '../home/home.component';
 import { UserService } from '../../user/user.service';
 import { NgIf } from '@angular/common';
+import { ElapsedTimePipe } from '../../pipes/elapsed-time.pipe';
 
 @Component({
   selector: 'app-themes',
