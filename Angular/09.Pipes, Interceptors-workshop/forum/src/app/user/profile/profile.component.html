@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="profile">
+    <img src="assets/images/profile.png" alt="default user" />
+    <h3>User Info:</h3>
+
+    <!--Non-editing-->
+    <ng-container *ngIf="!isEditing">
+      <div class="flex">
+        <p>Username:</p>
+        <p>{{user.username}}</p>
+      </div>
+      <div class="flex">
+        <p>Email:</p>
+        <p>{{user.email}}</p>
+      </div>
+      <div class="flex">
+        <p>Phone:</p>
+        <p>{{user.telStart+user.tel}}</p>
+      </div>
+      <button class="edit-button" (click)="toggleEditing()">Edit</button>
+    </ng-container>
+
+    <!--When editing-->
+    <ng-container *ngIf="isEditing">
+      <form #form="ngForm">
+        <div class="flex">
+          <p>Username:</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value="Johny"
+            required=""
+            minlength="5"
+            ngModel
+          />
+        </div>
+        <div class="flex">
+          <p>Email:</p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value="john.doe@gmail.com"
+            required
+            ngModel
+            [pattern]="emailPattern"
+          />
+        </div>
+        <div class="flex">
+          <p>Phone:</p>
+          <div>
+            <select name="telStart" id="select-tel" class="tel" ngModel >
+              <option value="00359" selected>+359</option>
+            </select>
+            <input
+              type="text"
+              name="tel"
+              id="tel"
+              value="885 888 888"
+              required
+              minlength="7"
+              ngModel
+            />
+          </div>
+        </div>
+        <button class="red-button" (click)="toggleEditing()">Cancel</button>
+        <button class="green-button" [disabled]="form.invalid" (click)="submitEditHandler(form)">Save</button>
+      </form>
+    </ng-container>
+  </div>
+</div>
