@@ -20,6 +20,7 @@ interface User {
 export class ProfileComponent {
   user: User = this.userService.user!;
   editData!: User;
+  telCode: string = '+359';
   emailPattern = new RegExp(`[^@]{6,}@gmail\.(${EMAIL_DOMAINS.join('|')})$`);
 
   isEditing: boolean = false;
@@ -28,16 +29,20 @@ export class ProfileComponent {
 
   toggleEditing() {
     this.isEditing = !this.isEditing;
-    this.editData = { ...this.user };
+    this.editData = { ...this.user, tel: this.user.tel.slice(4) };
   }
 
   submitEditHandler(form: NgForm) {
     if (form.invalid) {
       return;
     }
-
+    console.log(form.value.telStart);
     this.userService
-      .updateProfile(form.value.username, form.value.email, `+359${form.value.tel}`)
+      .updateProfile(
+        form.value.username,
+        form.value.email,
+        `${form.value.tel.includes('+')?'':form.value.telStart}${form.value.tel}`
+      )
       .subscribe((user) => {
         console.log(user);
         this.user = user;

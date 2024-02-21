@@ -77,3 +77,8 @@
 .green-button:disabled{
     background-color: #ddd;
 }
+
+#tel{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}

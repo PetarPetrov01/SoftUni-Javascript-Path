@@ -48,11 +48,11 @@
         <div class="flex">
           <p>Phone:</p>
           <div>
-            <select name="telStart" id="select-tel" class="tel">
-              <option value="00359" selected>+359</option>
+            <select name="telStart" id="select-tel" class="tel" [(ngModel)]="telCode">
+              <option ngValue="+359" selected>+359</option>
             </select>
             <input
-              type="text"
+              type="number"
               name="tel"
               id="tel"
               required
