@@ -1,11 +1,11 @@
 import {
+  HTTP_INTERCEPTORS,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpInterceptorFn,
   HttpRequest,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Provider } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { environment } from '../environments/environment.development';
 
@@ -27,9 +27,14 @@ export class AppInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((err) => {
-        console.log(err);
         return [err];
       })
-      );
+    );
   }
 }
+
+export const appInterceptorProvider: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AppInterceptor,
+  multi: true,
+};
