@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Subscription, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,13 +13,12 @@ export class UserService {
   user: User | undefined;
   USER_KEY = '[user]';
 
+  subscription: Subscription;
+
   constructor(private http: HttpClient) {
-    try {
-      const lsUser = localStorage.getItem(this.USER_KEY) || '';
-      this.user = JSON.parse(lsUser);
-    } catch (error) {
-      this.user = undefined;
-    }
+    this.subscription = this.user$$.subscribe((user) => {
+      this.user = user;
+    });
   }
 
   get isLogged(): boolean {
@@ -54,8 +53,15 @@ export class UserService {
       );
   }
 
-  logout(): void {
-    this.user = undefined;
-    localStorage.removeItem(this.USER_KEY);
+  logout() {
+    return this.http
+      .post<User>('/api/logout', {})
+      .pipe(tap((user) => this.user$$.next(undefined)));
+  }
+
+  getProfile() {
+    return this.http
+      .get<User>('/api/users/profile')
+      .pipe(tap((user)=>this.user$$.next(user)))      
   }
 }

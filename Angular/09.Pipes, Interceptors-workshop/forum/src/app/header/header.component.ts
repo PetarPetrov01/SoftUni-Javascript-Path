@@ -17,12 +17,13 @@ export class HeaderComponent {
     return this.userService.isLogged;
   }
 
-  get firstName() {
-    return this.userService.user?.firstName || '';
+  get username() {
+    return this.userService.user?.username || '';
   }
 
   logout() {
-    this.userService.logout();
-    this.router.navigate(['/']);
+    this.userService.logout().subscribe(()=>{
+      this.router.navigate(['/']);
+    })
   }
 }
