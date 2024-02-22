@@ -1,0 +1,16 @@
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    padding: 1em 2em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+}
