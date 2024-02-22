@@ -3,11 +3,12 @@ import { ApiService } from '../../../api.service';
 import { Post } from '../../../types/Post';
 import { NgFor } from '@angular/common';
 import { ElapsedTimePipe } from '../../../pipes/elapsed-time.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recents',
   standalone: true,
-  imports: [NgFor, ElapsedTimePipe],
+  imports: [NgFor, ElapsedTimePipe, RouterLink],
   templateUrl: './recents.component.html',
   styleUrl: './recents.component.css',
 })

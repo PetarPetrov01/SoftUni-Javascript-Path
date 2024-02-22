@@ -13,6 +13,7 @@ import { ErrorService } from './error/error.service';
 // import { ErrorService } from './error/error.service';
 
 const { appUrl } = environment;
+const authorizedRoutes =['/api']
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
@@ -21,10 +22,14 @@ export class AppInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    
+    //POST => true; GET && url==profile => true;
+    const includeCredentials = req.method!='GET' || req.url.includes('/users/profile')
+
     if (req.url.startsWith('/api')) {
       req = req.clone({
         url: req.url.replace('/api', appUrl),
-        withCredentials: true,
+        withCredentials: includeCredentials,
       });
       console.log('from interceptor');
       console.log(req);
@@ -32,12 +37,10 @@ export class AppInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((err) => {
-        console.log(err);
         if (err.status === 401) {
-          this.router.navigate(['/login']);
+          req.url.includes('/users/profile')? null : this.router.navigate(['/login'])
         } else {
           this.errorService.setError(err);
-          this.router.navigate(['/error'])
         }
         return [err];
       })
