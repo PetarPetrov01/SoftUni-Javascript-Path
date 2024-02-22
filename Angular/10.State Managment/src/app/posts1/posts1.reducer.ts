@@ -10,7 +10,9 @@ function changeState(state: Post, data: Post) {
   return { ...state, ...data };
 }
 
-export function posts1Reducer(state: Post, action: PostActions.UpdateText) {
+export function posts1Reducer(state: Post = defPost, action: PostActions.UpdateText) {
+    console.log(state, action)
+
   switch (action.type) {
     case PostActions.UPDATE_TEXT:
         return {...state, text: action.payload}
