@@ -7,6 +7,7 @@ export const DOWNVOTE = '[post] Downvote';
 
 export class UpdateText implements Action {
   readonly type: string = UPDATE_TEXT;
+  
   constructor(public payload: string) {}
 }
 
