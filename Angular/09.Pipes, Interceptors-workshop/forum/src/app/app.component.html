@@ -1,4 +1,5 @@
 <app-authentication>
+    <app-error *ngIf="error$ | async"/>
     <app-header />
     <router-outlet />
     <app-footer />

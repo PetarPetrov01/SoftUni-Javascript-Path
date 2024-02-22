@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges, SimpleChanges } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ErrorService {
-  apiError$$ = new BehaviorSubject(null);
-  constructor() {}
+  private apiError$$ = new BehaviorSubject(null);
+  public error$ = this.apiError$$.asObservable();
   
-  setError(err: any){
-    this.apiError$$.next(err)
+  constructor() {}
+
+  setError(err: any) {
+    this.apiError$$.next(err);    
   }
 }

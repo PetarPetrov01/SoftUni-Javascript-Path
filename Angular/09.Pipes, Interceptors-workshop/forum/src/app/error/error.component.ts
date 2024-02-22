@@ -10,15 +10,14 @@ import { NgIf } from '@angular/common';
   styleUrl: './error.component.css',
 })
 export class ErrorComponent implements OnInit {
-  error$ = this.errorService.apiError$$.asObservable();
+  error$ = this.errorService.error$;
   errorMsg: string = '';
 
   constructor(private errorService: ErrorService) {}
 
   ngOnInit(): void {
     this.error$.subscribe((err: any) => {
-      console.log(err);
-      this.errorMsg = err.message;
+      this.errorMsg = err?.error.message || err?.message;
     });
   }
 }
