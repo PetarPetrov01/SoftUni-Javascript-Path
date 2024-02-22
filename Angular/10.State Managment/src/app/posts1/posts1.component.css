@@ -1,0 +1,42 @@
+.container{
+    margin: 2em auto;
+    padding: 5em;
+    background-color: #e1e1e1;
+    width: 600px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input{
+    font-size: 14px;
+}
+
+input:focus{
+    outline: none;
+}
+
+a{
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: #f1f1f1;
+}
+
+a:hover{
+    background: #090909;
+    color: #f1f1f1;
+}
