@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ErrorService } from './error.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-error',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './error.component.html',
   styleUrl: './error.component.css',
 })
@@ -16,6 +17,7 @@ export class ErrorComponent implements OnInit {
 
   ngOnInit(): void {
     this.error$.subscribe((err: any) => {
+      console.log(err);
       this.errorMsg = err.message;
     });
   }

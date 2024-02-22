@@ -36,11 +36,12 @@ export class ProfileComponent {
     if (form.invalid) {
       return;
     }
+    console.log(form.value)
     this.userService
       .updateProfile(
         form.value.username,
         form.value.email,
-        `${form.value.tel.includes('+')?'':form.value.telStart}${form.value.tel}`
+        `${String(form.value.tel).includes('+')?'':form.value.telStart}${form.value.tel}`
       )
       .subscribe((user) => {
         this.user = user;
