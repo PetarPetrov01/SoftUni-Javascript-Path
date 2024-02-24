@@ -1,0 +1,16 @@
+<h1>Posts2</h1>
+
+<div class="container" *ngIf="post$ | async as p">
+    <h2>{{ p.text }}</h2>
+    <h3>Likes: {{ p.likes }}</h3>
+    <div class="controls">
+      <a  (click)="reset()">Reset</a>
+      <a  (click)="upvote()">Upvote</a>
+      <a  (click)="downvote()">Downvote</a>
+    </div>
+    <div class="input-group">
+      <input type="text" [(ngModel)]="textMsg" />
+      <a  (click)="editText()">ChangeText</a>
+    </div>
+  </div>
+  
