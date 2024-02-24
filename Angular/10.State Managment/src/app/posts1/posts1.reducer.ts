@@ -1,3 +1,4 @@
+import { Action } from '@ngrx/store';
 import * as PostActions from './posts1.action';
 import { Post } from './posts1.type';
 
@@ -15,7 +16,10 @@ export function posts1Reducer(state: Post = defPost, action: PostActions.UpdateT
 
   switch (action.type) {
     case PostActions.UPDATE_TEXT:
+      if(action?.payload){
         return {...state, text: action.payload}
+      }
+      return state;
     //   return changeState(state, { text: action.payload });
     case PostActions.RESET:
       return defPost;

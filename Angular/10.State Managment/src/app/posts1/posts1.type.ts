@@ -4,5 +4,6 @@ export interface Post {
 }
 
 export interface PostsState {
-  post: Post;
+  post1: Post;
+  post2: Post;
 }

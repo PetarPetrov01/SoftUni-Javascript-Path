@@ -5,6 +5,10 @@
     width: 600px;
 }
 
+h1{
+    text-align: center;
+}
+
 .controls{
     display: flex;
     justify-content: center;

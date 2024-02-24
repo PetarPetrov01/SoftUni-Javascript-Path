@@ -21,7 +21,7 @@ export class Posts1Component {
 
   constructor(private store: Store<PostsState>) {
     console.log('sa');
-    this.post$ = this.store.select('post');
+    this.post$ = this.store.select('post1');
     this.post$.subscribe((p) => console.log(p));
   }
 
